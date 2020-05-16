@@ -1,0 +1,11 @@
+$govuk-global-styles: true;
+
+$govuk-pub-page-width: 1220px !default;
+
+// GOV.UK Frontend
+@import "node_modules/govuk-frontend/govuk/all";
+
+// GOV.UK Publishing Frontend
+@import "src/govuk-pub/all";
+
+// Other component styles
