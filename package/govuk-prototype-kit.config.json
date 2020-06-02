@@ -1,0 +1,6 @@
+{
+  "nunjucksPaths": ["/"],
+  "scripts": ["/govuk-pub/all.js"],
+  "assets": ["/govuk-pub/assets"],
+  "sass": ["/govuk-pub/all.scss"]
+}
