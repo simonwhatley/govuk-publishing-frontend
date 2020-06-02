@@ -113,13 +113,6 @@ const nunjucksEnvironment = nunjucks.configure(appViews, {
 // Add Nunjucks filters for application
 utils.addNunjucksFilters(nunjucksEnvironment);
 
-// Add filters from MOJ Frontend
-// let govukPublishingFilters = require('./src/govuk-pub/filters/all')();
-// govukPublishingFilters = Object.assign(govukPublishingFilters);
-// Object.keys(govukPublishingFilters).forEach(function (filterName) {
-//   nunjucksEnvironment.addFilter(filterName, govukPublishingFilters[filterName])
-// });
-
 // Set view engine
 app.set('view engine', 'html');
 

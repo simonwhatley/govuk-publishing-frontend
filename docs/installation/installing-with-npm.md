@@ -19,10 +19,10 @@ npm install nunjucks --save
 To install, run:
 
 ```
-npm install @whatterz/govuk-publishing-frontend --save
+npm install @simonwhatley/govuk-publishing-frontend --save
 ```
 
-After you have installed GOV.UK Frontend the `@whatterz/govuk-publishing-frontend` package will appear in your `node_modules` folder.
+After you have installed GOV.UK Frontend the `@simonwhatley/govuk-publishing-frontend` package will appear in your `node_modules` folder.
 
 ## Importing styles
 
@@ -31,13 +31,13 @@ You need to import the GOV.UK Frontend styles into the main Sass file in your pr
 1. To import all components, add the below to your Sass file:
 
 ```SCSS
-@import "node_modules/@whatterz/govuk-publishing-frontend/govuk/all";
+@import "node_modules/@simonwhatley/govuk-publishing-frontend/govuk/all";
 ```
 
 2. To import an individual component (for example a button), add the below to your Sass file:
 
 ```SCSS
-@import "node_modules/@whatterz/govuk-publishing-frontend/govuk/components/button/button";
+@import "node_modules/@simonwhatley/govuk-publishing-frontend/govuk/components/button/button";
 ```
 
 ### Optional: Resolving SCSS import paths
@@ -63,5 +63,5 @@ to include add `includePaths` to it.
 After resolving the import paths you can import GOV.UK Frontend by using:
 
 ```SCSS
-@import "@whatterz/govuk-publishing-frontend/govuk/components/button/button";
+@import "@simonwhatley/govuk-publishing-frontend/govuk/components/button/button";
 ```

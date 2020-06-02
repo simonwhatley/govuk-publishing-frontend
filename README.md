@@ -17,13 +17,13 @@ Using the GOV.UK Publishing Frontend requires the installation of the [GOV.UK Fr
 This repository is maintained by Simon Whatley. If you’ve got a question or need support you can:
 
 * Email support@humanedesign.co putting the repository name in the subject line.
-* [View known issues on GitHub](https://github.com/whatterz/govuk-publishing-frontend/issues).
+* [View known issues on GitHub](https://github.com/simonwhatley/govuk-publishing-frontend/issues).
 
 ## Contributing
 If you’ve got an idea or suggestion you can:
 
 * Email contribute@humanedesign.co putting the repository name in the subject line.
-* [Create a GitHub issue](https://github.com/whatterz/govuk-publishing-frontend/issues).
+* [Create a GitHub issue](https://github.com/simonwhatley/govuk-publishing-frontend/issues).
 
 ## Licence
-Unless otherwise stated, this codebase is released under the [MIT License](https://github.com/whatterz/govuk-publishing-frontend/blob/master/LICENSE). This covers both the codebase and any sample code in the documentation.
+Unless otherwise stated, this codebase is released under the [MIT License](https://github.com/simonwhatley/govuk-publishing-frontend/blob/master/LICENSE). This covers both the codebase and any sample code in the documentation.

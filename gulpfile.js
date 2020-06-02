@@ -13,6 +13,7 @@ gulp.task('generate-assets', gulp.series(
     'copy-vendor-javascript',
     'copy-namespace',
     'copy-helpers',
+    'sass:lint',
     'sass'
   )
 ));
