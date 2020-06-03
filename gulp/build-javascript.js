@@ -14,7 +14,7 @@ gulp.task('build:javascript', () => {
         return 'GOVUKPublishingFrontend';
       },
       namespace: function() {
-        return 'govukPublishingFrontend';
+        return 'GOVUKPublishingFrontend';
       }
     }))
     .pipe(gulp.dest('package/govuk-pub/'));
