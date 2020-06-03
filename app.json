@@ -8,7 +8,7 @@
     "frontend-framework"
   ],
   "website": "https://govuk-publishing-frontend.herokuapp.com/",
-  "repository": "https://github.com/simonwhatley/mojdt-frontend",
+  "repository": "https://github.com/simonwhatley/govuk-publishing-frontend",
   "addons": [
 
   ],
