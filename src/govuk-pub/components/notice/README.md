@@ -9,7 +9,7 @@ The notice component replaces the notice and withdrawal notice patterns on GOV.U
 ## Example usage
 
 ```
-{{ appNotice({
+{{ govukPubNotice({
   heading: {
     text: 'Statistics release cancelled'
   },

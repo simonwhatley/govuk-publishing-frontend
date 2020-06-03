@@ -1,4 +1,4 @@
-.govuk-p-notice {
+.govuk-pub-notice {
   @include govuk-text-colour;
   @include govuk-responsive-padding(4);
   @include govuk-responsive-margin(8, "bottom");
@@ -17,7 +17,7 @@
   }
 }
 
-.govuk-p-notice__title {
+.govuk-pub-notice__title {
   @include govuk-font(24, $weight: bold);
   margin-top: 0;
   @include govuk-responsive-margin(4, "bottom");
@@ -31,7 +31,7 @@
   }
 }
 
-.govuk-p-notice__description {
+.govuk-pub-notice__description {
   @include govuk-font(19);
   margin: 0;
 }
