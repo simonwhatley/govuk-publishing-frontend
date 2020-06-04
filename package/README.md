@@ -10,7 +10,7 @@ GOV.UK Publishing Frontend is maintained by Simon Whatley. If you need support e
 
 ## Quick start
 
-We recommend [installing GOV.UK Publishing Frontend using node package manager (npm)](docs/installation/installing-with-npm.md).
+We recommend [installing GOV.UK Publishing Frontend using node package manager (npm)](https://github.com/simonwhatley/govuk-publishing-frontend/blob/master/docs/installation/installing-with-npm.md).
 
 Once installed, you will be able to use the code from the examples in the [GOV.UK Publishing Frontend](https://govuk-publishing-frontend.herokuapp.com/) in your service.
 
