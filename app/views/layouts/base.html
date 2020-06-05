@@ -23,13 +23,13 @@
 {%- from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {%- from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
-
+{%- from "govuk-pub/components/notice/macro.njk" import govukPubNotice %}
 
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title{% if pageTitleLang %} lang="{{ pageTitleLang }}"{% endif %}>{% block pageTitle %}GOV.UK Publishing Frontend{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="{{ themeColor | default('#0b0c0c') }}">
