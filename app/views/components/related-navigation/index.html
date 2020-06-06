@@ -1,0 +1,383 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Related navigation component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/toggle.js"></script>
+<script type="text/javascript">
+  var $element = $('#related-navigation-toggle');
+  var toggle = new GOVUK.Modules.Toggle();
+  toggle.start($element);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Related navigation
+    </h1>
+
+    <p class="govuk-body-l">Displays related content including topics, guidance and collections.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/related_navigation">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/related-navigation">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubRelatedNavigation({
+      sections: [{
+        items: [{
+          heading: {
+            text: 'Find an apprenticeship'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        },{
+          heading: {
+            text: 'Training and study at work'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        },{
+          heading: {
+            text: 'Careers helpline for teenagers'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    {{ govukPubRelatedNavigation({
+      sections: [{
+        heading: {
+          text: 'Explore the topic'
+        },
+        items: [{
+          heading: {
+            text: 'Driving licences'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Driving tests and learning to drive or ride'
+          },
+          href: '#'
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    {{ govukPubRelatedNavigation({
+      attributes: {
+        id: 'related-navigation-toggle'
+      },
+      sections: [{
+        heading: {
+          text: 'World locations'
+        },
+        limit: {
+          count: 5,
+          'data-expanded': 'false',
+          'data-controls': 'toggle_world_locations',
+          'data-toggled-text': 'Show fewer',
+          'aria-controls': 'toggle_world_locations',
+          'aria-expanded': 'false'
+        },
+        items: [{
+          heading: {
+            text: 'Austria'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Belgium'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Bulgaria'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Croatia'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Republic of Cyprus'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Czech Republic'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Denmark'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Estonia'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Finland'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'France'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Germany'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Greece'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Hungary'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Ireland'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Italy'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Latvia'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Lithuania'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Luxembourg'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Malta'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Netherlands'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Poland'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Portugal'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Romania'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Slovakia'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Slovenia'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Spain'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Sweden'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'United Kingdom'
+          },
+          href: '#'
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    {{ govukPubRelatedNavigation({
+      sections: [{
+        heading: {
+          text: 'Other contacts',
+          classes: 'govuk-pub-related-navigation__sub-heading--other'
+        },
+        items: [{
+          heading: {
+            text: 'Jam producers (Spanish)'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 5</h3>
+
+    {{ govukPubRelatedNavigation({
+      heading: {
+        text: 'Lorem ipsum dolor sit amet'
+      },
+      sections: [{
+        items: [{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        }]
+      },{
+        heading: {
+          text: 'Collection'
+        },
+        items: [{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#'
+        }]
+      },{
+        heading: {
+          text: 'Explore the topic'
+        },
+        items: [{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#'
+        }]
+      },{
+        heading: {
+          text: 'World locations'
+        },
+        items: [{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#'
+        }]
+      },{
+        heading: {
+          text: 'Elsewhere on the web',
+          classes: 'govuk-pub-related-navigation__sub-heading--other'
+        },
+        items: [{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        },{
+          heading: {
+            text: 'Lorem ipsum dolor sit amet'
+          },
+          href: '#',
+          classes: 'govuk-pub-related-navigation__section-link--other'
+        }]
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
