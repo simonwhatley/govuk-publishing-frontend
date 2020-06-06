@@ -1,0 +1,17 @@
+{%- if params.text or params.html %}
+  <div class="govuk-pub-organisation-logo {{- ' brand--' + params.brand if params.brand }} {{- ' ' + params.classes if params.classes }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    {% if params.href %}
+      <a class="govuk-pub-organisation-logo__container govuk-pub-organisation-logo__link {{- ' govuk-pub-organisation-logo__crest' if params.crest }} {{- ' govuk-pub-organisation-logo__crest--' + params.crest if params.crest }} {{- ' brand__border-color' if params.brand }}" href="{{ params.href }}"{% for attribute, value in params.link.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+        <span class="govuk-pub-organisation-logo__name">
+          {{- params.html | safe if params.html else params.text -}}
+        </span>
+      </a>
+    {% else %}
+      <div class="govuk-pub-organisation-logo__container {{- ' govuk-pub-organisation-logo__crest' if params.crest }} {{- ' govuk-pub-organisation-logo__crest--' + params.crest if params.crest }} {{- ' brand__border-color' if params.brand }}">
+        <span class="govuk-pub-organisation-logo__name ">
+          {{- params.html | safe if params.html else params.text -}}
+        </span>
+      </div>
+    {% endif %}
+  </div>
+{% endif -%}

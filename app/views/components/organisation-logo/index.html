@@ -1,0 +1,218 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Organisation logo component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% set organisations = [
+  {
+    "name": "Prime Minister's Office – 10 Downing Street",
+    "crest": "eo",
+    "brand": "cabinet-office"
+  },
+  {
+    "name": "Attorney<br>General's<br>Office",
+    "crest": "single-identity",
+    "brand": "attorney-generals-office"
+  },
+  {
+    "name": "Cabinet Office",
+    "crest": "single-identity",
+    "brand": "cabinet-office"
+  },
+  {
+    "name": "Department for<br>Business, Energy<br>& Industrial Strategy",
+    "crest": "bis",
+    "brand": "department-for-business-innovation-skills"
+  },
+  {
+    "name": "Department for<br>Digital, Culture,<br>Media & Sport",
+    "crest": "single-identity",
+    "brand": "department-for-culture-media-sport"
+  },
+  {
+    "name": "Department<br>for Education",
+    "crest": "single-identity",
+    "brand": "department-for-education"
+  },
+  {
+    "name": "Department<br>for Environment,<br>Food & Rural Affairs",
+    "crest": "single-identity",
+    "brand": "department-for-environment-food-rural-affairs"
+  },
+  {
+    "name": "Department<br>for Exiting the<br>European Union",
+    "crest": "single-identity",
+    "brand": "department-of-energy-climate-change"
+  },
+  {
+    "name": "Department<br>for International<br>Development",
+    "crest": "single-identity",
+    "brand": "department-for-international-development"
+  },
+  {
+    "name": "Department for<br>InternationalTrade",
+    "crest": "dit",
+    "brand": "department-for-international-trade"
+  },
+  {
+    "name": "Department<br>for Transport",
+    "crest": "single-identity",
+    "brand": "department-for-transport"
+  },
+  {
+    "name": "Department<br>for Work<br>& Pensions",
+    "crest": "single-identity",
+    "brand": "department-for-transport"
+  },
+  {
+    "name": "Department<br>of Health &<br>Social Care",
+    "crest": "single-identity",
+    "brand": "department-of-health"
+  },
+  {
+    "name": "Foreign &<br>Commonwealth<br>Office",
+    "crest": "single-identity",
+    "brand": "foreign-commonwealth-office"
+  },
+  {
+    "name": "Governmment<br>Legal Department",
+    "crest": "single-identity",
+    "brand": "attorney-generals-office"
+  },
+  {
+    "name": "HM Revenue<br>& Customs",
+    "crest": "hmrc",
+    "brand": "hm-revenue-customs"
+  },
+  {
+    "name": "HM Treasury",
+    "crest": "single-identity",
+    "brand": "hm-treasury"
+  },
+  {
+    "name": "Home Office",
+    "crest": "ho",
+    "brand": "home-office"
+  },
+  {
+    "name": "Ministry<br>of Defence",
+    "crest": "mod",
+    "brand": "ministry-of-defence"
+  },
+  {
+    "name": "Ministry of Housing,<br>Communities &<br>Local Government",
+    "crest": "single-identity",
+    "brand": "department-for-communities-and-local-government"
+  },
+  {
+    "name": "Ministry<br>of Justice",
+    "crest": "single-identity",
+    "brand": "ministry-of-justice"
+  },
+  {
+    "name": "Northern<br>Ireland<br>Office",
+    "crest": "single-identity",
+    "brand": "northern-ireland-office"
+  },
+  {
+    "name": "Office of the<br>Advocate General<br>for Scotland",
+    "crest": "so",
+    "brand": "office-of-the-advocate-general-for-scotland"
+  },
+  {
+    "name": "Office of the<br>Leader of the<br>House of Commons",
+    "crest": "portcullis",
+    "brand": "the-office-of-the-leader-of-the-house-of-commons"
+  },
+  {
+    "name": "Office of the<br>Leader of the<br>House of Lords",
+    "crest": "portcullis",
+    "brand": "office-of-the-leader-of-the-house-of-lords"
+  },
+  {
+    "name": "Office of the Secretary of State for Scotland",
+    "crest": "so",
+    "brand": "scotland-office"
+  },
+  {
+    "name": "Office of the Secretary of State for Wales<br>Swyddfa Ysgrifennydd Gwladol Cymru",
+    "crest": "wales",
+    "brand": "wales-office"
+  },
+  {
+    "name": "UK Export<br>Finance",
+    "crest": "dit",
+    "brand": "department-for-international-trade"
+  }
+] %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Organisation logo
+    </h1>
+
+    <p class="govuk-body-l">Displays an organisation logo: text with crest and branded border colour.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/organisation_logo">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/organisation-logo">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">No brand colour or crest</p>
+
+    {{ govukPubOrganisationLogo({
+      html: 'Department<br>Name'
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With crest</p>
+
+    {{ govukPubOrganisationLogo({
+      html: 'Department<br>Name',
+      crest: 'single-identity'
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">With brand colour and crest, and linked name</p>
+
+    {{ govukPubOrganisationLogo({
+      html: 'Department<br>Name',
+      href: '#',
+      crest: 'single-identity',
+      brand: 'cabinet-office'
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Departments</h3>
+
+    {%- for organisation in organisations %}
+    <p class="govuk-!-margin-bottom-9">
+      {{ govukPubOrganisationLogo({
+        html: organisation.name,
+        crest: organisation.crest,
+        brand: organisation.brand
+      }) }}
+    </p>
+    {% endfor -%}
+
+  </div>
+</div>
+
+{% endblock %}
