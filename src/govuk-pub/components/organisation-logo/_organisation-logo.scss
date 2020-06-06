@@ -1,0 +1,116 @@
+// Default logo corresponds with the "medium stacked" Whitehall equivalent
+.govuk-pub-organisation-logo {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: (15 / 13);
+
+  @include govuk-media-query($from: tablet) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.govuk-pub-organisation-logo__container {
+  display: block;
+  width: auto;
+  height: auto;
+  color: govuk-colour("black");
+  text-decoration: none;
+  text-transform: none;
+
+  // Logo direction never changes, even for rtl content.
+  direction: ltr;
+}
+
+// Scale images on smaller viewports
+.govuk-pub-organisation-logo__image {
+  max-width: 100%;
+}
+
+.govuk-pub-organisation-logo__crest {
+  padding-top: 20px;
+  padding-left: 6px;
+  // Default brand colour
+  border-left: 2px solid govuk-colour("black");
+
+  @include govuk-media-query($from: tablet) {
+    padding-top: 25px;
+    padding-left: 7px;
+  }
+
+  .brand--executive-office & {
+    padding-left: 0;
+    border-left-width: 0;
+    background-position: 0 0;
+  }
+}
+
+.govuk-pub-organisation-logo__name {
+  position: relative;
+  top: 3px;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+.govuk-pub-organisation-logo__link {
+  @include govuk-link-common;
+  @include govuk-link-style-text;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-colour, 0 8px $govuk-focus-text-colour;
+  }
+}
+
+.govuk-pub-organisation-logo__crest--dit {
+  @include crest("dit_crest");
+}
+
+.govuk-pub-organisation-logo__crest--bis {
+  @include crest("bis_crest");
+}
+
+.govuk-pub-organisation-logo__crest--hmrc {
+  @include crest("hmrc_crest");
+}
+
+.govuk-pub-organisation-logo__crest--ho {
+  @include crest("ho_crest");
+  @include tall-crest;
+}
+
+.govuk-pub-organisation-logo__crest--mod {
+  @include crest("mod_crest");
+  @include tall-crest;
+}
+
+.govuk-pub-organisation-logo__crest--single-identity,
+.govuk-pub-organisation-logo__crest--eo,
+.govuk-pub-organisation-logo__crest--org {
+  @include crest("org_crest");
+}
+
+.govuk-pub-organisation-logo__crest--portcullis {
+  @include crest("portcullis");
+}
+
+.govuk-pub-organisation-logo__crest--so {
+  @include crest("so_crest");
+}
+
+.govuk-pub-organisation-logo__crest--ukaea {
+  @include crest("ukaea_crest");
+}
+
+.govuk-pub-organisation-logo__crest--ukho {
+  @include crest("ukho");
+  @include tall-crest;
+}
+
+.govuk-pub-organisation-logo__crest--wales {
+  @include crest("wales_crest");
+  @include tall-crest;
+}
