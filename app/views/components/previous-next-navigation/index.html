@@ -1,0 +1,117 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Previous and next navigation component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Previous and next navigation
+    </h1>
+
+    <p class="govuk-body-l">Displays links that allow users to navigate between a series of pages or elements.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/previous_and_next_navigation">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/previous-next-navigation">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">With title and text labels</p>
+
+    {{ govukPubPreviousNextNavigation({
+      previous: {
+        href: '#',
+        title: {
+          text: 'Previous page'
+        },
+        label: {
+          text: '1 of 3'
+        }
+      },
+      next: {
+        href: '#',
+        title: {
+          text: 'Next page'
+        },
+        label: {
+          text: '3 of 3'
+        }
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">No text labels</p>
+
+    {{ govukPubPreviousNextNavigation({
+      previous: {
+        href: '#',
+        title: {
+          text: 'Previous page'
+        }
+      },
+      next: {
+        href: '#',
+        title: {
+          text: 'Next page'
+        }
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">Only next</p>
+
+    {{ govukPubPreviousNextNavigation({
+      next: {
+        href: '#',
+        title: {
+          text: 'Next page'
+        },
+        label: {
+          text: 'Tax disc'
+        }
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    {{ govukPubPreviousNextNavigation({
+      previous: {
+        href: '#',
+        title: {
+          text: 'Previous page'
+        },
+        label: {
+          text: 'Applying for a provisional lorry or bus licence'
+        }
+      },
+      next: {
+        href: '#',
+        title: {
+          text: 'Next page'
+        },
+        label: {
+          text: 'Driver CPC part 1 test: theory'
+        }
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
