@@ -1,0 +1,173 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Share links component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Share links
+    </h1>
+
+    <p class="govuk-body-l">Displays links for linking to or sharing the current page on social media.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="http://government-frontend.herokuapp.com/component-guide/share_links">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/share-links">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubShareLinks({
+      items: [{
+        text: 'Facebook',
+        icon: 'facebook',
+        href: '#'
+      },{
+        text: 'Twitter',
+        icon: 'twitter',
+        href: '#'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    {{ govukPubShareLinks({
+      items: [{
+        text: 'Share on Facebook',
+        icon: 'facebook',
+        href: '#'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">With departmental brand</p>
+
+    {{ govukPubShareLinks({
+      brand: 'attorney-generals-office',
+      items: [{
+        text: 'Follow the Attorney General on Twitter',
+        icon: 'twitter',
+        href: '#'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">Stacked icons</p>
+
+    {{ govukPubShareLinks({
+      stacked: true,
+      items: [{
+        text: 'Facebook',
+        icon: 'facebook',
+        href: '#'
+      },{
+        text: 'Twitter',
+        icon: 'twitter',
+        href: '#'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 5</h3>
+
+    <p class="govuk-body">All available share links</p>
+
+    {{ govukPubShareLinks({
+      stacked: true,
+      items: [{
+        text: 'Facebook',
+        icon: 'facebook',
+        href: '#'
+      },{
+        text: 'Twitter',
+        icon: 'twitter',
+        href: '#'
+      },{
+        text: 'Flickr',
+        icon: 'flickr',
+        href: '#'
+      },{
+        text: 'Instagram',
+        icon: 'instagram',
+        href: '#'
+      },{
+        text: 'LinkedIn',
+        icon: 'linkedin',
+        href: '#'
+      },{
+        text: 'WhatsApp',
+        icon: 'whatsapp',
+        href: '#'
+      },{
+        text: 'YouTube',
+        icon: 'youtube',
+        href: '#'
+      },{
+        text: 'Email',
+        icon: 'email',
+        href: '#'
+      },{
+        text: 'Anything else that might be included that could have quite a long name',
+        href: '#'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 6</h3>
+
+    <p class="govuk-body">All available share links in a grid</p>
+
+    {{ govukPubShareLinks({
+      columns: true,
+      items: [{
+        text: 'Facebook',
+        icon: 'facebook',
+        href: '#'
+      },{
+        text: 'Twitter',
+        icon: 'twitter',
+        href: '#'
+      },{
+        text: 'Flickr',
+        icon: 'flickr',
+        href: '#'
+      },{
+        text: 'Instagram',
+        icon: 'instagram',
+        href: '#'
+      },{
+        text: 'LinkedIn',
+        icon: 'linkedin',
+        href: '#'
+      },{
+        text: 'WhatsApp',
+        icon: 'whatsapp',
+        href: '#'
+      },{
+        text: 'YouTube',
+        icon: 'youtube',
+        href: '#'
+      },{
+        text: 'Email',
+        icon: 'email',
+        href: '#'
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
