@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.3.0
+
+- Added download link component
+- Added email link component
+- Added print link component
+- Added previous/next navigation component
+- Added share links component
+- Added subscription links component
+
 ## v0.2.0
 
 - Added organisation logo component
