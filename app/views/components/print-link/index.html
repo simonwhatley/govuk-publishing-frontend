@@ -1,0 +1,54 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Print link component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Print link
+    </h1>
+
+    <p class="govuk-body-l">Displays a link with a print icon.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://government-frontend.herokuapp.com/component-guide/print-link">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/print-link">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">Default</p>
+
+    {{ govukPubPrintLink({
+      href: '#'
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With custom text</p>
+
+    {{ govukPubPrintLink({
+      href: '#',
+      text: 'Print this page',
+      attributes: {
+        rel: 'alternate'
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
