@@ -1,0 +1,63 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Subscription links component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Subscription links
+    </h1>
+
+    <p class="govuk-body-l">Displays links to ‘Get email alerts’ and ‘Subscribe to feed’.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/subscription-links">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/subscription-links">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubSubscriptionLinks({
+      classes: 'govuk-!-margin-bottom-9',
+      email: {
+        text: 'Get email alerts',
+        href: '#'
+      },
+      feed: {
+        text: 'Subscribe to feed',
+        href: '#'
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    {{ govukPubSubscriptionLinks({
+      classes: 'govuk-!-margin-bottom-9',
+      small_form: true,
+      email: {
+        text: 'Get email alerts',
+        href: '#'
+      },
+      feed: {
+        text: 'Subscribe to feed',
+        href: '#'
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
