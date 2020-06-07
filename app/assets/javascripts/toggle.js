@@ -48,7 +48,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     this.start = function ($element) {
       var toggleSelector = '[data-controls][data-expanded]'
       var toggleClass = $element.attr('data-toggle-class') || 'js-hidden'
-      var trackable = '[data-track-category][data-track-action]'
+      // var trackable = '[data-track-category][data-track-action]'
 
       $element.on('click', toggleSelector, toggle)
       $element.find(toggleSelector).each(addAriaAttrs)
@@ -87,9 +87,9 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
           $toggle.text(toggledText)
         }
 
-        if (window.GOVUK.analytics && window.GOVUK.analytics.trackEvent && $toggle.is(trackable)) {
-          track($toggle)
-        }
+        // if (window.GOVUK.analytics && window.GOVUK.analytics.trackEvent && $toggle.is(trackable)) {
+        //   track($toggle)
+        // }
 
         event.preventDefault()
       }
@@ -101,11 +101,11 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
         return $element.find(selector)
       }
 
-      function track ($toggle) {
-        var options = { label: $toggle.data('toggled-text') || $toggle.text() }
-
-        window.GOVUK.analytics.trackEvent($toggle.data('track-category'), $toggle.data('track-action'), options)
-      }
+      // function track ($toggle) {
+      //   var options = { label: $toggle.data('toggled-text') || $toggle.text() }
+      //
+      //   window.GOVUK.analytics.trackEvent($toggle.data('track-category'), $toggle.data('track-action'), options)
+      // }
     }
   }
 })(window.GOVUK.Modules)
