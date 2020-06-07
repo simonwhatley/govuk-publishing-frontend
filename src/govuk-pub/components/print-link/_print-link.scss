@@ -1,0 +1,22 @@
+.govuk-pub-print-link {
+  display: inline-block;
+  @include govuk-font(19);
+  margin-top: govuk-spacing(3);
+  margin-bottom: govuk-spacing(3);
+
+  &:focus {
+    @include govuk-focused-text;
+  }
+
+  @include govuk-media-query(tablet) {
+    margin-top: govuk-spacing(6);
+  }
+
+}
+
+.govuk-pub-print-link__icon {
+  width: 1.31578947368em;
+  height: 1.31578947368em; // 25 / 19
+  margin-right: govuk-spacing(2);
+  vertical-align: middle;
+}
