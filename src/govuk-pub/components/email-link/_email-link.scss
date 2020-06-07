@@ -1,0 +1,10 @@
+.govuk-pub-email-link {
+  @include govuk-font(19, $weight: bold);
+}
+
+.govuk-pub-email-link__icon {
+  position: relative;
+  top: 2px;
+  margin-right: .5em;
+  float: left;
+}

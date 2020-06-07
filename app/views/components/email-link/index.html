@@ -1,0 +1,51 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Email link component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Email link
+    </h1>
+
+    <p class="govuk-body-l">Displays a text link with a notification icon. Intended for email alert links.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://govuk-collections.herokuapp.com/component-guide/email-link">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/email-link">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">Default</p>
+
+    {{ govukPubEmailLink({
+      href: '#'
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With custom text</p>
+
+    {{ govukPubEmailLink({
+      href: '#',
+      text: 'Sign up for updates to this page'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
