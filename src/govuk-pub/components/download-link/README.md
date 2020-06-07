@@ -2,9 +2,7 @@
 
 Displays a link with a file download icon.
 
-
-
-[Preview the component](https://govuk-website-prototype.herokuapp.com/components/download-link/)
+[Preview the component](https://govuk-publishing-frontend.herokuapp.com/components/download-link/)
 
 ## Example usage
 
