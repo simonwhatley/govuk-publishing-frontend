@@ -1,0 +1,22 @@
+<nav class="govuk-pub-contents-list {{- ' ' + params.classes if params.classes }}" role="{{ params.role | default('navigation') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- if params.heading %}
+  <h{{ params.heading.headingLevel | default(2) }} class="govuk-pub-contents-list__title {{- ' ' + params.heading.classes if params.heading.classes }}" {%- for attribute, value in params.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+  </h{{ params.heading.headingLevel | default(2) }}>
+  {% endif -%}
+  {%- if params.items %}
+  <{{ 'ol' if params.listStyle == 'numbered' else 'ul' }} class="govuk-pub-contents-list__list">
+    {%- for item in params.items %}
+    <li class="govuk-pub-contents-list__list-item {{- ' govuk-pub-contents-list__list-item--numbered' if params.listStyle == 'numbered' else ' govuk-pub-contents-list__list-item--dashed' }} {%- if item.active %} govuk-pub-contents-list__list-item--active{% endif %}" {%- if item.active %} aria-current="true"{% endif %} {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {%- if item.active %}
+        {{- item.html | safe if item.html else item.text -}}
+      {% else %}
+      <a class="govuk-pub-contents-list__link govuk-link"  href="{{ item.href }}">
+        {{- item.html | safe if item.html else item.text -}}
+      </a>
+      {% endif %}
+    </li>
+    {% endfor -%}
+  </{{ 'ol' if params.listStyle == 'numbered' else 'ul' }}>
+  {% endif -%}
+</nav>

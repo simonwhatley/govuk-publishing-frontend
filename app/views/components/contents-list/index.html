@@ -1,0 +1,96 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Contents list component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Contents list
+    </h1>
+
+    <p class="govuk-body-l">Provides a list of links<!--  with options for dashes or numbering-->.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/contents_list">GOV.UK component guide</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubContentsList({
+      heading: {
+        text: 'Contents'
+      },
+      items: [{
+        text: 'First thing',
+        href: '#first-thing'
+      }, {
+        text: 'Second thing',
+        href: '#second-thing',
+        active: true
+      }, {
+        text: 'Third thing',
+        href: '#third-thing'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p>Without underlined links</p>
+
+    {{ govukPubContentsList({
+      heading: {
+        text: 'Summary'
+      },
+      classes: 'govuk-pub-contents-list--no-underline',
+      items: [{
+        text: 'First thing',
+        href: '#first-thing'
+      }, {
+        text: 'Second thing',
+        href: '#second-thing',
+        active: true
+      }, {
+        text: 'Third thing',
+        href: '#third-thing'
+      }]
+    }) }}
+
+    <!-- <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p>With numbered items</p>
+
+    {{ govukPubContentsList({
+      heading: {
+        text: 'Summary'
+      },
+      listStyle: 'numbered',
+      classes: 'govuk-pub-contents-list--no-underline',
+      items: [{
+        text: 'First thing',
+        href: '#first-thing'
+      }, {
+        text: 'Second thing',
+        href: '#second-thing',
+        active: true
+      }, {
+        text: 'Third thing',
+        href: '#third-thing'
+      }]
+    }) }} -->
+
+  </div>
+</div>
+
+{% endblock %}
