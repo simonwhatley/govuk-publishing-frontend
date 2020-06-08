@@ -15,7 +15,7 @@ format_numbers option will pull out numbers in the link text to render them as t
 ## Example usage
 
 ```
-{{ appContentsList({
+{{ govukPubContentsList({
   heading: {
     text: 'Contents'
   },
