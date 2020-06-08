@@ -1,0 +1,109 @@
+.govuk-pub-related-navigation {
+  @include govuk-text-colour;
+  border-top: 2px solid govuk-colour("blue");
+}
+
+.govuk-pub-related-navigation__main-heading {
+  @include govuk-font(19, $weight: bold);
+  margin-top: govuk-spacing(3);
+  margin-bottom: govuk-spacing(2);
+}
+
+.govuk-pub-related-navigation__sub-heading {
+  @include govuk-font(16);
+  margin: 0;
+  padding-top: govuk-spacing(3);
+  border-top: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
+}
+
+.govuk-pub-related-navigation__sub-heading--footer {
+  @include govuk-font(19, $weight: bold);
+  margin-top: govuk-spacing(3);
+  margin-bottom: govuk-spacing(2);
+  padding-top: 0;
+  border-top: 0;
+}
+
+.govuk-pub-related-navigation__main-heading  + .govuk-pub-related-navigation__sub-heading {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.govuk-pub-related-navigation__sub-heading--other {
+  @include govuk-font(19, $weight: bold);
+  padding-top: 0;
+  border-top: 0;
+}
+
+.govuk-pub-related-navigation__nav-section {
+  margin-bottom: govuk-spacing(6);
+}
+
+.govuk-pub-related-navigation__link {
+  margin-top: govuk-spacing(3);
+  list-style-type: none;
+  @include govuk-font($size: 16, $weight: regular, $line-height: 1.45);
+
+  @include govuk-media-query($from: tablet) {
+    line-height: 1.28;
+  }
+
+  @include govuk-template-link-focus-override;
+}
+
+.govuk-pub-related-navigation__link--truncated-links {
+  margin-top: govuk-spacing(2);
+}
+
+.govuk-pub-related-navigation__toggle {
+  @include govuk-link-common;
+  @include govuk-link-style-no-visited-state;
+  display: none;
+
+  .js-enabled & {
+    display: inline-block;
+  }
+}
+
+.govuk-pub-related-navigation__section-link {
+  @extend %govuk-link;
+  font-weight: bold;
+
+  @include govuk-template-link-focus-override;
+}
+
+.govuk-pub-related-navigation__section-link--other {
+  font-weight: normal;
+
+  @include govuk-template-link-focus-override;
+}
+
+.govuk-pub-related-navigation__section-link--footer {
+  @include govuk-template-link-focus-override;
+}
+
+.govuk-pub-related-navigation__section-link--inline {
+  line-height: 1.45;
+}
+
+// reset the default browser styles
+.govuk-pub-related-navigation__link-list {
+  margin: 0;
+  margin-bottom: 1.25em;
+  padding: 0;
+  list-style: none;
+}
+
+.govuk-pub-related-navigation__toggle-more {
+  .govuk-pub-related-navigation__section-link {
+    @include govuk-media-query($from: tablet) {
+      line-height: 1.45;
+    }
+  }
+
+  &.js-hidden {
+    .js-enabled & {
+      display: none;
+    }
+  }
+}

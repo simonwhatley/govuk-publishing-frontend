@@ -1,0 +1,42 @@
+<div class="govuk-pub-related-navigation {{- ' ' + params.classes if params.classes }}" data-module="govuk-pub-related-navigation" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <h{{ params.heading.headingLevel | default(2) }} class="govuk-pub-related-navigation__main-heading {{- ' ' + params.heading.classes if params.heading.classes }}" id="related-nav-related_items{{ '-' + params.id if params.id }}" {%- for attribute, value in params.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    {{- params.heading.html | safe if params.heading.html else params.heading.text | default('Related content') -}}
+  </h{{ params.heading.headingLevel | default(2) }}>
+  {%- for section in params.sections %}
+    <nav aria-labelledby="{{ 'related-nav-collections' if (section.heading.html or section.heading.text) else 'related-nav-related_items'}}{{ '-' + params.id if params.id }}" class="govuk-pub-related-navigation__nav-section" role="navigation" {%- for attribute, value in section.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {%- if section.heading.html or section.heading.text %}
+        <h{{ section.heading.headingLevel | default(3) }} class="govuk-pub-related-navigation__sub-heading {{- ' ' + section.heading.classes if section.heading.classes }}" id="related-nav-collections{{ '-' + params.id if params.id }}" {%- for attribute, value in section.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+          {{- section.heading.html | safe if section.heading.html else section.heading.text -}}
+        </h{{ section.heading.headingLevel | default(3) }}>
+      {% endif -%}
+      <ul class="govuk-pub-related-navigation__link-list" {%- for attribute, value in section.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+        {%- set itemCount = section.limit.count if section.limit.count else section.items.length -%}
+        {% for i in range(0, itemCount) -%}
+          {%- set item = section.items[i] -%}
+          <li class="govuk-pub-related-navigation__link">
+            <a class="govuk-pub-related-navigation__section-link {{- ' ' + item.classes if item.classes }}" href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+              {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
+            </a>
+          </li>
+        {% endfor -%}
+        {%- if section.limit %}
+          <li class="govuk-pub-related-navigation__link toggle-wrap">
+            <a aria-controls="{{ section.limit['aria-controls'] }}" aria-expanded="{{ section.limit['aria-expanded'] }}" class="govuk-pub-related-navigation__toggle" data-controls="{{ section.limit['data-controls'] }}" data-expanded="{{ section.limit['data-expanded'] }}" data-toggled-text="{{ section.limit['data-toggled-text'] }}" href="#" role="button">
+              {{- '+' + (section.items.length - section.limit.count) + ' more' -}}
+            </a>
+          </li>
+          <li class="govuk-pub-related-navigation__link govuk-pub-related-navigation__link--truncated-links">
+            <span id="{{ section.limit['aria-controls'] }}" class="govuk-pub-related-navigation__toggle-more js-hidden" aria-live="polite" role="region">
+              {% for i in range(section.limit.count, section.items.length) -%}
+                {%- set item = section.items[i] -%}
+                <a class="govuk-pub-related-navigation__section-link govuk-pub-related-navigation__section-link--inline {{- ' ' + item.classes if item.classes }}" href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+                  {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
+                </a> {%- if loop.index == (loop.length-1) %} and {% elif loop.index < loop.length %}, {% endif -%}
+              {% endfor -%}
+            </span>
+          </li>
+        {% endif -%}
+      </ul>
+    </nav>
+  {% endfor -%}
+</div>
