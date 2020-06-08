@@ -10,7 +10,7 @@ Supports nesting contents one level deep, currently only used by specialist docu
 
 format_numbers option will pull out numbers in the link text to render them as though they were the list style type. Applies to numbers at the start of text, with or without a decimal. See the format complex numbers fixture for details. -->
 
-[Preview the component](https://govuk-website-prototype.herokuapp.com/components/contents-list/)
+[Preview the component](https://govuk-publishing-frontend.herokuapp.com/components/contents-list/)
 
 ## Example usage
 
