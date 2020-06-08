@@ -1,0 +1,173 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Document list component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Document list
+    </h1>
+
+    <p class="govuk-body-l">Displays an ordered list of links to documents including document type and when updated.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/document_list">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/document-list">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubDocumentList({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Document 1'
+        },
+        metadata: {
+          document_type: 'Statutory guidance'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Document 2'
+        },
+        metadata: {
+          document_type: 'Statutory guidance'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Document 3'
+        },
+        metadata: {
+          document_type: 'Statutory guidance'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    {{ govukPubDocumentList({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Document 1'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          public_updated_at: '1 June 2019',
+          document_type: 'Statutory guidance'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Document 2'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          public_updated_at: '27 July 2019',
+          document_type: 'Statutory guidance'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Document 3'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+        public_updated_at: '30 August 2019',
+          document_type: 'Statutory guidance'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    {{ govukPubDocumentList({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Document 1'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Document 2'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Document 3'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">Without links</p>
+
+    {{ govukPubDocumentList({
+      items: [{
+        heading: {
+          text: 'Document 1'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        }
+      },
+      {
+        heading: {
+          text: 'Document 2'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        }
+      },
+      {
+        heading: {
+          text: 'Document 3'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        }
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
