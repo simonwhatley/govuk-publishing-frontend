@@ -1,0 +1,37 @@
+{%- if params.items %}
+<ol class="govuk-pub-document-list {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- for item in params.items %}
+  <li class="govuk-pub-document-list__item {{- ' ' + item.classes if item.classes }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    {% if item.href | length %}
+      <a class="govuk-pub-document-list__item-title" href="{{ item.href }}">
+        {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
+      </a>
+    {% else %}
+      <span class="govuk-pub-document-list__item-title {{- ' ' + item.heading.classes if item.heading.classes }}">
+        {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
+      </span>
+    {% endif %}
+    <p class="govuk-pub-document-list__item-description {{- ' ' + item.description.classes if item.description.classes }}">
+      {{- item.description.html | safe if item.description.html else item.description.text -}}
+    </p>
+    {% if item.metadata %}
+      <ul class="govuk-pub-document-list__item-metadata">
+        {%- for attribute, value in item.metadata %}
+          {%- if attribute == 'public_updated_at' %}
+            <li class="govuk-pub-document-list__attribute">
+              <time class="govuk-pub-document-list__metadata" datetime="{{ value }}">
+                {{- value -}}
+              </time>
+            </li>
+          {% else %}
+            <li class="govuk-pub-document-list__attribute">
+              {{- value -}}
+            </li>
+          {% endif -%}
+        {% endfor -%}
+      </ul>
+    {% endif -%}
+  </li>
+  {% endfor -%}
+</ol>
+{% endif -%}
