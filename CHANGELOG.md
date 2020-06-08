@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.4.0
+
+- Added contents list component
+- Added document list component
+- Fixed typo in organisation logo examples
+
 ## v0.3.0
 
 - Added download link component
