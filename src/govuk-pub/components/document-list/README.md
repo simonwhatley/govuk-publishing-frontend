@@ -82,13 +82,13 @@ This component accepts the following arguments.
 |Name|Type|Required|Description|
 |---|---|---|---|
 |href|string|Yes|The URL of the resource.|
-|title|object|Yes|See [title](#title)|
+|heading|object|Yes|See [title](#heading)|
 |description|object|Yes|See [description](#description)|
 |metadata|object|No|Metadata to display for each item, for example, date updated (`public_updated_at`).|
 |classes|string|No|Classes to add to the line item (`<li>`).|
 |attributes|object|No|HTML attributes (for example data attributes) to add to the line item (`<li>`).|
 
-#### Title
+#### Heading
 
 |Name|Type|Required|Description|
 |---|---|---|---|
