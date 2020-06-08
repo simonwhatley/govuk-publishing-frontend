@@ -1,0 +1,10 @@
+<a class="govuk-pub-print-link {{- ' ' + params.classes if params.classes }}" href="{{ params.href }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <svg class="govuk-pub-print-link__icon" aria-hidden="true" viewBox="0 0 16 18" height="18" width="16" xmlns="http://www.w3.org/2000/svg">
+    <image height="18" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASAgMAAAAvVbb5AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+    AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACVBMVEX///8KDAz///9QUv6Q
+    AAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAHdElNRQfjChkRDA30RTnOAAAAMElEQVQI12Ng
+    YA11YGAQWwUkwoAEI5hYhUKEAgEysWoVkJgahsyCKJ4aBtMWGuoAADXpGT5wCnkBAAAAJXRFWHRk
+    YXRlOmNyZWF0ZQAyMDE5LTEwLTI1VDE3OjEyOjEzKzAzOjAw1eA2pgAAACV0RVh0ZGF0ZTptb2Rp
+    ZnkAMjAxOS0xMC0yNVQxNzoxMjoxMyswMzowMKS9jhoAAAAASUVORK5CYII="/>
+  </svg>{{- params.html | safe if params.html else params.text | default('Print') -}}
+</a>
