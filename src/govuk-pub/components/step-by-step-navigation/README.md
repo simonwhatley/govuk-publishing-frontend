@@ -102,19 +102,19 @@ This component accepts the following arguments.
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|id|string|No||
-|steps|array|Yes||
-|small|boolean|No||
+|id|string|No|Specific `id` for the component.|
+|steps|array|Yes|Options for the steps. See [steps](#steps)|
+|small|boolean|No|If 'true' is set, the step by step will be rendered smaller to fit in a sidebar.|
 |attributes|object|No|HTML attributes (for example data attributes) to add to the container.|
 
 ### Steps
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|heading|object|Yes||
-|contents|array|Yes||
-|active|boolean|No||
-|logic|string|No||
+|heading|object|Yes|Options for the step heading. See [heading](#heading)|
+|contents|array|Yes|Options for the step contents. See [contents](#contents)|
+|active|boolean|No|Used to show which step the user is currently on.|
+|logic|string|No|Used to change the number next to a step to the word ‘and’ or the word ‘or’.|
 
 #### Heading
 
@@ -124,7 +124,7 @@ This component accepts the following arguments.
 |html|string|Yes|If `text` is set, this is not required. HTML to use within the heading. If `html` is provided, the `text` argument will be ignored.|
 |headingLevel|numeric|No|A number for the heading level. Defaults to 2 (`<h2>`)|
 
-#### Content
+#### Contents
 
 |Name|Type|Required|Description|
 |---|---|---|---|
