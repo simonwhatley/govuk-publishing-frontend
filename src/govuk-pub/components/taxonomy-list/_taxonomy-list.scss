@@ -1,8 +1,8 @@
 .govuk-pub-taxonomy-list {
   display: flex;
-  flex-wrap: wrap;
   margin: govuk-spacing(3) 0 0 0;
   padding: 0;
+  flex-wrap: wrap;
 
   @include govuk-media-query($from: tablet) {
     margin-right: -25px;
