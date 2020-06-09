@@ -1,0 +1,55 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Step by step navigation related component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Step by step navigation related
+    </h1>
+
+    <p class="govuk-body-l">Links to step by step navigations that a page is part of.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/step_by_step_nav_related">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/step-by-step-navigation-related">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubStepByStepNavigationRelated({
+      items: [{
+        text: 'Learn to drive a car: step by step',
+        href: '#'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    {{ govukPubStepByStepNavigationRelated({
+      items: [{
+        text: 'Learn to drive a car: step by step',
+        href: '#'
+      },{
+        text: 'Learn to drive a motorbike: step by step',
+        href: '#'
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
