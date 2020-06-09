@@ -1,0 +1,14 @@
+<div class="govuk-pub-step-nav-header {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <span class="govuk-pub-step-nav-header__part-of {{- ' ' + params.label.classes if params.label.classes }}" {%- for attribute, value in params.label.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    {{- params.label.html | safe if params.label.html else params.label.text | default('Part of') -}}
+  </span>
+  {%- if params.heading.href %}
+    <a href="{{ params.heading.href }}" class="govuk-pub-step-nav-header__title {{- ' ' + params.heading.classes if params.heading.classes }}" {%- for attribute, value in params.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+    </a>
+  {% else %}
+    <span class="govuk-pub-step-nav-header__title {{- ' ' + params.heading.classes if params.heading.classes }}" {%- for attribute, value in params.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+    </span>
+  {% endif -%}
+</div>
