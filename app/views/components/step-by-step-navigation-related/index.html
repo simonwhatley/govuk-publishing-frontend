@@ -39,7 +39,26 @@
 
     <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
 
+    <p class="govuk-body">If more than one link is passed to the component, they are output as a list.</p>
+
     {{ govukPubStepByStepNavigationRelated({
+      items: [{
+        text: 'Learn to drive a car: step by step',
+        href: '#'
+      },{
+        text: 'Learn to drive a motorbike: step by step',
+        href: '#'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">The default title ‘Part of’ can be replaced if required.</p>
+
+    {{ govukPubStepByStepNavigationRelated({
+      heading: {
+        text: 'Also part of'
+      },
       items: [{
         text: 'Learn to drive a car: step by step',
         href: '#'
