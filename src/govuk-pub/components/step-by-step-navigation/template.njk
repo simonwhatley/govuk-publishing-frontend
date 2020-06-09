@@ -1,0 +1,42 @@
+{%- if params.steps %}
+{% set id = params.id | default('step-by-step-navigation') %}
+<div id="{{ id }}" class="govuk-pub-step-nav {{- ' govuk-pub-step-nav--large' if not params.small }}" data-show-text="show" data-hide-text="hide" data-show-all-text="Show all" data-hide-all-text="Hide all" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <ol class="govuk-pub-step-nav__steps">
+    {%- set position = 1 -%}
+    {%- for step in params.steps %}
+      <li class="govuk-pub-step-nav__step js-step {{- ' govuk-pub-step-nav__step--active' if step.active }}" id="{{ 'step-by-step-' + id + '-' + loop.index }}" {%- if step.active %} aria-current="step"{% endif %} {%- if step.expanded %} data-show{% endif %} {%- for attribute, value in step.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+        <div class="govuk-pub-step-nav__header js-toggle-panel" data-position="{{ loop.index }}">
+          <h{{ params.headlingLevel | default(2) }} class="govuk-pub-step-nav__title">
+            <span class="govuk-pub-step-nav__circle govuk-pub-step-nav__circle--{{ 'logic' if step.logic else 'number' }}">
+              <span class="govuk-pub-step-nav__circle-inner">
+                <span class="govuk-pub-step-nav__circle-background">
+                  {%- if step.logic %}
+                    {{- step.logic -}}
+                  {% else %}
+                    <span class="govuk-pub-step-nav__circle-step-label govuk-visually-hidden">Step</span> {{ position }}<span class="govuk-pub-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                  {% endif -%}
+                </span>
+              </span>
+            </span>
+            <span class="js-step-title">
+              {{- step.heading.html | safe if step.heading.html else step.heading.text -}}
+            </span>
+          </h{{ params.headlingLevel | default(2) }}>
+        </div>
+        <div class="govuk-pub-step-nav__panel js-panel" id="{{ 'step-panel-' + id + '-' + loop.index }}">
+          {%- for content in step.contents %}
+            {%- if content.html %}
+              {{- content.html | safe if content.html -}}
+            {% else %}
+              <p class="govuk-pub-step-nav__paragraph">{{- content.text | safe if content.text -}}</p>
+            {% endif -%}
+          {% endfor -%}
+        </div>
+      </li>
+      {%- if not step.logic %}
+        {%- set position = position + 1 -%}
+      {% endif -%}
+    {% endfor -%}
+  </ol>
+</div>
+{% endif -%}

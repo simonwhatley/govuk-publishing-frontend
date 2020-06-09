@@ -1,0 +1,238 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Step by step navigation component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/components/step-by-step-navigation/step-by-step-navigation.js"></script>
+<script type="text/javascript">
+  var $element1 = $('#step-by-step-navigation-1');
+  var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation();
+  stepByStepNavigation.start($element1);
+
+  var $element2 = $('#step-by-step-navigation-2');
+  var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation();
+  stepByStepNavigation.start($element2);
+
+  var $element3 = $('#step-by-step-navigation-3');
+  var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation();
+  stepByStepNavigation.start($element3);
+
+  var $element4 = $('#step-by-step-navigation-4');
+  var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation();
+  stepByStepNavigation.start($element4);
+
+  var $element5 = $('#step-by-step-navigation-5');
+  var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation();
+  stepByStepNavigation.start($element5);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Step by step navigation
+    </h1>
+
+    <p class="govuk-body-1">A series of expanding/collapsing steps designed to navigate a user through a process.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/step_by_step_nav">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/step-by-step-navigation">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubStepByStepNavigation({
+      id: 'step-by-step-navigation-1',
+      steps: [{
+        heading: {
+          text: 'Step 1'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        },
+        {
+          text: 'Vivamus nec pharetra ipsum. Duis euismod augue nisl, sit amet dictum velit malesuada at.'
+        }]
+      },
+      {
+        heading: {
+          text: 'Step 2'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }],
+        logic: 'and'
+      },
+      {
+        heading: {
+          text: 'Step 3'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With an optional step</p>
+
+    {{ govukPubStepByStepNavigation({
+      id: 'step-by-step-navigation-2',
+      steps: [{
+        heading: {
+          text: 'Step 1'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        },
+        {
+          text: 'Vivamus nec pharetra ipsum. Duis euismod augue nisl, sit amet dictum velit malesuada at.'
+        }]
+      },
+      {
+        heading: {
+          text: 'Step 2'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }],
+        logic: 'or'
+      },
+      {
+        heading: {
+          text: 'Step 3'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">With a step open by default</p>
+
+    {{ govukPubStepByStepNavigation({
+      id: 'step-by-step-navigation-3',
+      steps: [{
+        heading: {
+          text: 'Step 1 (Open by default)'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        },
+        {
+          text: 'Vivamus nec pharetra ipsum. Duis euismod augue nisl, sit amet dictum velit malesuada at.'
+        }],
+        expanded: true
+      },
+      {
+        heading: {
+          text: 'Step 2'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }]
+      },
+      {
+        heading: {
+          text: 'Step 3'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">With an active step</p>
+
+    {{ govukPubStepByStepNavigation({
+      id: 'step-by-step-navigation-4',
+      steps: [{
+        heading: {
+          text: 'Step 1'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        },
+        {
+          text: 'Vivamus nec pharetra ipsum. Duis euismod augue nisl, sit amet dictum velit malesuada at.'
+        }],
+        active: true
+      },
+      {
+        heading: {
+          text: 'Step 2'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }],
+        logic: 'or'
+      },
+      {
+        heading: {
+          text: 'Step 3'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 5</h3>
+
+    <p class="govuk-body">Small step by step for use in a sidebar</p>
+
+    {{ govukPubStepByStepNavigation({
+      id: 'step-by-step-navigation-5',
+      small: true,
+      steps: [{
+        heading: {
+          text: 'Step 1'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        },
+        {
+          text: 'Vivamus nec pharetra ipsum. Duis euismod augue nisl, sit amet dictum velit malesuada at.'
+        }]
+      },
+      {
+        heading: {
+          text: 'Step 2'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }]
+      },
+      {
+        heading: {
+          text: 'Step 3'
+        },
+        contents: [{
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        }]
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
