@@ -1,0 +1,93 @@
+.govuk-pub-highlight-boxes {
+  @include govuk-text-colour;
+  display: flex;
+  margin: govuk-spacing(3) 0 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+
+  @include govuk-media-query($from: tablet) {
+    margin-right: -25px;
+  }
+}
+
+.govuk-pub-highlight-boxes__item-wrapper {
+  @include govuk-font(19);
+  box-sizing: border-box;
+  width: 100%;
+  padding: govuk-spacing(1) govuk-spacing(2) govuk-spacing(5) 0;
+  list-style-type: none;
+
+  @include govuk-media-query($from: tablet) {
+    width: 50%;
+    padding: govuk-spacing(1) govuk-spacing(5) govuk-spacing(5) 0;
+  }
+
+  @include govuk-media-query($from: desktop) {
+    width: (1 / 3) * 100%;
+    padding: govuk-spacing(1) govuk-spacing(5) govuk-spacing(5) 0;
+  }
+}
+
+.govuk-pub-highlight-boxes__item-wrapper--half-width {
+  @include govuk-media-query($from: desktop) {
+    width: 50%;
+    padding: govuk-spacing(1) govuk-spacing(5) govuk-spacing(5) 0;
+  }
+}
+
+.govuk-pub-highlight-boxes__item {
+  box-sizing: border-box;
+  height: 100%;
+  padding: govuk-spacing(3) * 1.5;
+  border: 1px solid govuk-colour("mid-grey", $legacy: "grey-2");
+  box-shadow: 7px 7px 0 govuk-colour("white"), 8px 8px 0 govuk-colour("mid-grey", $legacy: "grey-2");
+}
+
+.govuk-pub-highlight-boxes--inverse {
+  border: 0;
+  color: govuk-colour("white");
+  background-color: govuk-colour("blue");
+}
+
+.govuk-pub-highlight-boxes__title {
+  @extend %govuk-link;
+  @include govuk-font(19, $weight: bold);
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: underline;
+}
+
+.govuk-pub-highlight-boxes--inverse {
+  .govuk-pub-highlight-boxes__title {
+    &:link,
+    &:visited,
+    &:hover {
+      color: govuk-colour("white");
+    }
+
+    &:active,
+    &:focus {
+      color: $govuk-focus-text-colour;
+    }
+  }
+
+  .govuk-pub-highlight-boxes__title--featured,
+  .govuk-pub-highlight-boxes__description,
+  .govuk-pub-highlight-boxes__metadata {
+    color: govuk-colour("white");
+  }
+}
+
+.govuk-pub-highlight-boxes__title--featured {
+  @include govuk-font(24, $weight: bold);
+}
+
+.govuk-pub-highlight-boxes__description {
+  margin: 0 0 govuk-spacing(2) 0;
+}
+
+.govuk-pub-highlight-boxes__metadata {
+  @include govuk-font(16);
+  display: inline-block;
+  margin: 0 govuk-spacing(3) 0 0;
+}

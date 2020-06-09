@@ -1,0 +1,27 @@
+{%- if params.items %}
+<ol class="govuk-pub-highlight-boxes {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- for item in params.items %}
+  <li class="govuk-pub-highlight-boxes__item-wrapper {{- ' ' + item.classes if item.classes }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    <div class="govuk-pub-highlight-boxes__item {{- ' govuk-pub-highlight-boxes--inverse' if params.inverse }}">
+      <a class="govuk-pub-highlight-boxes__title {{- ' govuk-pub-highlight-boxes__title--featured' if item.featured }}" href="{{ item.href }}">
+        {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
+      </a>
+      <p class="govuk-pub-highlight-boxes__description {{- ' ' + item.description.classes if item.description.classes }}">
+        {{- item.description.html | safe if item.description.html else item.description.text -}}
+      </p>
+      {% if item.metadata.document_type %}
+        <p class="govuk-pub-highlight-boxes__metadata">{{ item.metadata.document_type }}</p>
+      {% endif -%}
+      {% if item.metadata.organisation %}
+        <p class="govuk-pub-highlight-boxes__metadata">{{ item.metadata.organisation }}</p>
+      {% endif -%}
+      {%- if item.metadata.public_updated_at %}
+        <time class="govuk-pub-highlight-boxes__metadata" datetime="{{ item.metadata.public_updated_at }}">
+          {{- item.metadata.public_updated_at -}}
+        </time>
+      {% endif -%}
+    </div>
+  </li>
+  {% endfor -%}
+</ol>
+{% endif -%}
