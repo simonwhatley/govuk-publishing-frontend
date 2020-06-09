@@ -49,5 +49,29 @@ This component accepts the following arguments.
 
 |Name|Type|Required|Description|
 |---|---|---|---|
+|heading|object|No|Options for the heading element. Defaults to 'Part of' See [heading](#heading)|
+|items|array|Yes|Options for the related links. See [items](#items)|
+|classes|string|No|Classes to add to the container.|
+|attributes|object|No|HTML attributes to add to the container.|
+
+### Heading
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|text|string|Yes|If `html` is set, this is not required. Text to use within the heading. If `html` is provided, the `text` argument will be ignored.|
+|html|string|Yes|If `text` is set, this is not required. HTML to use within the heading. If `html` is provided, the `text` argument will be ignored.|
+|headingLevel|numeric|No|A number for the heading level. Defaults to 2 (`<h2>`)|
+|classes|string|No|Classes to add to the heading.|
+|attributes|object|No|HTML attributes to add to the heading.|
+
+### Items
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|text|string|Yes|If `html` is set, this is not required. Text to use within the item. If `html` is provided, the `text` argument will be ignored.|
+|html|string|Yes|If `text` is set, this is not required. HTML to use within the item. If `html` is provided, the `text` argument will be ignored.|
+|href|string|No|The URL of the resource.|
+|classes|string|No|Classes to add to the item.|
+|attributes|object|No|HTML attributes to add to the item.|
 
 *Warning: If you’re using Nunjucks macros in production be aware that using HTML arguments, or ones ending with `.html` can be at risk from [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks. More information about security vulnerabilities can be found in the [Nunjucks documentation](https://mozilla.github.io/nunjucks/api.html#user-defined-templates-warning).*
