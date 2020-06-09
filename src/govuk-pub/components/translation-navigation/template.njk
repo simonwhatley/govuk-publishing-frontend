@@ -1,0 +1,19 @@
+{%- if params.items %}
+<nav class="govuk-pub-translation-nav {{- ' govuk-pub-translation-nav--inverse' if params.inverse }} {{- ' brand--' + params.brand if params.brand }} {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <ul class="govuk-pub-translation-nav__list">
+    {%- for item in params.items %}
+      <li class="govuk-pub-translation-nav__list-item">
+        {% if item.active -%}
+          <span lang="{{ item.locale }}">
+            {{- item.html | safe if item.html else item.text -}}
+          </span>
+        {% else %}
+          <a hreflang="{{ item.locale }}" lang="{{ item.locale }}" rel="alternate" class="govuk-pub-translation-nav__link {{- ' brand__color' if params.brand }} {{- ' ' + item.classes if item.classes }}" href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+            {{- item.html | safe if item.html else item.text -}}
+          </a>
+        {% endif -%}
+      </li>
+    {% endfor -%}
+  </ul>
+</nav>
+{% endif -%}

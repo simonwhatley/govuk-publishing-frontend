@@ -1,0 +1,173 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Translation navigation component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Translation navigation
+    </h1>
+
+    <p class="govuk-body-l">Displays a list of links to available translations.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/translation-nav">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/translation-navigation">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubTranslationNavigation({
+      items: [{
+        href: '#',
+        text: 'English',
+        locale: 'en',
+        active: true
+      }, {
+        href: '#',
+        text: 'Cymraeg',
+        locale: 'cy'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">Multiple translations</p>
+
+    {{ govukPubTranslationNavigation({
+      items: [{
+        href: '#',
+        text: 'English',
+        locale: 'en',
+        active: true
+      }, {
+        href: '#',
+        text: 'Français',
+        locale: 'fr'
+      }, {
+        href: '#',
+        text: 'हिंदी',
+        locale: 'hi'
+      }, {
+        href: '#',
+        text: '日本語',
+        locale: 'ja'
+      }, {
+        href: '#',
+        text: 'اردو',
+        locale: 'ur'
+      }, {
+        href: '#',
+        text: '中文',
+        locale: 'zh'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">With data attributes</p>
+
+    {{ govukPubTranslationNavigation({
+      items: [{
+        href: '#',
+        text: 'English',
+        locale: 'en',
+        attributes: {
+          track_category: "categoryEnglish",
+          track_action: 1.1,
+          track_label: "labelEnglish",
+          track_options: '{dimension28: 1, dimension29: "dimension29English"}'
+        },
+        active: true
+      }, {
+        href: '#',
+        text: 'Cymraeg',
+        attributes: {
+          track_category: "categoryWelsh",
+          track_action: 1.2,
+          track_label: "labelWelsh",
+          track_options: '{dimension28: 1, dimension29: "dimension29Welsh"}'
+        },
+        locale: 'cy'
+      }],
+      attributes: {
+        'aria-label': 'Translations',
+        'role': 'navigation'
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">Inverse</p>
+
+    <div class="app-background--on-govuk-blue govuk-!-padding-left-2 govuk-!-padding-right-2 govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+      {{ govukPubTranslationNavigation({
+        inverse: true,
+        items: [{
+          href: '#',
+          text: 'English',
+          locale: 'en',
+          active: true
+        }, {
+          href: '#',
+          text: 'Cymraeg',
+          locale: 'cy'
+        }]
+      }) }}
+    </div>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 5</h3>
+
+    <p class="govuk-body">With a brand colour (<code>wales-office</code>)</p>
+
+    {{ govukPubTranslationNavigation({
+      brand: 'wales-office',
+      items: [{
+        href: '#',
+        text: 'English',
+        locale: 'en',
+        active: true
+      }, {
+        href: '#',
+        text: 'Cymraeg',
+        locale: 'cy'
+      }]
+    }) }}
+
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 6</h3>
+
+    <p class="govuk-body">Right to left (using class <code>direction-rtl</code> on the container)</p>
+
+    <div class="direction-rtl">
+      {{ govukPubTranslationNavigation({
+        items: [{
+          href: '#',
+          text: 'English',
+          locale: 'en',
+          active: true
+        }, {
+          href: '#',
+          text: 'Cymraeg',
+          locale: 'cy'
+        }]
+      }) }}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

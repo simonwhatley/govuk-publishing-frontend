@@ -13,3 +13,7 @@ $govuk-pub-page-width: 1220px !default;
 // .govuk-header__container {
 //   border-bottom: 10px solid govuk-colour('red');
 // }
+
+.app-background--on-govuk-blue {
+  background-color: govuk-colour('blue');
+}
