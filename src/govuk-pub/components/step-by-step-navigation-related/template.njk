@@ -1,15 +1,15 @@
-<div class="govuk-pub-step-nav-related {{- ' govuk-pub-step-nav-related--singular' if params.singular }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  {%- if params.singular %}
-    <h{{ params.heading.headingLevel | default(2) }} class="govuk-pub-step-nav-related__heading">
+<div class="govuk-pub-step-nav-related {{- ' govuk-pub-step-nav-related--singular' if params.items.length == 1 }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- if params.items.length == 1 %}
+    <h{{ params.heading.headingLevel | default(2) }} class="govuk-pub-step-nav-related__heading {{- ' ' + params.heading.classes if params.heading.classes }}">
       <span class="govuk-pub-step-nav-related__pretitle" {%- for attribute, value in params.label.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
         {{- params.heading.html | safe if params.heading.html else params.heading.text | default('Part of') -}}
       </span>
-      <a href="{{ params.items[0].href }}" class="govuk-pub-step-nav-related__link" {%- for attribute, value in params.items[0].attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      <a href="{{ params.items[0].href }}" class="govuk-pub-step-nav-related__link {{- ' ' + params.items[0].classes if params.items[0].classes }}" {%- for attribute, value in params.items[0].attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
         {{- params.items[0].html | safe if params.items[0].html else params.items[0].text -}}
       </a>
     </h{{ params.heading.headingLevel | default(2) }}>
   {% else %}
-    <h{{ params.heading.headingLevel | default(2) }} class="govuk-pub-step-nav-related__heading">
+    <h{{ params.heading.headingLevel | default(2) }} class="govuk-pub-step-nav-related__heading {{- ' ' + params.heading.classes if params.heading.classes }}">
       <span class="govuk-pub-step-nav-related__pretitle" {%- for attribute, value in params.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
         {{- params.heading.html | safe if params.heading.html else params.heading.text | default('Part of') -}}
       </span>
@@ -17,7 +17,7 @@
     <ul class="govuk-pub-step-nav-related__links">
       {%- for item in params.items %}
         <li class="govuk-pub-step-nav-related__link-item">
-          <a href="{{ item.href }}" class="govuk-pub-step-nav-related__links" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+          <a href="{{ item.href }}" class="govuk-pub-step-nav-related__links {{- ' ' + params.item.classes if params.item.classes }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
             {{- item.html | safe if item.html else item.text -}}
           </a>
         </li>
