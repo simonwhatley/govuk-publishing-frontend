@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.6.0
+
+- Added highlight boxes component
+- Added image card component
+- Added taxonomy list component
+- Added translation navigation component
+
 ## v0.5.0
 
 - Added related navigation component
