@@ -1,0 +1,183 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Taxonomy list component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Taxonomy list
+    </h1>
+
+    <p class="govuk-body-l">Wraps the <a class="govuk-link" href="../components/highlight-boxes">highlight box</a>, <a class="govuk-link" href="../components/document-list">document list</a> and <a class="govuk-link" href="../components/image-card">image card</a> components in one list.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/taxonomy_list">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/taxonomy-list">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">With highlight boxes and document list</p>
+
+    {{ govukPubTaxonomyList({
+      highlights: {
+        inverse: true,
+        items: [{
+          href: '#',
+          heading: {
+            text: 'Lorem ipsum dolor sit amet 1'
+          },
+          metadata: {
+            document_type: 'Speech'
+          }
+        },
+        {
+          href: '#',
+          heading: {
+            text: 'Lorem ipsum dolor sit amet 2'
+          },
+          metadata: {
+            document_type: 'Policy paper'
+          }
+        },
+        {
+          href: '#',
+          heading: {
+            text: 'Lorem ipsum dolor sit amet 3'
+          },
+          metadata: {
+            document_type: 'Guide'
+          }
+        }]
+      },
+      documents: {
+        items: [{
+          href: '#',
+          heading: {
+            text: 'Document 1'
+          },
+          metadata: {
+            document_type: 'Statutory guidance'
+          }
+        },
+        {
+          href: '#',
+          heading: {
+            text: 'Document 2'
+          },
+          metadata: {
+            document_type: 'Statutory guidance'
+          }
+        },
+        {
+          href: '#',
+          heading: {
+            text: 'Document 3'
+          },
+          metadata: {
+            document_type: 'Statutory guidance'
+          }
+        }]
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With image cards and document list</p>
+
+    {{ govukPubTaxonomyList({
+      imageCards: {
+        items: [{
+          href: '#',
+          heading: {
+            text: 'Lorem ispum dolor emit',
+            headingLevel: '3'
+          },
+          image: {
+            src: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/62756/s300_courts-of-justice.JPG',
+            alt: 'Royal Courts of Justice'
+          },
+          metadata: {
+            public_updated_at: '27 June 2019',
+            document_type: 'Press release'
+          }
+        },
+        {
+          href: '#',
+          heading: {
+            text: 'Lorem ispum dolor emit',
+            headingLevel: '3'
+          },
+          image: {
+            src: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/62756/s300_courts-of-justice.JPG',
+            alt: 'Royal Courts of Justice'
+          },
+          metadata: {
+            public_updated_at: '27 June 2019',
+            document_type: 'Press release'
+          }
+        },
+        {
+          href: '#',
+          heading: {
+            text: 'Lorem ispum dolor emit',
+            headingLevel: '3'
+          },
+          image: {
+            src: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/62756/s300_courts-of-justice.JPG',
+            alt: 'Royal Courts of Justice'
+          },
+          metadata: {
+            public_updated_at: '27 June 2019',
+            document_type: 'Press release'
+          }
+        }]
+      },
+      documents: {
+        items: [{
+          href: '#',
+          heading: {
+            text: 'Document 1'
+          },
+          metadata: {
+            document_type: 'Statutory guidance'
+          }
+        },
+        {
+          href: '#',
+          heading: {
+            text: 'Document 2'
+          },
+          metadata: {
+            document_type: 'Statutory guidance'
+          }
+        },
+        {
+          href: '#',
+          heading: {
+            text: 'Document 3'
+          },
+          metadata: {
+            document_type: 'Statutory guidance'
+          }
+        }]
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

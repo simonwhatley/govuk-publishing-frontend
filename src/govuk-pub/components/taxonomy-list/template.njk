@@ -1,0 +1,48 @@
+{%- from "../document-list/macro.njk" import govukPubDocumentList -%}
+{%- from "../highlight-boxes/macro.njk" import govukPubHighlightBoxes -%}
+{%- from "../image-card/macro.njk" import govukPubImageCard -%}
+
+<ul class="govuk-pub-taxonomy-list {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {% if params.highlights %}
+    {{ govukPubHighlightBoxes({
+      inverse: params.highlights.inverse,
+      items: params.highlights.items
+    }) }}
+  {% endif -%}
+
+  {% if params.imageCards %}
+
+    {%- for item in params.imageCards.items %}
+      <li class="govuk-pub-taxonomy-list__item">
+        {{ govukPubImageCard({
+          href: item.href,
+          heading: {
+            text: item.heading.text,
+            html: item.heading.html
+          },
+          description: {
+            text: item.description.text,
+            html: item.description.html
+          },
+          image: {
+            src: item.image.src,
+            alt: item.image.alt
+          },
+          metadata: {
+            public_updated_at: item.metadata.public_updated_at,
+            document_type: item.metadata.document_type
+          }
+        }) }}
+      </li>
+
+    {% endfor -%}
+
+  {% endif -%}
+
+  {% if params.documents %}
+    {{ govukPubDocumentList({
+      classes: 'govuk-pub-document-list__multi-list',
+      items: params.documents.items
+    }) }}
+  {% endif -%}
+</ul>
