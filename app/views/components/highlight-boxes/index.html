@@ -1,0 +1,240 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Highlight boxes component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Highlight boxes
+    </h1>
+
+    <p class="govuk-body-l">Displays content item details in a grid of highlight boxes, with a max of 3 items per row.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/highlight_boxes">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/highlight-boxes">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubHighlightBoxes({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Lorem ipsum dolor sit amet 1'
+        },
+        metadata: {
+          document_type: 'Speech'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Lorem ipsum dolor sit amet 2'
+        },
+        metadata: {
+          document_type: 'Policy paper'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Lorem ipsum dolor sit amet 3'
+        },
+        metadata: {
+          document_type: 'Guide'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    {{ govukPubHighlightBoxes({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Highlight 1'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          document_type: 'Speech',
+          organisation: 'Department name',
+          public_updated_at: '27 June 2019'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Highlight 2'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          document_type: 'Document',
+          organisation: 'Department name',
+          public_updated_at: '27 July 2019'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Highlight 3'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          document_type: 'Guide',
+          organisation: 'Department name',
+          public_updated_at: '27 August 2019'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p>Inverse colour boxes</p>
+
+    {{ govukPubHighlightBoxes({
+      inverse: true,
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Highlight 1'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          document_type: 'Speech',
+          organisation: 'Department name',
+          public_updated_at: '27 June 2019'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Highlight 2'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          document_type: 'Document',
+          organisation: 'Department name',
+          public_updated_at: '27 July 2019'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Highlight 3'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          document_type: 'Guide',
+          organisation: 'Department name',
+          public_updated_at: '27 August 2019'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p>A featured box</p>
+
+    {{ govukPubHighlightBoxes({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Highlight 1'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          document_type: 'Speech',
+          organisation: 'Department name',
+          public_updated_at: '27 June 2019'
+        },
+        featured: true
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Highlight 2'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          document_type: 'Document',
+          organisation: 'Department name',
+          public_updated_at: '27 July 2019'
+        }
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Highlight 3'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        metadata: {
+          document_type: 'Guide',
+          organisation: 'Department name',
+          public_updated_at: '27 August 2019'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 5</h3>
+
+    <p>Half-width boxes (using class modifier)</p>
+
+    {{ govukPubHighlightBoxes({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Lorem ipsum dolor sit amet 1'
+        },
+        metadata: {
+          document_type: 'Speech'
+        },
+        classes: 'govuk-pub-highlight-boxes__item-wrapper--half-width'
+      },
+      {
+        href: '#',
+        heading: {
+          text: 'Lorem ipsum dolor sit amet 2'
+        },
+        metadata: {
+          document_type: 'Policy paper'
+        },
+        classes: 'govuk-pub-highlight-boxes__item-wrapper--half-width'
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
