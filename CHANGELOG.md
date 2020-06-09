@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.5.0
+
+- Added related navigation component
+- Added step by step navigation component
+- Added step by step navigation header component
+- Added step by step navigation related component
+
 ## v0.4.0
 
 - Added contents list component
