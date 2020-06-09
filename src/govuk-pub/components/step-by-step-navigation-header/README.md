@@ -44,6 +44,8 @@ This component accepts the following arguments.
 
 |Name|Type|Required|Description|
 |---|---|---|---|
+|heading|object|Yes|Options for the heading. See [heading](#heading)|
+|label|object|No|Options for the label. See [label](#label)|
 |classes|string|No|Classes to add to the container.|
 |attributes|object|No|HTML attributes to add to the container.|
 
