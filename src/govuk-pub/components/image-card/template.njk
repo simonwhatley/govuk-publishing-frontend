@@ -1,0 +1,54 @@
+<div class="govuk-pub-image-card {{- ' brand--' + params.brand if params.brand }} {{- ' govuk-pub-image-card--large' if params.large }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <figure class="govuk-pub-image-card__image-wrapper">
+    <img class="govuk-pub-image-card__image {{- ' ' + params.image.classes if params.image.classes }}" alt="{{ params.image.alt }}" src="{{ params.image.src }}" {%- for attribute, value in params.image.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  </figure>
+  <div class="govuk-pub-image-card__text-wrapper">
+    {%- if params.metadata %}
+      <p class="govuk-pub-image-card__context">
+        {%- if params.metadata.public_updated_at %}
+          <time datetime="{{- params.metadata.public_updated_at -}}">
+            {{- params.metadata.public_updated_at -}}
+          </time>
+        {% endif -%}
+        {%- if params.metadata.document_type %}
+        <span aria-hidden="true"> — </span>{{ params.metadata.document_type -}}
+        {% endif -%}
+      </p>
+    {% endif -%}
+    {%- if params.href %}
+      {%- if params.heading.headingLevel %}
+        <h{{ params.heading.headingLevel | default(2) }} class="govuk-pub-image-card__title {{- ' ' + params.heading.classes if params.heading.classes }}" {%- for attribute, value in params.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+          <a class="govuk-pub-image-card__title-link {{- ' brand__color' if params.brand }}" href="{{ params.href }}">
+            {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+          </a>
+        </h{{ params.heading.headingLevel | default(2) }}>
+      {% else %}
+        <span class="govuk-pub-image-card__title {{- ' ' + params.heading.classes if params.heading.classes }}">
+          <a class="govuk-pub-image-card__title-link {{- ' brand__color' if params.brand }}" href="{{ params.href }}">
+            {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+          </a>
+        </span>
+      {% endif -%}
+    {% else %}
+      <h{{ params.heading.headingLevel | default(2) }} class="govuk-pub-image-card__title {{- ' ' + params.heading.classes if params.heading.classes }}" {%- for attribute, value in params.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+        {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+      </h{{ params.heading.headingLevel | default(2) }}>
+    {% endif -%}
+    {%- if params.description %}
+      <div class="govuk-pub-image-card__description {{- ' ' + params.description.classes if params.description.classes }}" {%- for attribute, value in params.description.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+        {{- params.description.html | safe if params.description.html else params.description.text -}}
+      </div>
+    {% endif -%}
+    {%- if params.links %}
+      <ul class="govuk-pub-image-card__list {{- ' govuk-pub-image-card__list--indented' if not params.extraLinksNoIndent }}">
+        {% for item in params.links %}
+          <li class="govuk-pub-image-card__list-item {{- ' ' + item.classes if item.classes }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+            <a class="govuk-pub-image-card__list-item-link {{- ' brand__color' if params.brand }}" href="{{ item.href }}">
+              {{- item.html | safe if item.html else item.text -}}
+            </a>
+          </li>
+        {% endfor -%}
+      </ul>
+    {% endif -%}
+  </div>
+</div>
