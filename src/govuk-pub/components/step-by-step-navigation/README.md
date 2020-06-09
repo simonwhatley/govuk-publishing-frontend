@@ -10,6 +10,8 @@ This component is based on the accordion component in collections.
 
 [Preview the component](https://govuk-publishing-frontend.herokuapp.com/components/step-by-step-navigation/)
 
+[View a list of live step by steps](https://live-stuff.herokuapp.com/document-types/step-by-step-nav)
+
 ## Example usage
 
 **Macro**
