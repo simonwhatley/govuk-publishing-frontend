@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block pageScripts %}
-<script src="/public/javascripts/toggle.js"></script>
+<script src="/public/javascripts/components/related-navigation/related-navigation.js"></script>
 <script type="text/javascript">
   var $element = $('#related-navigation-toggle');
-  var toggle = new GOVUK.Modules.Toggle();
-  toggle.start($element);
+  var related = new GOVUK.Modules.RelatedNavigation();
+  related.start($element);
 </script>
 {% endblock %}
 

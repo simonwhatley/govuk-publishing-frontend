@@ -4,7 +4,7 @@
 
   Use as follows:
 
-  <div data-module="js-toggle">
+  <div data-module="govuk-pub-related-navigation">
     <a href="#" data-controls="target" data-expanded="true">
       Show more
     </a>
@@ -44,7 +44,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 (function (Modules) {
   'use strict'
 
-  Modules.Toggle = function () {
+  Modules.RelatedNavigation = function () {
     this.start = function ($element) {
       var toggleSelector = '[data-controls][data-expanded]'
       var toggleClass = $element.attr('data-toggle-class') || 'js-hidden'
