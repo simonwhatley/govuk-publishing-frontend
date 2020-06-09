@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Image card component – GOV.UK Prototype
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype",
+    classes: "app-tag--prototype"
+  },
+  html: 'This is a prototype – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Components</span>
+        Image card
+      </h1>
+
+      <p class="govuk-body-l">Displays an image and associated text with a link.</p>
+
+      <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/image_card">GOV.UK component guide</a></p>
+
+      <h2 class="govuk-heading-l">Examples</h2>
+
+      <h3 class="govuk-heading-m">Example 1</h3>
+
+      {{ appImageCard({
+        href: '#',
+        title: {
+          text: 'Lorem ispum dolor emit',
+          headingLevel: '3'
+        },
+        image: {
+          src: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/62756/s300_courts-of-justice.JPG',
+          alt: 'Royal Courts of Justice'
+        }
+      }) }}
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+      {{ appImageCard({
+        href: '#',
+        title: {
+          text: 'Lorem ispum dolor emit'
+        },
+        image: {
+          src: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/62756/s300_courts-of-justice.JPG',
+          alt: 'Royal Courts of Justice'
+        }
+      }) }}
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+      {{ appImageCard({
+        href: '#',
+        title: {
+          text: 'Lorem ispum dolor emit'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        image: {
+          src: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/62756/s300_courts-of-justice.JPG',
+          alt: 'Royal Courts of Justice'
+        },
+        metadata: {
+          public_updated_at: '2019-06-27 10:29:44 +0000',
+          document_type: 'Press release'
+        }
+      }) }}
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+      {{ appImageCard({
+        href: '#',
+        title: {
+          text: 'Lorem ispum dolor emit'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        image: {
+          src: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/62756/s300_courts-of-justice.JPG',
+          alt: 'Royal Courts of Justice'
+        },
+        metadata: {
+          public_updated_at: '2019-06-27 10:29:44 +0000',
+          document_type: 'Press release'
+        },
+        links: [{
+          text: 'Lorem ispum dolor emit',
+          href: '#'
+        },
+        {
+          text: 'Lorem ispum dolor emit',
+          href: '#'
+        },
+        {
+          text: 'Lorem ispum dolor emit',
+          href: '#'
+        }]
+      }) }}
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 5</h3>
+
+      {{ appImageCard({
+        title: {
+          text: 'Lorem ispum dolor emit'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        image: {
+          src: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/62756/s300_courts-of-justice.JPG',
+          alt: 'Royal Courts of Justice'
+        },
+        links: [{
+          text: 'Lorem ispum dolor emit',
+          href: '#'
+        },
+        {
+          text: 'Lorem ispum dolor emit',
+          href: '#'
+        },
+        {
+          text: 'Lorem ispum dolor emit',
+          href: '#'
+        }],
+        extra_links_no_indent: true
+      }) }}
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 6</h3>
+
+      {{ appImageCard({
+        large: true,
+        title: {
+          text: 'Lorem ispum dolor emit'
+        },
+        description: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pharetra ipsum. Duis euismod augue nisl.'
+        },
+        image: {
+          src: 'https://assets.publishing.service.gov.uk/frontend/homepage/uk-leaves-the-eu-d84d2981a9953d8b1261c9d25016223b0a8af3c096fa2d5e03510d73a78e3c60.jpg',
+          alt: 'Some meaningful alt text please'
+        },
+        metadata: {
+          public_updated_at: '2019-06-27 10:29:44 +0000',
+          document_type: 'Press release'
+        }
+      }) }}
+
+    </div>
+</div>
+
+{% endblock %}
