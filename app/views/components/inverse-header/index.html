@@ -1,0 +1,97 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Inverse header component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Inverse header
+    </h1>
+
+    <p class="govuk-body-l">A wrapper to contain header content in white text.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/inverse_header">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/inverse-header">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {%- call govukPubInverseHeader({}) %}
+
+      <div class="app-c-title app-c-title--inverse">
+        <h1 class="app-c-title__text">
+          Education, Training and Skills
+        </h1>
+      </div>
+
+    {% endcall -%}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With <code>fullWidth: true</code> attribute. Used when the header covers the full width of the page, but it’s content is in the grid layout. The left-right padding is removed to make the contents line up with the other items on the page.</p>
+
+    {%- call govukPubInverseHeader({
+      fullWidth: true,
+      classes: 'govuk-pub-inverse-header--padding-top'
+    }) %}
+
+      <div class="app-c-title app-c-title--inverse">
+        <h1 class="app-c-title__text">
+          Education, Training and Skills
+        </h1>
+      </div>
+
+    {% endcall -%}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">The inverse header component is used on HTML publications.</p>
+
+    {%- call govukPubInverseHeader({
+      classes: 'govuk-pub-inverse-header--padding-top'
+    }) %}
+
+      <div class="app-c-title app-c-title--inverse app-c-title--bottom-margin">
+        <p class="app-c-title__context">Notice</p>
+        <h1 class="app-c-title__text">
+          LN5 0AT, Jackson Homes (Scopwick) Ltd: environmental permit application
+        </h1>
+      </div>
+      <p class="publication-header__last-changed">Published 22 April 2016</p>
+
+    {% endcall -%}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">With GOV.UK frontend markup</p>
+
+    {%- call govukPubInverseHeader({}) %}
+
+      <div class="govuk-!-padding-top-9">
+        <h1 class="govuk-heading-xl app-font-colour--white govuk-!-margin-bottom-1">
+          <span class="govuk-caption-xl app-font-colour--white govuk-!-margin-bottom-1">Notice</span>
+          LN5 0AT, Jackson Homes (Scopwick) Ltd: environmental permit application
+        </h1>
+        <p class="govuk-body-s app-font-colour--white govuk-!-margin-bottom-0">Published 22 April 2016</p>
+      </div>
+
+    {% endcall -%}
+
+  </div>
+</div>
+
+{% endblock %}

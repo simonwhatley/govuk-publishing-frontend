@@ -1,0 +1,3 @@
+<header class="govuk-pub-inverse-header {{- ' govuk-pub-inverse-header--full-width' if params.fullWidth == true }} {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {{- caller() if caller -}}
+</header>
