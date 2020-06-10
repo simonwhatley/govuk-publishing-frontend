@@ -1,0 +1,18 @@
+{%- if params.items.length %}
+<ol class="govuk-pub-topic-list {{- ' brand--' + params.brand if params.brand }} {{- ' govuk-pub-topic-list--small' if params.small }} {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- for item in params.items %}
+    <li class="govuk-pub-topic-list__item">
+      <a class="govuk-link govuk-pub-topic-list__link govuk-pub-topic-list__link--no-underline {{- ' brand__color' if params.brand }} {{- ' ' + item.classes if item.classes }}" href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+        {{- item.html | safe if item.html else item.text -}}
+      </a>
+    </li>
+  {% endfor -%}
+  {%- if (params.moreLink.html or params.moreLink.text) and params.moreLink.href %}
+  <li class="govuk-pub-topic-list__item">
+    <a class="govuk-link govuk-pub-topic-list__link {{- ' brand__color' if params.brand }} {{- ' govuk-pub-topic-list--small' if params.small }} {{- ' ' + params.moreLink.classes if params.moreLink.classes }}" href="{{ params.moreLink.href }}" {%- for attribute, value in params.moreLink.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {{- params.moreLink.html | safe if params.moreLink.html else params.moreLink.text -}}
+    </a>
+  </li>
+  {% endif -%}
+</ol>
+{% endif -%}
