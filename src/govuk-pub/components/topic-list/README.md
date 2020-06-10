@@ -1,14 +1,13 @@
 # Topic list
 
-Displays a list of topics
+Displays a list of topics.
 
-
-[Preview the component](https://govuk-website-prototype.herokuapp.com/components/topic-list/)
+[Preview the component](https://govuk-publishing-frontend.herokuapp.com/components/topic-list/)
 
 ## Example usage
 
 ```
-{{ appTopicList({
+{{ govukPubTopicList({
   items: [{
     text: 'Environmental taxes, reliefs and schemes for businesses',
     href: '#'
