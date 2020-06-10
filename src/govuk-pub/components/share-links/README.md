@@ -66,7 +66,7 @@ This component accepts the following arguments.
 Use the following crest and brand codes to display the appropriate organisation logo and associated brand colours.
 
 |Department|Brand|
-|---|---|---|
+|---|---|
 |Attorney General's Office|`attorney-generals-office`|
 |Cabinet Office|`cabinet-office`|
 |Department for Business, Energy & Industrial Strategy|`department-for-business-innovation-skills`|
