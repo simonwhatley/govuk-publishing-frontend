@@ -1,0 +1,76 @@
+.govuk-pub-published-dates {
+  @include govuk-font(16);
+  line-height: 1.45em;
+  direction: ltr;
+}
+
+.govuk-pub-published-dates-list {
+  @include govuk-clearfix;
+}
+
+
+.govuk-pub-published-dates__term {
+  margin-top: .5em;
+  line-height: 1.4;
+
+  @include govuk-media-query($from: tablet) {
+    box-sizing: border-box;
+    margin-top: 0;
+    padding-right: govuk-spacing(1);
+    float: left;
+    clear: left;
+  }
+}
+
+.govuk-pub-published-dates__definition {
+  margin: 0;
+  line-height: 1.4;
+
+  @include govuk-media-query($from: tablet) {
+    padding-right: govuk-spacing(1);
+    float: left;
+  }
+}
+
+.govuk-pub-published-dates__toggle {
+  display: none;
+
+  .js-enabled & {
+    display: inline-block;
+  }
+
+  &:focus {
+    @include govuk-template-link-focus-override;
+  }
+
+}
+
+.govuk-pub-published-dates__history-link {
+  &:focus {
+    @include govuk-template-link-focus-override;
+  }
+}
+
+.govuk-pub-published-dates__change-history {
+  margin: govuk-spacing(4) 0;
+  padding: 0;
+
+  &.js-hidden {
+    display: none;
+  }
+}
+
+.govuk-pub-published-dates__change-item {
+  margin-bottom: govuk-spacing(2);
+  list-style-type: none;
+}
+
+.govuk-pub-published-dates__change-date {
+  display: block;
+  @include govuk-font($size: 16, $weight: "bold");
+}
+
+.govuk-pub-published-dates--history {
+  padding-top: govuk-spacing(2);
+  border-top: 1px solid govuk-colour("mid-grey");
+}

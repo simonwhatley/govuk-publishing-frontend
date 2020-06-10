@@ -1,0 +1,40 @@
+<div class="govuk-pub-published-dates {{- ' govuk-pub-published-dates--history' if params.history.length }} {{- ' ' + params.classes if params.classes }}" data-module="govuk-pub-published-dates" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <dl class="govuk-pub-published-dates-list">
+    {%- if params.published.timestamp %}
+      <dt class="govuk-pub-published-dates__term">
+        {{- params.published.html | safe if params.published.html else params.published.text | default('Published') -}}
+      </dt>
+      <dd class="govuk-pub-published-dates__definition">
+        {{ params.published.timestamp -}}
+      </dd>
+    {% endif -%}
+    {%- if params.lastUpdated.timestamp %}
+      <dt class="govuk-pub-published-dates__term">
+        {{- params.lastUpdated.html | safe if params.lastUpdated.html else params.lastUpdated.text | default('Last updated') -}}
+      </dt>
+      <dd class="govuk-pub-published-dates__definition">
+        {{- params.lastUpdated.timestamp }}
+        {%- if params.linkToHistory.html or params.linkToHistory.text %}
+          &mdash; <a class="govuk-link {{- ' ' + params.linkToHistory.classes if params.linkToHistory.classes }}" href="{{ params.linkToHistory.href }}" {%- for attribute, value in params.linkToHistory.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+            {{- params.linkToHistory.html | safe if params.linkToHistory.html else params.linkToHistory.text -}}
+          </a>
+        {% endif -%}
+      </dd>
+    {% endif -%}
+    {%- if params.history.length %}
+      <dd class="govuk-pub-published-dates__definition">
+        <a href="#full-history" class="govuk-pub-published-dates__toggle govuk-link" data-controls="full-history" data-expanded="false" data-toggled-text="-&nbsp;hide all updates">+&nbsp;show all updates</a>
+      </dd>
+    {% endif -%}
+  </dl>
+  {%- if params.lastUpdated.timestamp %}
+    <ol class="govuk-pub-published-dates__change-history js-hidden" id="full-history">
+      {%- for item in params.history %}
+        <li class="govuk-pub-published-dates__change-item {{- ' ' + item.classes if item.classes }}">
+          <time class="govuk-pub-published-dates__change-date timestamp" datetime="{{ item.timestamp }}">{{ item.timestamp }}</time>
+          {{- item.html | safe if item.html else item.text -}}
+        </li>
+      {% endfor -%}
+    </ol>
+  {% endif -%}
+</div>
