@@ -91,12 +91,12 @@ Use the following brand codes to display the appropriate organisation brand colo
 |Government Legal Department|`attorney-generals-office`|
 |HM Revenue & Customs|`hm-revenue-customs`|
 |HM Treasury|`hm-treasury`|
-|Home Office|home-office`|
-|Ministry of Defence|ministry-of-defence`|
+|Home Office|`home-office`|
+|Ministry of Defence|`ministry-of-defence`|
 |Ministry of Housing, Communities & Local Government|`department-for-communities-and-local-government`|
 |Ministry of Justice|`ministry-of-justice`|
 |Northern Ireland Office|`northern-ireland-office`|
-|Office of the Advocate General for Scotland|office-of-the-advocate-general-for-scotland`|
+|Office of the Advocate General for Scotland|`office-of-the-advocate-general-for-scotland`|
 |Office of the Leader of the House of Commons|`the-office-of-the-leader-of-the-house-of-commons`|
 |Office of the Leader of the House of Lords|`office-of-the-leader-of-the-house-of-lords`|
 |Office of the Secretary of State for Scotland|`scotland-office`|
