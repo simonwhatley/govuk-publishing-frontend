@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.7.0
+
+- Added banner component
+- Added published dates component
+- Added publisher metadata component
+- Added taxon list component
+- Added topic list component
+
 ## v0.6.0
 
 - Added highlight boxes component
