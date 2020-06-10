@@ -1,0 +1,31 @@
+{% set hasHeading = true %}
+{% if params.headingLevel == 0 %}
+  {% set hasHeading = false %}
+{% endif %}
+
+{%- if params.items %}
+<ol class="govuk-pub-taxon-list {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- for item in params.items %}
+    <li class="govuk-pub-taxon-list__item {{- ' ' + item.classes if item.classes }}">
+      {%- if hasHeading %}
+        <h{{ params.headingLevel | default(2) }} class="govuk-pub-taxon-list__heading {{- ' ' + item.heading.classes if item.heading.classes }}" {%- for attribute, value in item.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {% endif -%}
+        <a class="govuk-pub-taxon-list__link govuk-link" href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+          {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
+        </a>
+      {%- if hasHeading %}
+        <h{{ params.headingLevel | default(2) }}>
+      {% endif -%}
+      {%- if item.description.html or item.description.text %}
+        {%- if item.description.html %}
+          {{- item.description.html | safe if item.description.html -}}
+        {% else %}
+          <p class="govuk-pub-taxon-list__description {{- ' ' + item.description.classes if item.description.classes }}">
+            {{- item.description.text -}}
+          </p>
+        {% endif -%}
+      {% endif -%}
+    </li>
+  {% endfor -%}
+</ol>
+{% endif -%}

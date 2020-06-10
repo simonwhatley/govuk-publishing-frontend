@@ -1,0 +1,189 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Taxon list component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Taxon list
+    </h1>
+
+    <p class="govuk-body-l">Displays a list of taxons.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://govuk-collections.herokuapp.com/component-guide/taxon-list">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/taxon-list">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubTaxonList({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Adult Dependants’ Grant'
+        },
+        description: {
+          text: 'Adult Dependants’ Grant for full-time students who financially support an adult - funding, how to apply, eligibility'
+        }
+      }, {
+        href: '#',
+        heading: {
+          text: 'Care to Learn'
+        },
+        description: {
+          text: 'Care to Learn helps pay for childcare while you’re studying - how to apply, money you get, courses that qualify, eligibility'
+        }
+      }, {
+        href: '#',
+        heading: {
+          text: 'Childcare Grant'
+        },
+        description: {
+          text: 'Childcare Grants for full-time students in higher education - grants, CCG1, CCG2 forms, how to apply, eligibility'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With custom heading level</p>
+
+    {{ govukPubTaxonList({
+      headingLevel: 3,
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Adult Dependants’ Grant'
+        },
+        description: {
+          text: 'Adult Dependants’ Grant for full-time students who financially support an adult - funding, how to apply, eligibility'
+        }
+      }, {
+        href: '#',
+        heading: {
+          text: 'Care to Learn'
+        },
+        description: {
+          text: 'Care to Learn helps pay for childcare while you’re studying - how to apply, money you get, courses that qualify, eligibility'
+        }
+      }, {
+        href: '#',
+        heading: {
+          text: 'Childcare Grant'
+        },
+        description: {
+          text: 'Childcare Grants for full-time students in higher education - grants, CCG1, CCG2 forms, how to apply, eligibility'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">Without headings</p>
+
+    {{ govukPubTaxonList({
+      headingLevel: 0,
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Adult Dependants’ Grant'
+        },
+        description: {
+          text: 'Adult Dependants’ Grant for full-time students who financially support an adult - funding, how to apply, eligibility'
+        }
+      }, {
+        href: '#',
+        heading: {
+          text: 'Care to Learn'
+        },
+        description: {
+          text: 'Care to Learn helps pay for childcare while you’re studying - how to apply, money you get, courses that qualify, eligibility'
+        }
+      }, {
+        href: '#',
+        heading: {
+          text: 'Childcare Grant'
+        },
+        description: {
+          text: 'Childcare Grants for full-time students in higher education - grants, CCG1, CCG2 forms, how to apply, eligibility'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">Without descriptions</p>
+
+    {{ govukPubTaxonList({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Adult Dependants’ Grant'
+        }
+      }, {
+        href: '#',
+        heading: {
+          text: 'Care to Learn'
+        }
+      }, {
+        href: '#',
+        heading: {
+          text: 'Childcare Grant'
+        }
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">With data attributes</p>
+
+    {{ govukPubTaxonList({
+      items: [{
+        href: '#',
+        heading: {
+          text: 'Adult Dependants’ Grant'
+        },
+        description: {
+          text: 'Adult Dependants’ Grant for full-time students who financially support an adult - funding, how to apply, eligibility'
+        },
+        attributes: {
+          track_category: 'navSubtopicContentItemLinkClicked',
+          track_action: '1.1',
+          track_label: '/green-taxes-and-reliefs',
+          track_options: "{dimension28: 2, dimension29: 'Environmental taxes, reliefs and schemes for businesses'}"
+        }
+      }, {
+        href: '#',
+        heading: {
+          text: 'Care to Learn'
+        },
+        description: {
+          text: 'Care to Learn helps pay for childcare while you’re studying - how to apply, money you get, courses that qualify, eligibility'
+        },
+        attributes: {
+          track_category: 'navSubtopicContentItemLinkClicked',
+          track_action: '1.2',
+          track_label: '/guidance/aggregates-levy-register-or-change-your-details',
+          track_options: "{dimension28: 2, dimension29: 'Aggregates Levy: register or change your details'}"
+        }
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

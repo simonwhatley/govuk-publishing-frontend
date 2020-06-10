@@ -1,0 +1,17 @@
+.govuk-pub-taxon-list__item {
+  @include govuk-font(19);
+  margin-bottom: govuk-spacing(4);
+  list-style: none;
+}
+
+.govuk-pub-taxon-list__heading {
+  margin-bottom: govuk-spacing(1);
+}
+
+.govuk-pub-taxon-list__description {
+  margin-top: govuk-spacing(1);
+}
+
+.govuk-pub-taxon-list__link {
+  font-weight: bold;
+}
