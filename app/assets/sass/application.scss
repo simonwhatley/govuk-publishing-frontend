@@ -8,6 +8,10 @@ $govuk-pub-page-width: 1220px !default;
 // GOV.UK Publishing Frontend
 @import "src/govuk-pub/all";
 
+// App components
+@import "components/title";
+
+
 // Other styles
 
 // .govuk-header__container {
@@ -16,4 +20,8 @@ $govuk-pub-page-width: 1220px !default;
 
 .app-background--on-govuk-blue {
   background-color: govuk-colour('blue');
+}
+
+.app-font-colour--white {
+  color: govuk-colour("white");
 }
