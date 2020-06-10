@@ -1,0 +1,62 @@
+{%- from "../published-dates/macro.njk" import govukPubPublishedDates -%}
+
+<div class="govuk-pub-publisher-metadata {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {{- govukPubPublishedDates({
+    published: {
+      timestamp: params.published.timestamp,
+      text: params.published.text,
+      html: params.published.html
+    },
+    lastUpdated: {
+      timestamp: params.lastUpdated.timestamp,
+      text: params.lastUpdated.text,
+      html: params.lastUpdated.html
+    },
+    linkToHistory: {
+      href: params.linkToHistory.href,
+      text: params.linkToHistory.text,
+      html: params.linkToHistory.html,
+      classes: params.linkToHistory.classes,
+      attributes: params.linkToHistory.attributes
+    }
+  }) -}}
+  {%- if params.sections %}
+    <div class="govuk-pub-publisher-metadata__other {{- ' ' + params.sections.classes if params.sections.classes }}" {%- for attribute, value in params.sections.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      <dl>
+        {%- for section in params.sections %}
+          <dt class="govuk-pub-publisher-metadata__term {{- ' ' + section.heading.classes if section.heading.classes }}" {%- for attribute, value in section.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+            {{- section.heading.html | safe if section.heading.html else section.heading.text -}}
+          </dt>
+          <dd class="govuk-pub-publisher-metadata__definition">
+            {%- set itemCount = section.limit.count if section.limit.count else section.items.length -%}
+            {%- for i in range(0, itemCount) %}
+              {%- set item = section.items[i] -%}
+              {% if item.href %}
+                <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+                  {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
+                </a>
+              {% else %}
+                {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
+              {% endif -%} {%- if loop.index == (loop.length-1) %} {{ section.itemSeparator if section.itemSeparator else 'and' }} {% elif loop.index < loop.length %}, {% endif -%}
+            {% endfor -%}
+            {%- if section.limit %}
+              <div class="app-metadata__toggle-wrap">
+                <a aria-controls="{{ section.limit['aria-controls'] }}" aria-expanded="{{ section.limit['aria-expanded'] }}" class="govuk-pub-publisher-metadata__definition-link" data-controls="{{ section.limit['data-controls'] }}" data-expanded="{{ section.limit['data-expanded'] }}" data-toggled-text="{{ section.limit['data-toggled-text'] }}" href="#" role="button">
+                  {{- '+' + (section.items.length - section.limit.count) + ' more' -}}
+                </a>
+              </div>
+              <span id="{{ section.limit['aria-controls'] }}" class="app-metadata__toggle-items js-hidden" aria-live="polite" role="region">
+                {% for i in range(section.limit.count, section.items.length) -%}
+                  {%- set item = section.items[i] -%}
+                  <a href="{{ item.href }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+                    {{- item.heading.html | safe if item.heading.html else item.heading.text -}}
+                  </a>{%- if loop.index == (loop.length-1) %} {{ section.itemSeparator if section.itemSeparator else 'and' }} {% elif loop.index < loop.length %}, {% endif -%}
+                {% endfor -%}
+              </span>
+            {% endif -%}
+          </dd>
+        {% endfor -%}
+      </dl>
+    </div>
+  {% endif -%}  
+</div>
