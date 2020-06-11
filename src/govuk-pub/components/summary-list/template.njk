@@ -19,10 +19,10 @@
       {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
     </h{{ params.heading.headingLevel | default(3) }}>
     {%- if params.actions | length %}
-      <ul class="govuk-summary-list__actions-list">
+      <ul class="govuk-pub-summary-list__section-actions-list">
         {%- for action in params.actions %}
           {%- if action.text %}
-          <li class="govuk-summary-list__actions-list-item">
+          <li class="govuk-pub-summary-list__section-actions-list-item">
             {{- _actionLink(action) -}}
           </li>
           {% endif -%}
