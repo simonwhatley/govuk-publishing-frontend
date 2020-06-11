@@ -1,0 +1,29 @@
+.govuk-pub-url-preview {
+  @include govuk-font(19);
+  @include govuk-responsive-margin(6, "bottom");
+
+  .govuk-inset-text {
+    margin-top: 0;
+  }
+}
+
+.govuk-pub-url-preview__title {
+  @include govuk-font($size: 19, $weight: bold);
+  margin: 0;
+}
+
+.govuk-pub-url-preview__url {
+  word-wrap: break-word;
+}
+
+.govuk-pub-url-preview__default-message,
+.govuk-pub-url-preview__error-message,
+.govuk-pub-url-preview__url {
+  margin: 0;
+}
+
+.govuk-pub-url-preview__default-message--hidden,
+.govuk-pub-url-preview__error-message--hidden,
+.govuk-pub-url-preview__url--hidden {
+  display: none;
+}

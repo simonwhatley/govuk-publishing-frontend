@@ -1,0 +1,16 @@
+<div class="govuk-pub-url-preview {{- ' ' + params.classes if params.classes }}" data-module="url-preview" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+  <div class="govuk-inset-text">
+    <p class="govuk-pub-url-preview__title {{- ' ' + params.heading.classes if params.heading.classes }}">
+      {{- params.heading.html | safe if params.heading.html else params.heading.text | default('Page address') -}}
+    </p>
+    <p class="govuk-pub-url-preview__default-message js-url-preview-default-message">
+      {{- params.defaultMessage.html | safe if params.defaultMessage.html else params.defaultMessage.text | default('You haven’t entered a title yet') -}}
+    </p>
+    <p class="govuk-pub-url-preview__error-message govuk-pub-url-preview__error-message--hidden js-url-preview-error-message">
+      {{- params.errorMessage.html | safe if params.errorMessage.html else params.errorMessage.text | default('Unable to generate URL') -}}
+    </p>
+    <p class="govuk-pub-url-preview__url govuk-pub-url-preview__url--hidden js-url-preview-url">
+      <span>{{ params.url.root | default('https://www.gov.uk/') }}</span><span class="govuk-pub-url-preview__path js-url-preview-path">{{ params.url.path }}</span>
+    </p>
+  </div>
+</div>
