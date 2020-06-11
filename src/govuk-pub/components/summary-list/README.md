@@ -54,9 +54,7 @@ Use the summary list to summarise information, for example, a user’s responses
 
 ## GOV.UK Design System
 
-This component incorporates components from the [GOV.UK Design System](https://design-system.service.gov.uk/):
-
-- [Summary list](https://design-system.service.gov.uk/components/summary-list)
+This component incorporates the [summary list component](https://design-system.service.gov.uk/components/summary-list) from the [GOV.UK Design System](https://design-system.service.gov.uk/).
 
 ## Accessibility acceptance criteria
 
