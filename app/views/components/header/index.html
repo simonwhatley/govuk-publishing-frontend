@@ -1,0 +1,106 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Header component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Header
+    </h1>
+
+    <p class="govuk-body-l">The header provides the crown logo, product or service name and navigation.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://content-publisher.integration.publishing.service.gov.uk/component-guide/layout_header">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/header">View the Nunjucks macro options on GitHub</a></p>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-5">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">Production</p>
+
+    {{ govukPubHeader({
+      serviceName: {
+        text: 'Publishing'
+      },
+      environment: 'production',
+      navigation: {
+        label: 'Account navigation',
+        items: [{
+          text: 'Account name',
+          href: '#',
+          active: true
+        }, {
+          text: 'Sign out',
+          href: '#'
+        }]
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">Staging and integration</p>
+
+    {{ govukPubHeader({
+      serviceName: {
+        text: 'Publishing'
+      },
+      environment: 'integration',
+      navigation: {
+        label: 'Account navigation',
+        items: [{
+          text: 'Account name',
+          href: '#',
+          active: true
+        }, {
+          text: 'Sign out',
+          href: '#'
+        }]
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">Development</p>
+
+    {{ govukPubHeader({
+      serviceName: {
+        text: 'Publishing'
+      },
+      environment: 'development',
+      navigation: {
+        label: 'Account navigation',
+        items: [{
+          text: 'Account name',
+          href: '#',
+          active: true
+        }, {
+          text: 'Sign out',
+          href: '#'
+        }]
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
