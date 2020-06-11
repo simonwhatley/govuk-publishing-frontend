@@ -7,7 +7,7 @@
 {% block pageScripts %}
 <script src="/public/javascripts/components/url-preview/url-preview.js"></script>
 <script type="text/javascript">
-  var $element = $('#title');
+  var $element = $('#url-preview');
   var urlPreview = new GOVUK.Modules.UrlPreview();
   urlPreview.start($element);
 </script>
@@ -24,15 +24,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+    <h1 class="govuk-heading-xl">
       <span class="govuk-caption-xl">Components</span>
       URL preview
     </h1>
-
-    {{ govukTag({
-      text: "Experimental",
-      classes: "govuk-!-margin-bottom-8"
-    }) }}
 
     <p class="govuk-body-l">Generates URL from an input value and validates it with a server endpoint.</p>
 
@@ -59,7 +54,9 @@
     }) }}
 
     {{ govukPubUrlPreview({
-
+      attributes: {
+        id: "url-preview"
+      }
     }) }}
 
     </form>
