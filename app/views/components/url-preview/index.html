@@ -1,0 +1,70 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  URL preview component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/components/url-preview/url-preview.js"></script>
+<script type="text/javascript">
+  var $element = $('#title');
+  var urlPreview = new GOVUK.Modules.UrlPreview();
+  urlPreview.start($element);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <span class="govuk-caption-xl">Components</span>
+      URL preview
+    </h1>
+
+    {{ govukTag({
+      text: "Experimental",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
+
+    <p class="govuk-body-l">Generates URL from an input value and validates it with a server endpoint.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://content-publisher.integration.publishing.service.gov.uk/component-guide/url_preview">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/url-preview">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <form method="get" data-url-preview-path="/generate-url" accept-charset="UTF-8" novalidate>
+
+    {{ govukInput({
+      id: "title",
+      name: "title",
+      label: {
+        text: 'Enter a title',
+        classes: 'govuk-label--s'
+      },
+      attributes: {
+        'data-url-preview': 'input'
+      }
+    }) }}
+
+    {{ govukPubUrlPreview({
+
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
