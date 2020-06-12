@@ -1,0 +1,119 @@
+$govuk-pub-secondary-button-colour: #00823b;
+$govuk-pub-secondary-button-hover-colour: darken($govuk-pub-secondary-button-colour, 5%);
+$govuk-pub-secondary-button-background-colour: govuk-colour("white");
+$govuk-pub-secondary-button-hover-background-colour: govuk-colour("light-grey", $legacy: "grey-4");
+
+$govuk-pub-quiet-button-colour: govuk-colour("dark-grey", $legacy: "grey-1");
+$govuk-pub-quiet-button-hover-colour: darken($govuk-pub-quiet-button-colour, 5%);
+
+// Because govuk-frontend adds a responsive bottom margin by default for each component
+// we reset it to zero so we can set it separately using `govuk-pub-button--bottom-margin`
+// If we decide to use responsive margins consistently across components we can remove this
+.govuk-pub-button {
+  margin-bottom: 0;
+}
+
+// this will be moved and extended into a model for general component spacing
+// once this has been decided upon and other work completed, see:
+// https://trello.com/c/KEkNsxG3/142-3-implement-customisable-spacing-for-components
+.govuk-pub-button--bottom-margin {
+  @include responsive-bottom-margin;
+}
+
+.govuk-pub-button--inline {
+  display: block;
+  width: 100%;
+  margin-bottom: govuk-spacing(1);
+  vertical-align: top;
+
+  @include govuk-media-query($from: desktop) {
+    display: inline-block;
+    width: auto;
+    margin-right: govuk-spacing(2);
+    vertical-align: baseline;
+  }
+}
+
+.govuk-pub-button__info-text {
+  @include govuk-text-colour;
+  @include govuk-font($size: 16);
+  display: block;
+  max-width: 14em;
+  margin-top: .5em;
+}
+
+.govuk-pub-button--secondary {
+  padding: (govuk-spacing(2) - $govuk-border-width-form-element) govuk-spacing(2); // s1
+  border-color: $govuk-pub-secondary-button-colour;
+  color: $govuk-pub-secondary-button-colour;
+  background-color: $govuk-pub-secondary-button-background-colour;
+  box-shadow: none;
+
+  &:link,
+  &:visited,
+  &:active,
+  &:focus {
+    color: $govuk-pub-secondary-button-colour;
+    background-color: $govuk-pub-secondary-button-background-colour;
+    text-decoration: none;
+  }
+
+  &:link:focus {
+    color: $govuk-pub-secondary-button-colour;
+  }
+
+  &:hover {
+    border-color: $govuk-pub-secondary-button-hover-colour;
+    color: $govuk-pub-secondary-button-hover-colour;
+    background-color: $govuk-pub-secondary-button-hover-background-colour;
+    text-decoration: none;
+  }
+
+  &:before {
+    content: none;
+  }
+}
+
+.govuk-pub-button--secondary-quiet {
+  padding: (govuk-spacing(2) - $govuk-border-width-form-element) govuk-spacing(2); // s1
+  border-color: $govuk-pub-quiet-button-colour;
+  color: $govuk-pub-quiet-button-colour;
+  background-color: $govuk-pub-secondary-button-background-colour;
+  box-shadow: none;
+
+  &:link,
+  &:visited,
+  &:active,
+  &:focus {
+    color: $govuk-pub-quiet-button-colour;
+    background-color: $govuk-pub-secondary-button-background-colour;
+    text-decoration: none;
+  }
+
+  &:link:focus {
+    color: $govuk-pub-quiet-button-colour;
+  }
+
+  &:hover {
+    border-color: $govuk-pub-quiet-button-hover-colour;
+    color: $govuk-pub-quiet-button-hover-colour;
+    background-color: $govuk-pub-secondary-button-hover-background-colour;
+    text-decoration: none;
+  }
+
+  &:before {
+    content: none;
+  }
+}
+
+.govuk-pub-button--summary-action {
+  display: inline-block;
+  width: auto; // Override GDS’s 100% width
+  margin-right: govuk-spacing(2);
+  margin-bottom: govuk-spacing(2);
+  white-space: nowrap;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
