@@ -1,0 +1,95 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Copy to clipboard component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/components/copy-to-clipboard/copy-to-clipboard.js"></script>
+<script type="text/javascript">
+  var $element1 = $('#example-1');
+  var copyToClipboard = new GOVUK.Modules.CopyToClipboard();
+  copyToClipboard.start($element1);
+
+  var $element2 = $('#example-2');
+  var copyToClipboard = new GOVUK.Modules.CopyToClipboard();
+  copyToClipboard.start($element2);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Copy to clipboard
+    </h1>
+
+    <p class="govuk-body-l">Content that a user is intended to copy, like a URL.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://content-publisher.integration.publishing.service.gov.uk/component-guide/copy_to_clipboard">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/copy-to-clipboard">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">Default</p>
+
+    {{ govukPubCopyToClipboard({
+      id: 'example-1',
+      input: {
+        id: 'example-1-input',
+        name: 'example-1-input',
+        label: {
+          text: 'Copy and send this link to someone and they’ll be able to preview your draft on GOV.UK.'
+        },
+        value: 'https://www.example.com',
+        attributes: {
+          readonly: 'readonly'
+        }
+      },
+      button: {
+        text: 'Copy link'
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With data attributes</p>
+
+    {{ govukPubCopyToClipboard({
+      id: 'example-2',
+      input: {
+        id: 'example-2-input',
+        name: 'example-2-input',
+        label: {
+          text: 'Copy and send this link to someone and they’ll be able to preview your draft on GOV.UK.'
+        },
+        value: 'https://www.example.com',
+        attributes: {
+          readonly: 'readonly'
+        }
+      },
+      button: {
+        text: 'Copy link',
+        classes: 'govuk-pub-button govuk-pub-button--secondary-quiet',
+        attributes: {
+          'tracking-code': 'GA-123ABC'
+        }
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
