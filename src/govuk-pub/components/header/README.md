@@ -45,9 +45,9 @@ This component accepts the following arguments.
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|organisationName|object|Yes||
-|serviceName|object|Yes||
-|navigation|array|No||
+|organisationName|object|Yes|The name of the organisation. See [organisation name](#organisation-name). Defaults to “GOV.UK”.|
+|serviceName|object|Yes|The name of the service, for example, “Pay”, “Notify”, “Content Publisher”. See [service name](#service-name).|
+|navigation|array|No|Used for account navigation. See [navigation](#navigation).|
 |environment|string|No|Defaults to `development`.|
 |href|string|Yes|The location of the resource. Defaults to `/`|
 |containerClasses|string|No|Classes to add to the container.|
@@ -73,8 +73,8 @@ This component accepts the following arguments.
 |Name|Type|Required|Description|
 |---|---|---|---|
 |id|string|No|Defaults to `navigation`|
-|label|string|No||
-|items|array|No|See [items](#items)|
+|label|string|No|The `aria-label` for the navigation.|
+|items|array|No|An array of navigation item objects. See [items](#items)|
 |classes|string|No|Classes to add to the navigation list.|
 
 #### Items
@@ -84,7 +84,7 @@ This component accepts the following arguments.
 |text|string|Yes|If `html` is set, this is not required. Text to use within the anchor link. If `html` is provided, the `text` argument will be ignored.|
 |html|string|Yes|If `text` is set, this is not required. HTML to use within the anchor link. If `html` is provided, the `text` argument will be ignored.|
 |href|string|Yes|The location of the resource.|
-|active|boolean|No||
+|active|boolean|No|Flag to mark the navigation item as active or not. Defaults to `false`.|
 |collapsedMenuOnly|boolean|No||
 
 
