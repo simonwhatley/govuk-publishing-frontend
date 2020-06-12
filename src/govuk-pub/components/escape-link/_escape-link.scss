@@ -1,23 +1,28 @@
 .govuk-pub-escape-link {
   @include govuk-font($size: 19, $weight: bold);
 
-  bottom: 0;
-  float: right;
-  padding: govuk-spacing(4) govuk-spacing(3);
+  // scss-lint:disable DuplicateProperty
+  // sass-lint:disable no-duplicate-properties
   position: fixed;
-  position: sticky; // scss-lint:disable DuplicateProperty
+  position: sticky;
+  // sass-lint:enable no-duplicate-properties
+  // scss-lint:enable DuplicateProperty
+
   right: 0;
+  bottom: 0;
+  padding: govuk-spacing(4) govuk-spacing(3);
+  float: right;
 
   &:link,
   &:visited,
   &:hover,
   &:active {
-    background-color: govuk-colour("black");
     color: govuk-colour("white");
+    background-color: govuk-colour("black");
   }
 
   &:focus {
-    background-color: $govuk-focus-colour;
     color: $govuk-focus-text-colour;
+    background-color: $govuk-focus-colour;
   }
 }
