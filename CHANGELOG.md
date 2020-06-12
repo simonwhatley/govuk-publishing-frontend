@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.8.0
+
+- Added header component
+- Added inset prompt component
+- Added inverse header component
+- Added summary list component
+- Added URL preview component
+
 ## v0.7.0
 
 - Added banner component
