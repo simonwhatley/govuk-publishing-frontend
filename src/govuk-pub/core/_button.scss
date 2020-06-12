@@ -17,7 +17,7 @@ $govuk-pub-quiet-button-hover-colour: darken($govuk-pub-quiet-button-colour, 5%)
 // once this has been decided upon and other work completed, see:
 // https://trello.com/c/KEkNsxG3/142-3-implement-customisable-spacing-for-components
 .govuk-pub-button--bottom-margin {
-  // @include responsive-bottom-margin;
+  @include responsive-bottom-margin;
 }
 
 .govuk-pub-button--inline {
@@ -29,8 +29,8 @@ $govuk-pub-quiet-button-hover-colour: darken($govuk-pub-quiet-button-colour, 5%)
   @include govuk-media-query($from: desktop) {
     display: inline-block;
     width: auto;
-    vertical-align: baseline;
     margin-right: govuk-spacing(2);
+    vertical-align: baseline;
   }
 }
 
@@ -108,10 +108,11 @@ $govuk-pub-quiet-button-hover-colour: darken($govuk-pub-quiet-button-colour, 5%)
 
 .govuk-pub-button--summary-action {
   display: inline-block;
-  white-space: nowrap;
+  width: auto; // Override GDS’s 100% width
   margin-right: govuk-spacing(2);
   margin-bottom: govuk-spacing(2);
-  width: auto; // Override GDS’s 100% width
+  white-space: nowrap;
+
   &:last-child {
     margin-right: 0;
   }
