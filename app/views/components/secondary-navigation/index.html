@@ -1,0 +1,53 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Secondary navigation component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Secondary navigation
+    </h1>
+
+    <p class="govuk-body-l">Displays a secondary navigation with the current page marked accordingly.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://content-publisher.integration.publishing.service.gov.uk/component-guide/secondary_navigation">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/secondary-navigation">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">Default</p>
+
+    {{ govukPubSecondaryNavigation({
+      label: 'Sub navigation',
+      items: [{
+        text: 'Nav item 1',
+        href: '#1',
+        active: true
+      }, {
+        text: 'Nav item 2',
+        href: '#2'
+      }, {
+        text: 'Nav item 3',
+        href: '#3'
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
