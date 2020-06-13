@@ -1,0 +1,36 @@
+{%- set headingHtml %}
+<span class="govuk-pub-action-link__link-wrapper {{- ' ' + params.heading.classes if params.heading.classes }}">
+  {%- if params.heading.href %}
+    <a class="govuk-link govuk-pub-action-link__link {{- ' ' + params.heading.anchorClasses if params.heading.anchorClasses }}" href="{{ params.heading.href }}" {%- for attribute, value in params.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+    </a>
+  {% else %}
+    {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+  {% endif -%}
+</span>
+{% endset -%}
+
+{%- set descriptionHtml %}
+<span class="govuk-pub-action-link__subtext-wrapper {{- ' ' + params.description.classes if params.description.classes }}">
+  <span class="govuk-pub-action-link__subtext">
+    {%- if params.description.href %}
+      <a class="govuk-pub-action-link__subtext-link govuk-link {{- ' ' + params.description.anchorClasses if params.description.anchorClasses }}" href="{{ params.description.href }}" {%- for attribute, value in params.description.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+        {{- params.description.html | safe if params.description.html else params.description.text -}}
+      </a>
+    {% else %}
+      {{- params.description.html | safe if params.description.html else params.description.text -}}
+    {% endif -%}
+  </span>
+</span>
+{% endset -%}
+
+<div class="govuk-pub-action-link {{- ' govuk-pub-action-link--with-subtext' if params.description }} {{- ' govuk-pub-action-link--light-text' if params.inverse }} {{- ' govuk-pub-action-link--mobile-subtext' if params.mobile }} {{- ' govuk-pub-action-link--simple' if params.simple }} {{- ' govuk-pub-action-link--dark-icon' if params.darkIcon }} {{- ' govuk-pub-action-link--nhs' if params.nhs }} {{- ' ' + params.classes if params.classes }}">
+  {%- if params.heading and params.description %}
+    <span class="govuk-pub-action-link__contents-wrapper">
+      {{ headingHtml | safe }}
+      {{ descriptionHtml | safe }}
+    </span>
+  {% else %}
+    {{ headingHtml | safe }}
+  {% endif -%}
+</div>

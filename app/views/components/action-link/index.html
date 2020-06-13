@@ -1,0 +1,196 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Action link component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Action link
+    </h1>
+
+    <p class="govuk-body-l">Use action links to help users get to the next stage of a journey quickly.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/action_link">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/action-link">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">Default</p>
+
+    {{ govukPubActionLink({
+      heading: {
+        text: "Go to NHS 111 online",
+        href: "https://www.example.com"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With no wrapping text.</p>
+
+    <p class="govuk-body">Uses a <code class="app-code">span</code> and the <code class="app-code">govuk-pub-action-link__nowrap-text</code> class.</p>
+
+    {{ govukPubActionLink({
+      heading: {
+        html: 'Coronavirus (COVID-19): <span class="govuk-pub-action-link__nowrap-text">what you need to do</span>',
+        href: "#"
+      }
+    }) }}
+
+<!-- <pre class="app-pre govuk-!-margin-top-6"><code class="app-code">&#123;&#123; govukPubActionLink({
+  heading: {
+    html: 'Coronavirus (COVID-19): &lt;span class="govuk-pub-action-link__nowrap-text"&gt;what you need to do&lt;/span&gt;',
+    href: "#"
+  }
+}) &#125;&#125;</code></pre> -->
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">With light heading on a dark background</p>
+
+    <div class="app-background--on-govuk-blue">
+      {{ govukPubActionLink({
+        inverse: true,
+        heading: {
+          text: "Coronavirus (COVID-19)",
+          href: "#"
+        }
+      }) }}
+    </div>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">With subtext</p>
+
+    {{ govukPubActionLink({
+      heading: {
+        text: "Coronavirus (COVID-19)",
+        href: "#"
+      },
+      description: {
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 5</h3>
+
+    <p class="govuk-body">With light subtext on a dark background</p>
+
+    <div class="app-background--on-govuk-blue">
+      {{ govukPubActionLink({
+        inverse: true,
+        heading: {
+          text: "Coronavirus (COVID-19)",
+          href: "#"
+        },
+        description: {
+          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        }
+      }) }}
+    </div>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 6</h3>
+
+    <p class="govuk-body">With mobile subtext</p>
+
+    {{ govukPubActionLink({
+      mobile: true,
+      heading: {
+        text: "Coronavirus (COVID-19)",
+        href: "#"
+      },
+      description: {
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 7</h3>
+
+    <p class="govuk-body">With link on subtext</p>
+
+    {{ govukPubActionLink({
+      heading: {
+        text: "Remain calm"
+      },
+      description: {
+        text: "Better things are ahead",
+        href: "#"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 8</h3>
+
+    <p class="govuk-body">With link on subtext on a dark background</p>
+
+    <div class="app-background--on-govuk-blue">
+      {{ govukPubActionLink({
+        inverse: true,
+        heading: {
+          text: "Remain calm"
+        },
+        description: {
+          text: "Better things are ahead",
+          href: "#"
+        }
+      }) }}
+    </div>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 9</h3>
+
+    <p class="govuk-body">With simple arrow</p>
+
+    {{ govukPubActionLink({
+      simple: true,
+      heading: {
+        text: "Getting financial help and keeping your business safe",
+        href: "#"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 10</h3>
+
+    <p class="govuk-body">With dark icon</p>
+
+    {{ govukPubActionLink({
+      darkIcon: true,
+      heading: {
+        text: "Coronavirus (COVID-19)",
+        href: "#"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 11</h3>
+
+    <p class="govuk-body">With an NHS icon</p>
+
+    {{ govukPubActionLink({
+      nhs: true,
+      mobile: true,
+      heading: {
+        text: "Coronavirus (COVID-19)"
+      },
+      description: {
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        href: "#"
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
