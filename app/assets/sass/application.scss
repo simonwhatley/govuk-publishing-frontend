@@ -25,3 +25,25 @@ $govuk-pub-page-width: 1220px !default;
 .app-font-colour--white {
   color: govuk-colour("white");
 }
+
+.app-code {
+  padding: 0 5px;
+  color: #d13118;
+  background-color: govuk-colour("light-grey");
+  font-family: monospace, monospace;
+  font-size: govuk-font(19);
+}
+
+.app-pre {
+  @include govuk-responsive-margin(4, "bottom");
+  background: govuk-colour("light-grey");
+  font-size: govuk-font(19);
+  margin: 0;
+  padding: govuk-spacing(3);
+  position: relative;
+  overflow: auto;
+
+  .app-code {
+    color: govuk-colour("black");
+  }
+}
