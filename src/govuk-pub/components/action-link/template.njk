@@ -24,7 +24,7 @@
 </span>
 {% endset -%}
 
-<div class="govuk-pub-action-link {{- ' govuk-pub-action-link--with-subtext' if params.description }} {{- ' govuk-pub-action-link--light-text' if params.inverse }} {{- ' govuk-pub-action-link--mobile-subtext' if params.mobile }} {{- ' govuk-pub-action-link--simple' if params.simple }} {{- ' govuk-pub-action-link--dark-icon' if params.darkIcon }} {{- ' govuk-pub-action-link--nhs' if params.nhs }} {{- ' ' + params.classes if params.classes }}">
+<div class="govuk-pub-action-link {{- ' govuk-pub-action-link--with-subtext' if params.description }} {{- ' govuk-pub-action-link--light-text' if params.inverse }} {{- ' ' + params.classes if params.classes }}">
   {%- if params.heading and params.description %}
     <span class="govuk-pub-action-link__contents-wrapper">
       {{ headingHtml | safe }}

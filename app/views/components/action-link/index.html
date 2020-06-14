@@ -52,13 +52,6 @@
       }
     }) }}
 
-<!-- <pre class="app-pre govuk-!-margin-top-6"><code class="app-code">&#123;&#123; govukPubActionLink({
-  heading: {
-    html: 'Coronavirus (COVID-19): &lt;span class="govuk-pub-action-link__nowrap-text"&gt;what you need to do&lt;/span&gt;',
-    href: "#"
-  }
-}) &#125;&#125;</code></pre> -->
-
     <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
 
     <p class="govuk-body">With light heading on a dark background</p>
@@ -108,15 +101,17 @@
 
     <p class="govuk-body">With mobile subtext</p>
 
+    <p class="govuk-body">Uses the <code class="app-code">govuk-pub-action-link--mobile-subtext</code> class.</p>
+
     {{ govukPubActionLink({
-      mobile: true,
       heading: {
         text: "Coronavirus (COVID-19)",
         href: "#"
       },
       description: {
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-      }
+      },
+      classes: "govuk-pub-action-link--mobile-subtext"
     }) }}
 
     <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 7</h3>
@@ -154,40 +149,45 @@
 
     <p class="govuk-body">With simple arrow</p>
 
+    <p class="govuk-body">Uses the <code class="app-code">govuk-pub-action-link--simple</code> class.</p>
+
     {{ govukPubActionLink({
-      simple: true,
       heading: {
         text: "Getting financial help and keeping your business safe",
         href: "#"
-      }
+      },
+      classes: "govuk-pub-action-link--simple"
     }) }}
 
     <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 10</h3>
 
     <p class="govuk-body">With dark icon</p>
 
+    <p class="govuk-body">Uses the <code class="app-code">govuk-pub-action-link--dark-icon</code> class.</p>
+
     {{ govukPubActionLink({
-      darkIcon: true,
       heading: {
         text: "Coronavirus (COVID-19)",
         href: "#"
-      }
+      },
+      classes: "govuk-pub-action-link--dark-icon"
     }) }}
 
     <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 11</h3>
 
     <p class="govuk-body">With an NHS icon</p>
 
+    <p class="govuk-body">Uses the <code class="app-code">govuk-pub-action-link--nhs</code> class.</p>
+
     {{ govukPubActionLink({
-      nhs: true,
-      mobile: true,
       heading: {
         text: "Coronavirus (COVID-19)"
       },
       description: {
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
         href: "#"
-      }
+      },
+      classes: "govuk-pub-action-link--nhs govuk-pub-action-link--mobile-subtext"
     }) }}
 
   </div>
