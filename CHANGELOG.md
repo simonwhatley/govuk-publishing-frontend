@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.9.0
+
+- Added action links component
+- Added copy to clipboard component
+- Added escape link component
+- Added secondary navigation component
+- Added side navigation component
+
 ## v0.8.0
 
 - Added header component
