@@ -37,9 +37,6 @@ This component accepts the following arguments.
 |Name|Type|Required|Description|
 |---|---|---|---|
 |inverse|boolean|No|Default is `false`. Setting this to `true` renders the highlight boxes as white text on a blue background.|
-|mobile|boolean|no|Default is `false`. Setting this to `true` renders the description below the heading.|
-|simple|boolean|no|Default is `false`. Setting this to `true` renders a plain arrow marker.|
-|nhs|boolean|no|Default is `false`. Setting this to `true` renders an NHS icon.|
 |heading|object|Yes|Options for the heading. See [heading](#heading)|
 |description|object|Yes|Options for the description. See [description](#description)|
 |classes|string|No|Classes to add to the container.|
@@ -66,5 +63,16 @@ This component accepts the following arguments.
 |classes|string|No|Classes to add to the subtext wrapper.|
 |anchorClasses|string|No|Classes to add to the anchor link. Ignored if no `href` is specified.|
 |attributes|object|No|HTML attributes (for example data attributes) to add to the anchor link. Ignored if no `href` is specified.|
+
+### Modifier classes
+
+This component accepts the following modifier classes
+
+|Class|Description|
+|---|---|
+|`govuk-pub-action-link--dark-icon`|Renders a dark arrow marker.|
+|`govuk-pub-action-link--mobile-subtext`|Renders the description below the heading.|
+|`govuk-pub-action-link--nhs`|Renders an NHS icon.|
+|`govuk-pub-action-link--simple`|Renders a plain arrow marker.|
 
 *Warning: If you’re using Nunjucks macros in production be aware that using HTML arguments, or ones ending with `.html` can be at risk from [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks. More information about security vulnerabilities can be found in the [Nunjucks documentation](https://mozilla.github.io/nunjucks/api.html#user-defined-templates-warning).*
