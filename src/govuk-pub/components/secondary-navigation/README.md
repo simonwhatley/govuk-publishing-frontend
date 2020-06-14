@@ -1,9 +1,8 @@
-# Sub navigation
+# Secondary navigation
 
 Displays a secondary navigation with the current page marked accordingly.
 
-- [Guidance](#)
-- [Preview](#)
+[Preview the component](https://govuk-publishing-frontend.herokuapp.com/components/secondary-navigation/)
 
 ## Example
 
