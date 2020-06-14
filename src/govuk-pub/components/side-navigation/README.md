@@ -2,12 +2,28 @@
 
 Component showing a secondary navigation in a side of the page.
 
-[Preview the component](https://govuk-content-publisher.herokuapp.com/components/side-navigation/)
+[Preview the component](https://govuk-publishing-frontend.herokuapp.com/components/side-navigation/)
 
 ## Example usage
 
 ```
-
+{{ govukPubSideNavigation({
+  items: [
+    {
+      text: "Nav item 1",
+      href: "#"
+    },
+    {
+      text: "Nav item 2",
+      href: "#",
+      active: true
+    },
+    {
+      text: "Nav item 3",
+      href: "#"
+    }
+  ]
+}) }}
 ```
 
 ## Accessibility acceptance criteria
