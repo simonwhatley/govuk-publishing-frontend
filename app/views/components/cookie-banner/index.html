@@ -1,0 +1,59 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Cookie banner component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/components/cookie-banner/cookie-functions.js"></script>
+<script src="/public/javascripts/components/cookie-banner/cookie-banner.js"></script>
+<script type="text/javascript">
+  var $element = $('#global-cookie-message');
+  var cookies = new GOVUK.Modules.CookieBanner();
+  cookies.start($element);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Cookie banner
+    </h1>
+
+    <p class="govuk-body-l">Help users manage their personal data by telling them when you store cookies on their device.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/cookie_banner">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/cookie-banner">View the Nunjucks macro options on GitHub</a></p>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-5">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">Default</p>
+
+    {{ govukPubCookieBanner({
+      attributes: {
+        id: "global-cookie-message"
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
