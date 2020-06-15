@@ -1,0 +1,59 @@
+.govuk-pub-info-metric__heading {
+  @include govuk-responsive-margin(6, "top");
+  @include govuk-responsive-margin(1, "bottom");
+}
+
+.govuk-pub-info-metric__trend {
+  @include govuk-responsive-margin(2, "left");
+}
+
+.govuk-pub-info-metric__trend-text {
+  @include govuk-visually-hidden;
+}
+
+.govuk-pub-info-metric__context {
+  margin-bottom: 0;
+}
+
+.govuk-pub-info-metric__trend-icon {
+  color: govuk-colour("dark-grey", $legacy: "grey-1");
+}
+
+.govuk-pub-info-metric__period {
+  @include govuk-responsive-margin(2, "left");
+}
+
+.govuk-pub-info-metric__about {
+  @include govuk-responsive-margin(1, "top");
+}
+
+.govuk-pub-info-metric__words {
+  @include govuk-responsive-margin(1, "top");
+}
+
+.govuk-pub-info-metric {
+
+  @include govuk-responsive-margin(3, "left");
+  @include govuk-responsive-margin(3, "right");
+  @include govuk-responsive-margin(2, "bottom");
+
+  .govuk-details__summary-text {
+    @include govuk-font(16);
+  }
+
+  .govuk-details__text {
+    @include govuk-font(16);
+  }
+
+  .govuk-pub-info-metric__short-context {
+    @include govuk-font(19);
+  }
+
+}
+
+.govuk-grid-column-one-third {
+
+  .govuk-pub-info-metric {
+    @include govuk-responsive-margin(1, "left");
+  }
+}
