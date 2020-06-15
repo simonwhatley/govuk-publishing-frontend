@@ -1,0 +1,120 @@
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+
+<div class="govuk-pub-feedback {{- ' ' + params.classes if params.classes }}" data-module="feedback" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  
+  <div class="govuk-pub-feedback__prompt govuk-pub-feedback__js-show js-prompt" tabindex="-1">
+    <div class="govuk-pub-feedback__prompt-questions js-prompt-questions">
+      <h2 class="govuk-pub-feedback__prompt-question">Is this page useful?</h2>
+      {# 'Maybe' button exists only to try and capture clicks by bots #}
+      <a class="govuk-pub-feedback__prompt-link" aria-expanded="false" role="button" style="display: none;" hidden="hidden" aria-hidden="true" href="/contact/govuk">
+        Maybe
+      </a>
+      <ul class="govuk-pub-feedback__option-list">
+        <li class="govuk-pub-feedback__option-list-item">
+          <a class="govuk-pub-feedback__prompt-link js-page-is-useful" aria-expanded="false" role="button" href="/contact/govuk">
+            Yes <span class="govuk-visually-hidden">this page is useful</span>
+          </a>
+        </li>
+        <li class="govuk-pub-feedback__option-list-item">
+          <a class="govuk-pub-feedback__prompt-link js-toggle-form js-page-is-not-useful" aria-controls="page-is-not-useful" aria-expanded="false" role="button" href="/contact/govuk">
+            No <span class="govuk-visually-hidden">this page is not useful</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-pub-feedback__prompt-questions govuk-pub-feedback__prompt-success js-prompt-success js-hidden" tabindex="-1">
+      Thank you for your feedback
+    </div>
+    <div class="govuk-pub-feedback__prompt-questions govuk-pub-feedback__prompt-questions--something-is-wrong js-prompt-questions">
+      <a class="govuk-pub-feedback__prompt-link js-toggle-form js-something-is-wrong" aria-controls="something-is-wrong" aria-expanded="false" role="button" href="/contact/govuk">
+        Is there anything wrong with this page?
+      </a>
+    </div>
+  </div>
+
+  <form action="/contact/govuk/problem_reports" id="something-is-wrong" class="govuk-pub-feedback__form js-feedback-form js-hidden" method="post" aria-hidden="true" novalidate>
+  
+    <a href="#" class="govuk-pub-feedback__close govuk-pub-feedback__js-show js-close-form" aria-controls="something-is-wrong" aria-expanded="true" role="button">
+      Close
+    </a>
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-pub-feedback__error-summary govuk-pub-feedback__js-show js-hidden js-errors" tabindex="-1"></div>
+        
+        <h3 class="govuk-pub-feedback__form-heading">Help us improve GOV.UK</h3>
+        
+        <p id="feedback_explanation" class="govuk-pub-feedback__form-paragraph">Don’t include personal or financial information like your National Insurance number or credit card details.</p>  
+        
+        {{ govukInput({
+          id: "what-doing",
+          name: "what_doing",
+          label: {
+            text: "What were you doing?"
+          },
+          classes: "govuk-pub-input",
+          attributes: {
+            "aria-describedby": "feedback_explanation"
+          }
+        }) }}
+        
+        {{ govukInput({
+          id: "what-wrong",
+          name: "what_wrong",
+          label: {
+            text: "What went wrong?"
+          },
+          classes: "govuk-pub-input"
+        }) }}
+        
+        {{ govukButton({
+          text: "Send",
+          classes: "govuk-pub-button"
+        }) }}
+        
+      </div>
+    </div>
+    
+  </form>
+
+  <form action="/contact/govuk/email-survey-signup" id="page-is-not-useful" class="govuk-pub-feedback__form govuk-pub-feedback__form--email govuk-pub-feedback__js-show js-feedback-form js-hidden" method="post" aria-hidden="true" novalidate>
+      
+    <a href="#" class="govuk-pub-feedback__close js-close-form" aria-controls="page-is-not-useful" aria-expanded="true" role="button">
+      Close
+    </a>
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds" id="survey-wrapper">
+        
+        <div class="govuk-pub-feedback__error-summary js-hidden js-errors" tabindex="-1"></div>
+        
+        <h3 class="govuk-pub-feedback__form-heading">Help us improve GOV.UK</h3>
+        
+        <p id="survey_explanation" class="govuk-pub-feedback__form-paragraph">To help us improve GOV.UK, we’d like to know more about your visit today. We’ll send you a link to a feedback form. It will take only 2 minutes to fill in. Don’t worry we won’t send you spam or share your email address with anyone.</p>    
+        
+        {{ govukInput({
+          id: "email",
+          name: "email",
+          label: {
+            text: "Email address"
+          },
+          classes: "govuk-pub-input",
+          attributes: {
+            "type": "email",
+            "autocomplete": "email",
+            "aria-describedby": "survey_explanation"
+          }
+        }) }}
+        
+        {{ govukButton({
+          text: "Send me the survey",
+          classes: "govuk-pub-button"
+        }) }}
+        
+      </div>
+    </div>
+    
+  </form>
+
+</div>

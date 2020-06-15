@@ -1,0 +1,51 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Feedback component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/components/feedback/feedback.js"></script>
+<script type="text/javascript">
+  var $element = $('#feedback');
+  var feedback = new GOVUK.Modules.Feedback();
+  feedback.start($element);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Feedback
+    </h1>
+
+    <p class="govuk-body-l">Invites a user feedback on the current page.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/feedback">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/feedback">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubFeedback({
+      attributes: {
+        id: 'feedback'
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
