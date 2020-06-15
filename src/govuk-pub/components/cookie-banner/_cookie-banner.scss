@@ -83,13 +83,13 @@ $govuk-cookie-banner-background: govuk-colour("light-grey", "grey-4");
 
 .govuk-pub-cookie-banner__hide-button {
   @include govuk-font($size: 19);
-  outline: 0;
+  margin-top: govuk-spacing(2);
+  padding: govuk-spacing(0);
   border: 0;
+  outline: 0;
+  color: $govuk-link-colour;
   background: none;
   text-decoration: underline;
-  color: $govuk-link-colour;
-  padding: govuk-spacing(0);
-  margin-top: govuk-spacing(2);
 
   &:hover {
     color: $govuk-link-hover-colour;
@@ -101,9 +101,9 @@ $govuk-cookie-banner-background: govuk-colour("light-grey", "grey-4");
   }
 
   @include govuk-media-query($from: desktop) {
-    margin-top: govuk-spacing(0);
     position: absolute;
     right: govuk-spacing(1);
+    margin-top: govuk-spacing(0);
   }
 }
 
@@ -114,10 +114,10 @@ $govuk-cookie-banner-background: govuk-colour("light-grey", "grey-4");
 
   .govuk-button,
   .govuk-pub-cookie-banner__link {
-    flex-grow: 1;
-    flex-basis: 10rem;
     margin-right: govuk-spacing(3);
     margin-bottom: govuk-spacing(3);
+    flex-grow: 1;
+    flex-basis: 10rem;
   }
 }
 
@@ -125,9 +125,9 @@ $govuk-cookie-banner-background: govuk-colour("light-grey", "grey-4");
 // scss-lint:disable IdSelector
 // sass-lint:disable no-ids
 .govuk-pub-cookie-banner#global-cookie-message {
-  background-color: $govuk-cookie-banner-background;
-  padding: govuk-spacing(4) 0;
   box-sizing: border-box;
+  padding: govuk-spacing(4) 0;
+  background-color: $govuk-cookie-banner-background;
 
   .govuk-pub-cookie-banner__message,
   .govuk-pub-cookie-banner__buttons,
