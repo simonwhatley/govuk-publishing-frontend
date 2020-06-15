@@ -34,9 +34,7 @@
   </div>
 
   <form action="/contact/govuk/problem_reports" id="something-is-wrong" class="govuk-pub-feedback__form js-feedback-form js-hidden" method="post" aria-hidden="true" novalidate>
-    <input type="hidden" name="javascript_enabled" value="true">
-    <input type="hidden" name="referrer" value="{{ params.referrer }}">
-    
+  
     <a href="#" class="govuk-pub-feedback__close govuk-pub-feedback__js-show js-close-form" aria-controls="something-is-wrong" aria-expanded="true" role="button">
       Close
     </a>
@@ -77,12 +75,11 @@
         
       </div>
     </div>
+    
   </form>
 
   <form action="/contact/govuk/email-survey-signup" id="page-is-not-useful" class="govuk-pub-feedback__form govuk-pub-feedback__form--email govuk-pub-feedback__js-show js-feedback-form js-hidden" method="post" aria-hidden="true" novalidate>
-    <input name="email_survey_signup[survey_id]" type="hidden" value="footer_satisfaction_survey">
-    <input name="email_survey_signup[survey_source]" type="hidden" value="/component-guide/feedback/preview">
-    
+      
     <a href="#" class="govuk-pub-feedback__close js-close-form" aria-controls="page-is-not-useful" aria-expanded="true" role="button">
       Close
     </a>
@@ -102,12 +99,12 @@
           label: {
             text: "Email address"
           },
+          classes: "govuk-pub-input",
           attributes: {
             "type": "email",
             "autocomplete": "email",
             "aria-describedby": "survey_explanation"
-          },
-          classes: "govuk-pub-input"
+          }
         }) }}
         
         {{ govukButton({
@@ -117,6 +114,7 @@
         
       </div>
     </div>
+    
   </form>
 
 </div>
