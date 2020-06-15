@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.10.0
+
+- Added cookie banner component
+- Added feedback component
+
 ## v0.9.0
 
 - Added action links component

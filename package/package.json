@@ -1,7 +1,7 @@
 {
   "name": "@simonwhatley/govuk-publishing-frontend",
   "description": "GOV.UK Publishing Frontend contains the code you need to start building user interfaces for GOV.UK platforms and services.",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "main": "all.js",
   "sass": "all.scss",
   "engines": {
