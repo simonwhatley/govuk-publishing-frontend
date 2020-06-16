@@ -1,6 +1,6 @@
-# Image card
+# Info metric
 
-Displats a view of a single or aggregated metric for a content item. 
+Displays a view of a single or aggregated metric for a content item. 
 
 The minimum requirements for it to display are a name and figure but it also supports trend direction and explanatory text to describe the metric.
 
