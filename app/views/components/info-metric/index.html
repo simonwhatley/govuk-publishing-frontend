@@ -1,0 +1,220 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Info metric component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Info metric
+    </h1>
+
+    <p class="govuk-body-l">Displays a single or aggregated metric for a content item.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://content-data.integration.publishing.service.gov.uk/component-guide/info-metric">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/info-metric">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">With an upward trend</p>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Unique page views"
+      },
+      description: {
+        text: "Number of visits during which the page was viewed at least once"
+      },
+      metric: {
+        figure: "1,234",
+        trend: "0.5",
+        period: "March 2019 to April 2019"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With a downward trend</p>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Unique page views"
+      },
+      description: {
+        text: "Number of visits during which the page was viewed at least once"
+      },
+      metric: {
+        figure: "1,233",
+        trend: "-0.5",
+        period: "April 2019 to May 2019"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">With no change</p>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Feedback comments"
+      },
+      description: {
+        text: "Number of anonymous user responses to ‘Is there anything wrong with this page?’"
+      },
+      metric: {
+        figure: "1,233",
+        trend: "0.0",
+        period: "May 2019 to June 2019"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">With no data</p>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Feedback comments"
+      },
+      description: {
+        text: "Number of anonymous user responses to ‘Is there anything wrong with this page?’"
+      }
+    }) }}
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Examples from ‘Content Data’</h2>
+
+    <h3 class="govuk-heading-m">Example 5</h3>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Unique page views"
+      },
+      description: {
+        text: "Number of visits during which the page was viewed at least once"
+      },
+      details: {
+        summaryText: "About unique page views",
+          html: '<p class="govuk-body govuk-body-s">This represents the number of visits in which the page was viewed at least once. For example, if a user visits the same page 5 times during their browsing session, it will show up as 1 unique pageview.
+        </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
+      },
+      metric: {
+        figure: "9,465,877"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 6</h3>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Page views"
+      },
+      description: {
+        text: "Number of times the page was viewed"
+      },
+      details: {
+        summaryText: "About page views",
+        html: '<p class="govuk-body govuk-body-s">This is a count of every time the page was viewed. For example, if someone visits page X, then goes to page Y and then back to page X again, page X will have 2 page views (and 1 unique page view).
+        </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
+      },
+      metric: {
+        figure: "11,404,837"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 7</h3>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Page views per visit"
+      },
+      description: {
+        text: "Number of times per visit the page was viewed"
+      },
+      details: {
+        summaryText: "About page views per visit",
+          html: '<p class="govuk-body govuk-body-s">This figure is calculated by dividing Google Analytics page views by unique page views. It shows on average how many times a page was viewed during a user’s session. If a page has a high ratio (above 1.4), this indicates that users have to come back to that page within their session - investigate the navigation from that page further to identify any issues.
+        </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
+      },
+      metric: {
+        figure: "1.2"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 8</h3>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Searches from page"
+      },
+      description: {
+        text: "Number of on-page searches"
+      },
+      details: {
+        summaryText: "About searches from page",
+        html: '<p class="govuk-body govuk-body-s">This is the number of internal site searches that were started from the page. When people use internal search, it could be an indication that they haven’t found what they’re looking for. You’ll need access to Google Analytics to see the search terms.
+        </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
+      },
+      metric: {
+        figure: "2,357"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 9</h3>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Number of feedback comments"
+      },
+      description: {
+        text: "Number of anonymous user responses to ‘Is there anything wrong with this page?’"
+      },
+      details: {
+        summaryText: "About number of feedback comments",
+        html: '<p class="govuk-body govuk-body-s">You can use Feedback Explorer (‘Feedex’) to find out what users are saying about your content. A high rate of feedback could indicate a problem with the content. The data comes from the ‘Is there anything wrong with this page?’ form and the satisfaction survey at the end of a transaction that started on GOV.UK. You’ll need a Signon account with Feedback Explorer permissions to see the comments.
+        </p><p class="govuk-body govuk-body-s">Source: calculated from Google Analytics</p>'
+      },
+      metric: {
+        figure: "338"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 10</h3>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Users who found page useful"
+      },
+      description: {
+        text: "Percentage of users who answered ‘yes’ to the ‘Is this page useful?’ survey"
+      },
+      details: {
+        summaryText: "About ‘users who found page useful’",
+        html: '<p class="govuk-body govuk-body-s">Percentage of users who answered ‘Yes’ rather than ‘No’ to the ‘Is this page useful?’ survey found on every page of GOV.UK. The more users who responded, the more reliable the score is. For a more reliable score on a page that doesn’t have many responses, choose a longer time period. This survey was introduced in February 2018 so there are no responses before this date.
+        </p><p class="govuk-body govuk-body-s">Source: calculated from Google Analytics</p>'
+      },
+      metric: {
+        figure: "64%",
+        figureContext: "7,238 responses",
+        trend: "4.36",
+        period: "from previous 30 days"
+      }
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
