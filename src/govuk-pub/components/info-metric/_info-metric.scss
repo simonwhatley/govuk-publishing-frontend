@@ -1,6 +1,14 @@
+.govuk-pub-info-metric {
+  @include govuk-font(19);
+}
+
 .govuk-pub-info-metric__heading {
   @include govuk-responsive-margin(6, "top");
   @include govuk-responsive-margin(1, "bottom");
+}
+
+.govuk-pub-info-metric__figure {
+  @include govuk-font($size: 36, $weight: "bold");
 }
 
 .govuk-pub-info-metric__trend {
@@ -12,7 +20,8 @@
 }
 
 .govuk-pub-info-metric__context {
-  margin-bottom: 0;
+  @include govuk-font(16);
+  margin-bottom: govuk-spacing(2);
 }
 
 .govuk-pub-info-metric__trend-icon {
@@ -25,6 +34,7 @@
 
 .govuk-pub-info-metric__about {
   @include govuk-responsive-margin(1, "top");
+  @include govuk-font(16);
 }
 
 .govuk-pub-info-metric__words {
