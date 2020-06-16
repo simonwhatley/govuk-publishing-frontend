@@ -16,9 +16,11 @@ The minimum requirements for it to display are a name and figure but it also sup
   context: {
     text: "Number of visits during which the page was viewed at least once"
   },
-  figure: "1,234",
-  trend: "0.5",
-  period: "March 2019 to April 2019"
+  metric: {
+    figure: "1,234",
+    trend: "0.5",
+    period: "March 2019 to April 2019"
+  }
 }) }}
 ```
 
@@ -86,9 +88,9 @@ This component accepts the following arguments.
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|figure|numeric|Yes||
+|figure|numeric|Yes|The value to be displayed|
 |figureContext|string|No|Additional detail to give context to the figure being presented, for example, number of responses.|
 |trend|numeric|No|The percentage up, down or no change for the figure.|
-|period|string|No||
+|period|string|No|The time period to which the metric relates.|
 
 *Warning: If you’re using Nunjucks macros in production be aware that using HTML arguments, or ones ending with `.html` can be at risk from [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks. More information about security vulnerabilities can be found in the [Nunjucks documentation](https://mozilla.github.io/nunjucks/api.html#user-defined-templates-warning).*
