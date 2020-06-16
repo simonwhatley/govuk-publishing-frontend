@@ -106,12 +106,10 @@
       description: {
         text: "Number of visits during which the page was viewed at least once"
       },
-      about: {
-        html: govukDetails({
-          summaryText: "About unique page views",
+      details: {
+        summaryText: "About unique page views",
           html: '<p class="govuk-body govuk-body-s">This represents the number of visits in which the page was viewed at least once. For example, if a user visits the same page 5 times during their browsing session, it will show up as 1 unique pageview.
         </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
-        })
       },
       metric: {
         figure: "9,465,877"
@@ -127,12 +125,10 @@
       description: {
         text: "Number of times the page was viewed"
       },
-      about: {
-        html: govukDetails({
-          summaryText: "About page views",
-          html: '<p class="govuk-body govuk-body-s">This is a count of every time the page was viewed. For example, if someone visits page X, then goes to page Y and then back to page X again, page X will have 2 page views (and 1 unique page view).
+      details: {
+        summaryText: "About page views",
+        html: '<p class="govuk-body govuk-body-s">This is a count of every time the page was viewed. For example, if someone visits page X, then goes to page Y and then back to page X again, page X will have 2 page views (and 1 unique page view).
         </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
-        })
       },
       metric: {
         figure: "11,404,837"
@@ -148,12 +144,10 @@
       description: {
         text: "Number of times per visit the page was viewed"
       },
-      about: {
-        html: govukDetails({
-          summaryText: "About page views per visit",
+      details: {
+        summaryText: "About page views per visit",
           html: '<p class="govuk-body govuk-body-s">This figure is calculated by dividing Google Analytics page views by unique page views. It shows on average how many times a page was viewed during a user’s session. If a page has a high ratio (above 1.4), this indicates that users have to come back to that page within their session - investigate the navigation from that page further to identify any issues.
         </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
-        })
       },
       metric: {
         figure: "1.2"
@@ -169,12 +163,10 @@
       description: {
         text: "Number of on-page searches"
       },
-      about: {
-        html: govukDetails({
-          summaryText: "About searches from page",
-          html: '<p class="govuk-body govuk-body-s">This is the number of internal site searches that were started from the page. When people use internal search, it could be an indication that they haven’t found what they’re looking for. You’ll need access to Google Analytics to see the search terms.
+      details: {
+        summaryText: "About searches from page",
+        html: '<p class="govuk-body govuk-body-s">This is the number of internal site searches that were started from the page. When people use internal search, it could be an indication that they haven’t found what they’re looking for. You’ll need access to Google Analytics to see the search terms.
         </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
-        })
       },
       metric: {
         figure: "2,357"
@@ -190,12 +182,10 @@
       description: {
         text: "Number of anonymous user responses to ‘Is there anything wrong with this page?’"
       },
-      about: {
-        html: govukDetails({
-          summaryText: "About number of feedback comments",
-          html: '<p class="govuk-body govuk-body-s">You can use Feedback Explorer (‘Feedex’) to find out what users are saying about your content. A high rate of feedback could indicate a problem with the content. The data comes from the ‘Is there anything wrong with this page?’ form and the satisfaction survey at the end of a transaction that started on GOV.UK. You’ll need a Signon account with Feedback Explorer permissions to see the comments.
+      details: {
+        summaryText: "About number of feedback comments",
+        html: '<p class="govuk-body govuk-body-s">You can use Feedback Explorer (‘Feedex’) to find out what users are saying about your content. A high rate of feedback could indicate a problem with the content. The data comes from the ‘Is there anything wrong with this page?’ form and the satisfaction survey at the end of a transaction that started on GOV.UK. You’ll need a Signon account with Feedback Explorer permissions to see the comments.
         </p><p class="govuk-body govuk-body-s">Source: calculated from Google Analytics</p>'
-        })
       },
       metric: {
         figure: "338"
@@ -211,12 +201,10 @@
       description: {
         text: "Percentage of users who answered ‘yes’ to the ‘Is this page useful?’ survey"
       },
-      about: {
-        html: govukDetails({
-          summaryText: "About ‘users who found page useful’",
-          html: '<p class="govuk-body govuk-body-s">Percentage of users who answered ‘Yes’ rather than ‘No’ to the ‘Is this page useful?’ survey found on every page of GOV.UK. The more users who responded, the more reliable the score is. For a more reliable score on a page that doesn’t have many responses, choose a longer time period. This survey was introduced in February 2018 so there are no responses before this date.
+      details: {
+        summaryText: "About ‘users who found page useful’",
+        html: '<p class="govuk-body govuk-body-s">Percentage of users who answered ‘Yes’ rather than ‘No’ to the ‘Is this page useful?’ survey found on every page of GOV.UK. The more users who responded, the more reliable the score is. For a more reliable score on a page that doesn’t have many responses, choose a longer time period. This survey was introduced in February 2018 so there are no responses before this date.
         </p><p class="govuk-body govuk-body-s">Source: calculated from Google Analytics</p>'
-        })
       },
       metric: {
         figure: "64%",

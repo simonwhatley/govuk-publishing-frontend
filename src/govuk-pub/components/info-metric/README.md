@@ -45,10 +45,10 @@ This component accepts the following arguments.
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|heading|object|Yes|See [heading](#heading)|
-|description|object|No|See [description](#description)|
-|details|object|No|See [details](#details)|
-|metric|object|Yes|See [metric](#metric)|
+|heading|object|Yes|Options for the heading. See [heading](#heading)|
+|description|object|No|Options for the description. See [description](#description)|
+|details|object|No|Options for the details. See [details](#details)|
+|metric|object|Yes|Options for the metric. See [metric](#metric)|
 |classes|string|No|Classes to add to the container tag.|
 |attributes|object|No|HTML attributes (for example data attributes) to add to the container tag.|
 
@@ -73,6 +73,14 @@ This component accepts the following arguments.
 
 |Name|Type|Required|Description|
 |---|---|---|---|
+|summaryText|string|Yes|If `summmaryHtml` is set, this is not required. Text to use within the summary element (the visible part of the details element). If `summaryHtml` is provided, the `summaryText` argument will be ignored.|
+|summaryHtml|string|Yes|If `summmaryText` is set, this is not required. HTML to use within the summary element (the visible part of the details element). If `summaryHtml` is provided, the `summaryText` argument will be ignored.|
+|text|string|Yes|If `html` is set, this is not required. Text to use within the heading. If `html` is provided, the `text` argument will be ignored.|
+|html|string|Yes|If `text` is set, this is not required. HTML to use within the heading. If `html` is provided, the `text` argument will be ignored.|
+|open|boolean|no|If `true`, details element will be expanded.|
+|classes|string|No|Classes to add to the details component.|
+|containerClasses|string|No|Classes to add to the container.|
+|attributes|object|No|HTML attributes (for example data attributes) to add to the details component.|
 
 ### Metric
 
