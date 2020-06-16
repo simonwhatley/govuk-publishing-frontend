@@ -43,7 +43,7 @@
 
 .govuk-pub-info-metric {
 
-  @include govuk-responsive-margin(3, "left");
+  // @include govuk-responsive-margin(3, "left");
   @include govuk-responsive-margin(3, "right");
   @include govuk-responsive-margin(2, "bottom");
 
