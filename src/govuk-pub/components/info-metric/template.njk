@@ -3,33 +3,33 @@
     {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
   </h{{ params.heading.headingLevel | default(3) }}>
   {%- if params.description %}
-    <p class="govuk-pub-info-metric__context">
+    <p class="govuk-pub-info-metric__context {{- ' ' + params.description.classes if params.description.classes }}">
       {{- params.description.html | safe if params.description.html else params.description.text -}}
     </p>
   {% endif -%}
   {%- if params.about %}
-    <div class="govuk-pub-info-metric__about">
+    <div class="govuk-pub-info-metric__about {{- ' ' + params.about.classes if params.about.classes }}">
       {{- params.about.html | safe if params.about.html else params.about.text -}}
     </div>
   {% endif -%}
   <span class="govuk-pub-info-metric__figure">
-    {%- if params.figure %}
-      {{- params.figure -}}
-      {%- if params.figureContext %} <span class="govuk-pub-info-metric__short-context">( {{- params.figureContext -}} )</span>{% endif -%}    
+    {%- if params.metric.figure %}
+      {{- params.metric.figure -}}
+      {%- if params.metric.figureContext %} <span class="govuk-pub-info-metric__short-context">( {{- params.metric.figureContext -}} )</span>{% endif -%}    
     {% else %}
       No data
     {% endif -%}
   </span>
-  {%- if params.trend %}
+  {%- if params.metric.trend %}
     <span class="govuk-pub-info-metric__trend">
-      {%- if params.trend > 0 %}+{% endif -%}{{- params.trend -}}%
+      {%- if params.metric.trend > 0 %}+{% endif -%}{{- params.metric.trend -}}%
     </span>
-    {%- if params.trend > 0 %}
+    {%- if params.metric.trend > 0 %}
       <span class="govuk-pub-info-metric__trend--up">
         <span aria-hidden="true" class="govuk-pub-info-metric__trend-icon">&#9650;</span>
         <span class="govuk-pub-info-metric__trend-text">Upward trend</span>
       </span>
-    {% elif params.trend < 0 %}
+    {% elif params.metric.trend < 0 %}
       <span class="govuk-pub-info-metric__trend--down">
         <span aria-hidden="true" class="govuk-pub-info-metric__trend-icon">&#9660;</span>
         <span class="govuk-pub-info-metric__trend-text">Downward trend</span>
@@ -41,9 +41,9 @@
       </span>
     {% endif -%}
   {% endif -%}
-  {% if params.period %}
+  {% if params.metric.period %}
     <span class="govuk-pub-info-metric__period">
-      {{- params.period -}}
+      {{- params.metric.period -}}
     </span>
   {% endif -%}
 </div>

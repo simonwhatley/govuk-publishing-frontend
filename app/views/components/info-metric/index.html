@@ -39,9 +39,11 @@
       description: {
         text: "Number of visits during which the page was viewed at least once"
       },
-      figure: "1,234",
-      trend: "0.5",
-      period: "March 2019 to April 2019"
+      metric: {
+        figure: "1,234",
+        trend: "0.5",
+        period: "March 2019 to April 2019"
+      }
     }) }}
 
     <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
@@ -50,14 +52,16 @@
 
     {{ govukPubInfoMetric({
       heading: {
-        text: "Unique pageviews"
+        text: "Unique page views"
       },
       description: {
-        text: "This is in your top 10 items"
+        text: "Number of visits during which the page was viewed at least once"
       },
-      figure: "321",
-      trend: "-0.5",
-      period: "April 2019 to May 2019"
+      metric: {
+        figure: "1,233",
+        trend: "-0.5",
+        period: "April 2019 to May 2019"
+      }
     }) }}
 
     <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
@@ -69,16 +73,31 @@
         text: "Feedback comments"
       },
       description: {
-        text: "This is in your top 10 items"
+        text: "Number of anonymous user responses to ‘Is there anything wrong with this page?’"
       },
-      figure: "1,234",
-      trend: "0.0",
-      period: "May 2019 to June 2019"
+      metric: {
+        figure: "1,233",
+        trend: "0.0",
+        period: "May 2019 to June 2019"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">With no data</p>
+
+    {{ govukPubInfoMetric({
+      heading: {
+        text: "Feedback comments"
+      },
+      description: {
+        text: "Number of anonymous user responses to ‘Is there anything wrong with this page?’"
+      }
     }) }}
 
     <h2 class="govuk-heading-l govuk-!-margin-top-9">Examples from ‘Content Data’</h2>
 
-    <h3 class="govuk-heading-m">Example 4</h3>
+    <h3 class="govuk-heading-m">Example 5</h3>
 
     {{ govukPubInfoMetric({
       heading: {
@@ -94,10 +113,12 @@
         </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
         })
       },
-      figure: "9,465,877"
+      metric: {
+        figure: "9,465,877"
+      }
     }) }}
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 5</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 6</h3>
 
     {{ govukPubInfoMetric({
       heading: {
@@ -113,10 +134,12 @@
         </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
         })
       },
-      figure: "11,404,837"
+      metric: {
+        figure: "11,404,837"
+      }
     }) }}
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 6</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 7</h3>
 
     {{ govukPubInfoMetric({
       heading: {
@@ -132,10 +155,12 @@
         </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
         })
       },
-      figure: "1.2"
+      metric: {
+        figure: "1.2"
+      }
     }) }}
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 7</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 8</h3>
 
     {{ govukPubInfoMetric({
       heading: {
@@ -151,10 +176,12 @@
         </p><p class="govuk-body govuk-body-s">Source: Google Analytics</p>'
         })
       },
-      figure: "1.2"
+      metric: {
+        figure: "2,357"
+      }
     }) }}
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 8</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 9</h3>
 
     {{ govukPubInfoMetric({
       heading: {
@@ -170,10 +197,12 @@
         </p><p class="govuk-body govuk-body-s">Source: calculated from Google Analytics</p>'
         })
       },
-      figure: "338"
+      metric: {
+        figure: "338"
+      }
     }) }}
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 9</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 10</h3>
 
     {{ govukPubInfoMetric({
       heading: {
@@ -189,10 +218,12 @@
         </p><p class="govuk-body govuk-body-s">Source: calculated from Google Analytics</p>'
         })
       },
-      figure: "64%",
-      figureContext: "7,238 responses",
-      trend: "4.36",
-      period: "from previous 30 days"
+      metric: {
+        figure: "64%",
+        figureContext: "7,238 responses",
+        trend: "4.36",
+        period: "from previous 30 days"
+      }
     }) }}
 
   </div>
