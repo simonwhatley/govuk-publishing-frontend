@@ -1,0 +1,42 @@
+{%- from "govuk/components/details/macro.njk" import govukDetails %}
+{%- from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set tableHtml %}
+
+{% endset %}
+
+<script type="text/javascript">
+  (function() {
+    var createChart = function() { new Chartkick["LineChart"]("{{ params.id }}", [{"name":"{{ params.label.text }}","linewidth":10,"data":[["2020-05-17",194358],["2020-05-18",450848],["2020-05-19",420307],["2020-05-20",372863],["2020-05-21",384038],["2020-05-22",369123],["2020-05-23",216255],["2020-05-24",172280],["2020-05-25",292248],["2020-05-26",425710],["2020-05-27",393002],["2020-05-28",370242],["2020-05-29",344373],["2020-05-30",176707],["2020-05-31",165398],["2020-06-01",440395],["2020-06-02",391262],["2020-06-03",400312],["2020-06-04",387972],["2020-06-05",353260],["2020-06-06",179250],["2020-06-07",163421],["2020-06-08",425605],["2020-06-09",388636],["2020-06-10",376049],["2020-06-11",362244],["2020-06-12",323283],["2020-06-13",162959],["2020-06-14",158363],["2020-06-15",392938]]}], {"library":{"legend":"none","chartArea":{"width":"80%","height":"85%"},"curveType":"none","tooltip":{"showColorCode":true,"isHtml":true,"trigger":"both"},"crosshair":{"orientation":"vertical","trigger":"both","color":"#ccc"},"hAxis":{"viewWindow":{"min":"Date(2020, 4, 17)","max":"Date(2020, 5, 15)"},"textStyle":{"color":"#000","fontName":"nta","fontSize":"12"},"format":"d MMM Y"},"vAxis":{"viewWindow":{"min":0,"max":586102.4},"format":"#,###,###","textStyle":{"color":"#000","fontName":"nta","fontSize":"12"}},"pointSize":0,"series":{"0":{"lineWidth":2,"color":"#2b8cc4"},"1":{"lineWidth":2,"lineDashStyle":[10,2],"color":"#454a4c"}}}}); };
+    if (window.addEventListener) {
+      window.addEventListener("load", createChart, true);
+    } else if (window.attachEvent) {
+      window.attachEvent("onload", createChart);
+    } else {
+      createChart();
+    }
+  })();
+</script>
+
+<div class="govuk-pub-chart">
+  <div class="govuk-pub-chart__chart" id="{{ params.id }}_chart">
+      
+    <div class="govuk-pub-govspeak govuk-govspeak">
+      <div class="govuk-pub-chart__accessibility-message">
+        The chart is a visual representation of the data available in the <a href="#{{ params.id }}_table">table</a>.
+      </div>
+    </div>
+      
+    <div id="{{ params.id }}">
+      
+    </div>    
+  </div>
+  <div class="govuk-pub-chart__table" id="{{ params.id }}_table">
+    
+    {{ govukDetails({
+      summaryText: params.label.text + ' table',
+      html: tableHtml
+    }) }}
+    
+  </div>
+</div>
