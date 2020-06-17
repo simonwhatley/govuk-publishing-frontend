@@ -4,6 +4,10 @@ Displays a data chart and a tabular version of the same data.
 
 [Preview the component](https://govuk-publishing-frontend.herokuapp.com/components/chart/)
 
+## Dependencies
+
+This component uses [Chartkick](https://chartkick.com/) and Google Charts.
+
 ## Example usage
 
 ```
