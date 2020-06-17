@@ -4,6 +4,11 @@
   Chart component – GOV.UK Publishing Frontend
 {% endblock %}
 
+{% block pageScripts %}
+<script src="/public/javascripts/components/chart/chart.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+{% endblock %}
+
 {% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
@@ -26,6 +31,11 @@
 
     <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/chart">View the Nunjucks macro options on GitHub</a></p>
 
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
     <h2 class="govuk-heading-l">Examples</h2>
 
     <h3 class="govuk-heading-m">Example 1</h3>
@@ -33,7 +43,42 @@
     <p class="govuk-body">Lorem</p>
 
     {{ govukPubChart({
-
+      id: "chart-1",
+      label: {
+        text: "Unique page views"
+      },
+      items: [
+        ["17 May 2020", 194358],
+        ["18 May 2020", 450848],
+        ["19 May 2020", 420307],
+        ["20 May 2020", 372863],
+        ["21 May 2020", 384038],
+        ["22 May 2020", 369123],
+        ["23 May 2020", 216255],
+        ["24 May 2020", 172280],
+        ["25 May 2020", 292248],
+        ["26 May 2020", 425710],
+        ["27 May 2020", 393002],
+        ["28 May 2020", 370242],
+        ["29 May 2020", 344373],
+        ["30 May 2020", 176707],
+        ["31 May 2020", 165398],
+        ["1 Jun 2020", 440395],
+        ["2 Jun 2020", 391262],
+        ["3 Jun 2020", 400312],
+        ["4 Jun 2020", 387972],
+        ["5 Jun 2020", 353260],
+        ["6 Jun 2020", 179250],
+        ["7 Jun 2020", 163421],
+        ["8 Jun 2020", 425605],
+        ["9 Jun 2020", 388636],
+        ["10 Jun 2020", 376049],
+        ["11 Jun 2020", 362244],
+        ["12 Jun 2020", 323283],
+        ["13 Jun 2020", 162959],
+        ["14 Jun 2020", 158363],
+        ["15 Jun 2020", 39938]
+      ]
     }) }}
 
     <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
@@ -41,7 +86,32 @@
     <p class="govuk-body">Lorem</p>
 
     {{ govukPubChart({
+      id: "chart-2",
+      label: {
+        text: "Page views"
+      }
+    }) }}
 
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">Lorem</p>
+
+    {{ govukPubChart({
+      id: "chart-3",
+      label: {
+        text: "Searches"
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">Lorem</p>
+
+    {{ govukPubChart({
+      id: "chart-4",
+      label: {
+        text: "Feedback"
+      }
     }) }}
 
   </div>
