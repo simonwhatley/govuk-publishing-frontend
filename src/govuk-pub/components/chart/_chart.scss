@@ -1,69 +1,105 @@
-.govuk-pub-info-metric {
-  @include govuk-font(19);
+.govuk-pub-details {
+  margin-bottom: 0;
 }
 
-.govuk-pub-info-metric__heading {
-  @include govuk-responsive-margin(6, "top");
-  @include govuk-responsive-margin(1, "bottom");
+.govuk-pub-chart__table-wrapper {
+  overflow: auto;
 }
 
-.govuk-pub-info-metric__figure {
-  @include govuk-font($size: 36, $weight: "bold");
-}
+.govuk-pub-chart__table {
+  max-height: 300px;
+  margin-top: govuk-spacing(3);
 
-.govuk-pub-info-metric__trend {
-  @include govuk-responsive-margin(2, "left");
-}
-
-.govuk-pub-info-metric__trend-text {
-  @include govuk-visually-hidden;
-}
-
-.govuk-pub-info-metric__context {
-  @include govuk-font(16);
-  margin-bottom: govuk-spacing(2);
-}
-
-.govuk-pub-info-metric__trend-icon {
-  color: govuk-colour("dark-grey", $legacy: "grey-1");
-}
-
-.govuk-pub-info-metric__period {
-  @include govuk-responsive-margin(2, "left");
-}
-
-.govuk-pub-info-metric__about {
-  @include govuk-responsive-margin(1, "top");
-  @include govuk-font(16);
-}
-
-.govuk-pub-info-metric__words {
-  @include govuk-responsive-margin(1, "top");
-}
-
-.govuk-pub-info-metric {
-
-  // @include govuk-responsive-margin(3, "left");
-  @include govuk-responsive-margin(3, "right");
-  @include govuk-responsive-margin(2, "bottom");
+  @include govuk-media-query($until: tablet) {
+    max-height: 250px;
+  }
 
   .govuk-details__summary-text {
     @include govuk-font(16);
   }
 
-  .govuk-details__text {
-    @include govuk-font(16);
+  .govuk-table {
+    .govuk-table__header {
+      min-width: 4em;
+      border: 0;
+      background-color: govuk-colour("white");
+      @include govuk-font($size: 14, $weight: bold);
+      text-align: center;
+    }
+
+    .govuk-table__body {
+      .govuk-table__cell {
+        @include govuk-font(14);
+        border-top: 1px solid govuk-colour("black");
+      }
+    }
+
+    .govuk-table__cell {
+      @include govuk-font(14);
+      border: 0;
+      text-align: center;
+    }
+
   }
 
-  .govuk-pub-info-metric__short-context {
-    @include govuk-font(19);
+  .govuk-table {
+    width: auto;
+  }
+
+  .govuk-table__header--stacked {
+    max-width: 15%;
+  }
+
+  .govuk-table__header--stacked[scope="row"] {
+    max-width: 20%;
   }
 
 }
 
-.govuk-grid-column-one-third {
+.govuk-pub-chart__accessibility-message {
+  @include govuk-visually-hidden;
+}
 
-  .govuk-pub-info-metric {
-    @include govuk-responsive-margin(1, "left");
+// This breaks our BEM markup but is injected by the charting library and can't be avoided
+// scss-lint:disable IdSelector
+// sass-lint:disable no-ids
+.govuk-pub-chart {
+  #chart-1,
+  #chart-2,
+  #chart-3,
+  #chart-4,
+  #chart-5,
+  #chart-6,
+  #chart-7 {
+    height: 250px;
+  }
+
+  @include govuk-media-query($until: tablet) {
+    #chart-1,
+    #chart-2,
+    #chart-3,
+    #chart-4,
+    #chart-5,
+    #chart-6,
+    #chart-7 {
+      height: 250px;
+    }
+  }
+}
+// scss-lint:enable IdSelector
+// sass-lint:enable no-ids
+
+.google-visualization-tooltip {
+  opacity: .95;
+  background-color: govuk-colour("black") !important;
+
+  span {
+    color: govuk-colour("white") !important;
+    font-family: "nta", Arial, sans-serif !important;
+    font-size: 14px !important;
+  }
+
+  .google-visualization-tooltip-square {
+    border-bottom: 0 !important;
   }
 }
