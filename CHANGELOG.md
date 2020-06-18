@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.11.0
+
+- Added glance metric component
+- Added info metric component
+
 ## v0.10.0
 
 - Added cookie banner component
