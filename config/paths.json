@@ -1,0 +1,10 @@
+{
+  "app": "app/",
+  "config": "config/",
+  "dist": "dist/",
+  "node_modules": "node_modules/",
+  "package": "package/",
+  "public": "public/",
+  "src": "src/govuk-pub/",
+    "components": "src/govuk-pub/components/"
+}
