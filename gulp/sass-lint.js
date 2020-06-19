@@ -4,7 +4,7 @@ const lint = require('gulp-sass-lint');
 
 // Styles lint
 gulp.task('sass:lint', () => {
- return gulp.src('src/govuk-pub/**/*.scss')
+ return gulp.src(['src/govuk-pub/**/*.scss','app/assets/**/*.scss'])
    .pipe(lint({
      configFile: 'config/.sass-lint.yml'
    }))
