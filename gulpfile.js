@@ -11,8 +11,8 @@ gulp.task('generate-assets', gulp.series(
     'copy-assets',
     'copy-component-javascript',
     'copy-vendor-javascript',
-    'copy-namespace',
-    'copy-helpers',
+    // 'copy-namespace',
+    'copy-common',
     'copy-all',
     'scss:lint',
     'sass'
@@ -34,9 +34,9 @@ gulp.task('build:package', gulp.series(
 
 gulp.task('build:dist', gulp.series(
   'clean'
-  ,'scss:lint'
+  // ,'scss:lint'
   // ,'scss:compile'
-  // ,'js:compile'
+  ,'js:compile'
 ));
 
 gulp.task('default', gulp.series(

@@ -79,10 +79,10 @@ gulp.task('js:compile', () => {
 
 gulp.task('scss:compile', () => {
 
-  const compileStyleshet = isDist ? configPaths.src + 'all.scss' : configPaths.app + 'assets/scss/app.scss'
-  const compileOldIeStyleshet = isDist ? configPaths.src + 'all-ie8.scss' : configPaths.app + 'assets/scss/app-ie8.scss'
+  const compiledStylesheet = isDist ? configPaths.src + 'all.scss' : configPaths.app + 'assets/scss/app.scss'
+  const compiledOldIeStylesheet = isDist ? configPaths.src + 'all-ie8.scss' : configPaths.app + 'assets/scss/app-ie8.scss'
 
-  const compile = gulp.src(compileStyleshet)
+  const compile = gulp.src(compiledStylesheet)
     .pipe(plumber(errorHandler))
     .pipe(sass())
     // minify css add vendor prefixes and normalize to compiled css
@@ -104,7 +104,7 @@ gulp.task('scss:compile', () => {
     ))
     .pipe(gulp.dest(taskArguments.destination + '/'))
 
-  const compileOldIe = gulp.src(compileOldIeStyleshet)
+  const compileOldIe = gulp.src(compiledOldIeStylesheet)
     .pipe(plumber(errorHandler))
     .pipe(sass())
     // minify css add vendor prefixes and normalize to compiled css

@@ -1,11 +1,12 @@
+'use strict'
+
 const gulp = require('gulp');
-var concat = require('gulp-concat');
-var umd = require('gulp-umd');
+const concat = require('gulp-concat');
+const umd = require('gulp-umd');
 
 gulp.task('build:javascript', () => {
   return gulp.src([
-      'src/govuk-pub/namespace.js',
-      'src/govuk-pub/helpers.js',
+      'src/govuk-pub/common.js',
       'src/govuk-pub/components/**/*.js'
     ])
     .pipe(concat('all.js'))
