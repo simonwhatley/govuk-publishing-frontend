@@ -2,6 +2,8 @@ $govuk-global-styles: true;
 
 $govuk-pub-page-width: 1220px !default;
 
+$app-code-colour: #d13118;
+
 // GOV.UK Frontend
 @import "node_modules/govuk-frontend/govuk/all";
 
@@ -19,7 +21,7 @@ $govuk-pub-page-width: 1220px !default;
 // }
 
 .app-background--on-govuk-blue {
-  background-color: govuk-colour('blue');
+  background-color: govuk-colour("blue");
 }
 
 .app-font-colour--white {
@@ -28,7 +30,7 @@ $govuk-pub-page-width: 1220px !default;
 
 .app-code {
   padding: 0 5px;
-  color: #d13118;
+  color: $app-code-colour;
   background-color: govuk-colour("light-grey");
   font-family: monospace, monospace;
   font-size: govuk-font(19);
@@ -36,12 +38,12 @@ $govuk-pub-page-width: 1220px !default;
 
 .app-pre {
   @include govuk-responsive-margin(4, "bottom");
-  background: govuk-colour("light-grey");
-  font-size: govuk-font(19);
+  position: relative;
   margin: 0;
   padding: govuk-spacing(3);
-  position: relative;
   overflow: auto;
+  background: govuk-colour("light-grey");
+  font-size: govuk-font(19);
 
   .app-code {
     color: govuk-colour("black");
