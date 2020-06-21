@@ -46,8 +46,6 @@ const errorHandler = function (error) {
   this.emit('end')
 }
 
-
-
 gulp.task('js:compile', () => {
   // for dist/ folder we only want compiled 'all.js' file
   const srcFiles = isDist ? configPaths.src + 'all.js' : configPaths.src + '**/*.js'
@@ -136,5 +134,7 @@ gulp.task('scss:compile', () => {
       })
     ))
     .pipe(gulp.dest(taskArguments.destination + '/'))
+
+  return merge(compile, compileOldIe)
 
 })

@@ -11,7 +11,6 @@ gulp.task('generate-assets', gulp.series(
     'copy-assets',
     'copy-component-javascript',
     'copy-vendor-javascript',
-    // 'copy-namespace',
     'copy-common',
     'copy-all',
     'scss:lint',
@@ -26,17 +25,19 @@ gulp.task('watch', gulp.parallel(
 ));
 
 gulp.task('build:package', gulp.series(
-  'clean',
-  'build:copy-files',
-  'build:javascript',
-  'build:compress-images'
+  'clean'
+  ,'build:copy-files'
+  ,'build:javascript'
+  ,'build:compress-images'
 ));
 
 gulp.task('build:dist', gulp.series(
   'clean'
-  // ,'scss:lint'
-  // ,'scss:compile'
+  ,'scss:lint'
+  ,'scss:compile'
   ,'js:compile'
+  ,'copy:assets'
+  ,'version:update-assets'
 ));
 
 gulp.task('default', gulp.series(
