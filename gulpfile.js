@@ -1,3 +1,5 @@
+'use strict'
+
 const gulp = require('gulp');
 const requireDir = require('require-dir');
 
@@ -13,32 +15,32 @@ gulp.task('generate-assets', gulp.series(
     'copy-vendor-javascript',
     'copy-common',
     'copy-all',
-    'scss:lint',
+    'lint:scss',
     'sass'
   )
-));
+))
 
 gulp.task('watch', gulp.parallel(
   'watch-sass',
   'watch-javascript',
   'watch-assets'
-));
+))
 
 gulp.task('build:package', gulp.series(
   'clean'
   ,'build:copy-files'
   ,'build:javascript'
   ,'build:compress-images'
-));
+))
 
 gulp.task('build:dist', gulp.series(
   'clean'
-  ,'scss:lint'
-  ,'scss:compile'
-  ,'js:compile'
-  ,'copy:assets'
-  ,'version:update-assets'
-));
+  ,'lint:scss'
+  ,'compile:scss'
+  ,'compile:js'
+  ,'assets:copy'
+  ,'assets:update-version'
+))
 
 gulp.task('default', gulp.series(
   'generate-assets',
@@ -46,4 +48,4 @@ gulp.task('default', gulp.series(
     'watch',
     'server'
   )
-));
+))

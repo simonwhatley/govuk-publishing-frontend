@@ -8,20 +8,7 @@ const taskArguments = require('./task-arguments')
 
 // Scss lint check -----------------------
 // ---------------------------------------
-// gulp.task('scss:lint', () => {
-//   return gulp.src([
-//     configPaths.app + '**/*.scss',
-//     configPaths.src + '**/*.scss'
-//   ])
-//     .pipe(lint({
-//       configFile: 'config/.sass-lint.yml'
-//     }))
-//     .pipe(lint.format())
-//     .pipe(lint.failOnError())
-// })
-
-
-gulp.task('scss:lint', () => {
+gulp.task('lint:scss', () => {
   const destination = taskArguments.destination
 
   if (destination === 'package') {

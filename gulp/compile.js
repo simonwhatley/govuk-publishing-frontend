@@ -21,9 +21,6 @@ const postcsspseudoclasses = require('postcss-pseudo-classes')({
 const configPaths = require('../config/paths.json')
 const taskArguments = require('./task-arguments')
 
-// Compile CSS and JS tasks -------------
-// --------------------------------------
-
 // check if destination flag is dist
 const isDist = taskArguments.destination === 'dist' || false
 
@@ -46,7 +43,9 @@ const errorHandler = function (error) {
   this.emit('end')
 }
 
-gulp.task('js:compile', () => {
+// Compile JS task ----------------------
+// --------------------------------------
+gulp.task('compile:js', () => {
   // for dist/ folder we only want compiled 'all.js' file
   const srcFiles = isDist ? configPaths.src + 'all.js' : configPaths.src + '**/*.js'
 
@@ -74,8 +73,9 @@ gulp.task('js:compile', () => {
   .pipe(gulp.dest(destinationPath))
 })
 
-
-gulp.task('scss:compile', () => {
+// Compile SCSS task --------------------
+// --------------------------------------
+gulp.task('compile:scss', () => {
 
   const compiledStylesheet = isDist ? configPaths.src + 'all.scss' : configPaths.app + 'assets/scss/app.scss'
   const compiledOldIeStylesheet = isDist ? configPaths.src + 'all-ie8.scss' : configPaths.app + 'assets/scss/app-ie8.scss'
