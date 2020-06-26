@@ -4,12 +4,6 @@
   Chevron banner component – GOV.UK Publishing Frontend
 {% endblock %}
 
-{% block pageHead %}
-<link rel="preload" as="image" href="/public/images/components/chevron-banner/chevron-banner-hover.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="/public/images/components/chevron-banner/chevron-banner-hover-border.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="/public/images/components/chevron-banner/chevron-banner-focus.svg" type="image/svg+xml">
-{% endblock %}
-
 {% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
@@ -40,6 +34,18 @@
       text: 'Check what you need to do',
       href: '#'
     }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">On a dark background</p>
+
+    <div class="app-background--brexit govuk-!-padding-5">
+      {{ govukPubChevronBanner({
+        inverse: true,
+        text: 'Check what you need to do',
+        href: '#'
+      }) }}
+    </div>
 
   </div>
 </div>

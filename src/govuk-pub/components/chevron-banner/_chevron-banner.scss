@@ -6,119 +6,113 @@ $yellow: #ffdd00;
   position: relative;
 }
 
-.govuk-pub-chevron-banner:hover {
-  .govuk-pub-chevron-banner__link-container {
+.govuk-pub-chevron-banner__chevron-point,
+.govuk-pub-chevron-banner__chevron-base {
+  stroke: $red;
+  stroke-width: 2.4;
+}
+
+.govuk-pub-chevron-banner:hover,
+.govuk-pub-chevron-banner--hover-border:hover {
+  .govuk-pub-chevron-banner__text {
     background-color: $dark-red;
+    border-color: $dark-red;
   }
 
-  @include govuk-media-query($from: mobile) {
-    .govuk-pub-chevron-banner__link-container:after {
-      background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-hover.svg");
-    }
+  .govuk-pub-chevron-banner__chevron-point,
+  .govuk-pub-chevron-banner__chevron-base {
+    fill: $dark-red;
+    stroke: $dark-red;
   }
 }
 
 .govuk-pub-chevron-banner--hover-border:hover {
-  .govuk-pub-chevron-banner__link-container {
-    border-right: 2px solid;
+  .govuk-pub-chevron-banner__text {
     border-color: govuk-colour("white");
-
-    @include govuk-media-query($from: mobile) {
-      border-right: 0;
-    }
   }
 
-  @include govuk-media-query($from: mobile) {
-    .govuk-pub-chevron-banner__link-container:after {
-      background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-hover-border.svg");
-    }
+  .govuk-pub-chevron-banner__chevron-point,
+  .govuk-pub-chevron-banner__chevron-base {
+    stroke: govuk-colour("white");
   }
 }
 
-.govuk-pub-chevron-banner:focus-within .govuk-pub-chevron-banner__link-container {
-  border-right: 2px solid;
-  border-color: govuk-colour("black");
-  background-color: $yellow;
+.govuk-pub-chevron-banner__link:focus {
+  background-color: transparent; // This is to override some generic link styling which sets a background colour on focus
+  text-decoration: none;
+  outline: 0;
 
-  @include govuk-media-query($from: mobile) {
-    border-right: 0;
+  .govuk-pub-chevron-banner__text {
+    color: govuk-colour("black");
+    background-color: $yellow;
+    border-color: govuk-colour("black");
+  }
+
+  .govuk-pub-chevron-banner__text:after {
+    background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-small-focus.svg");
+  }
+
+  .govuk-pub-chevron-banner__chevron-point,
+  .govuk-pub-chevron-banner__chevron-base {
+    fill: $yellow;
+    stroke: govuk-colour("black");
   }
 }
 
-.govuk-pub-chevron-banner:focus-within .govuk-pub-chevron-banner__link-container:after {
-  background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-small-focus.svg");
+.govuk-pub-chevron-banner__chevron {
+  display: none;
 
-  @include govuk-media-query($from: mobile) {
-    background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-focus.svg");
+  @include govuk-media-query(450px) {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    left: 70%;
+    margin-left: (45px + govuk-spacing(4));
+    top: 0;
+  }
+
+  @include govuk-media-query($from: 450px, $until: desktop) {
+    margin-left: (25px + govuk-spacing(2));
   }
 }
 
-.govuk-pub-chevron-banner__link-container {
-  padding: govuk-spacing(4);
-  border: 2px solid transparent;
-  border-right: 0;
-  border-radius: 5px;
-  background-color: $red;
-
-  @include govuk-media-query($from: mobile) {
-    margin-right: 120px;
-    padding: govuk-spacing(3);
-    border-radius: 5px 0 0 5px;
-  }
-
-  @include govuk-media-query($from: desktop) {
-    padding: govuk-spacing(4);
-  }
-}
-
-.govuk-pub-chevron-banner__link-container:after {
+.govuk-pub-chevron-banner__text:after {
   content: "";
   position: absolute;
+  right: 15px;
   top: 0;
-  right: 10px;
   width: 25px;
   height: 100%;
   background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-small.svg");
+  background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: center right;
-  background-size: 25px 25px;
 
-  @include govuk-media-query($from: mobile) {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 120px;
-    height: 100%;
-    background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner.svg");
-    background-repeat: no-repeat;
-    background-position: -1px center;
-    background-size: auto 100%;
-  }
-
-  // Target IE 9-11
-  @media screen and (min-width: 0\0) and (min-width: 320px) and (max-width: 364px) {
-    background-position: -15px center;
-  }
-
-  @media screen and (min-width: 0\0) and (min-width: 365px) and (max-width: 640px) {
-    background-position: -28px center;
-  }
-
-  @media screen and (min-width: 0\0) and (min-width: 641px) and (max-width: 769px) {
-    background-position: -20px center;
-  }
-
-  @media screen and (min-width: 0\0) and (min-width: 770px) {
-    background-position: -14px center;
+  @include govuk-media-query(450px) {
+    display: none;
   }
 }
 
-.govuk-pub-chevron-banner__link {
-  @include govuk-media-query($until: mobile) {
-    display: block;
-    width: 80%;
+.govuk-pub-chevron-banner__text {
+  display: block;
+  position: relative;
+  padding: govuk-spacing(4) 45px govuk-spacing(4) govuk-spacing(4);
+  background-color: $red;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid $red;
+  z-index: 1;
+
+  @include govuk-media-query($from: 450px, $until: desktop) {
+    padding: govuk-spacing(2) 25px govuk-spacing(2) govuk-spacing(2);
+  }
+
+  @include govuk-media-query($from: 450px) {
+    border-radius: 5px 0 0 5px;
+    border-right: 0;
+    width: 70%;
+    box-sizing: content-box;
   }
 }
 
@@ -130,20 +124,15 @@ $yellow: #ffdd00;
   text-decoration: none;
 }
 
-// The yellow is hardcoded so it doesn't vary between apps as a result of the partial GOVUK Frontend V3 pgrade
-.govuk-pub-chevron-banner__link:link:focus,
-.govuk-pub-chevron-banner__link:focus {
-  color: govuk-colour("black");
-  background-color: $yellow;
-  box-shadow: 0 -2px $yellow, 0 4px govuk-colour("black");
+// IE "hack" to stop the chevron SVG being stretched
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .govuk-pub-chevron-banner__chevron {
+    max-width: 160px;
+  }
 }
 
-.govuk-pub-chevron-banner__link:after {
-  content: "";
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+@media screen and (min-width: 0\0) {
+  .govuk-pub-chevron-banner__chevron {
+    max-width: 160px;
+  }
 }
