@@ -4,6 +4,8 @@ $govuk-pub-page-width: 1220px !default;
 
 $app-code-colour: #d13118;
 
+$govuk-brexit-background-colour: #182d4e;
+
 // GOV.UK Frontend
 @import "node_modules/govuk-frontend/govuk/all";
 
@@ -22,6 +24,10 @@ $app-code-colour: #d13118;
 
 .app-background--on-govuk-blue {
   background-color: govuk-colour("blue");
+}
+
+.app-background--brexit {
+  background-color: $govuk-brexit-background-colour;
 }
 
 .app-font-colour--white {
