@@ -1,5 +1,5 @@
-import { nodeListForEach } from './helpers';
-import RelatedNavigation from './components/related-navigation/related-navigation';
+import { nodeListForEach } from './common.js';
+// import RelatedNavigation from './components/related-navigation/related-navigation';
 
 // EXAMPLE
 // import Button from './components/button/button'
@@ -18,14 +18,14 @@ function initAll (options) {
   //   new Button($button).init()
   // })
 
-  var $navigation = scope.querySelectorAll('[data-module="govuk-pub-related-navigation"]');
-  nodeListForEach($navigation, function ($item) {
-    new RelatedNavigation($item).init();
-  });
+  // var $navigation = scope.querySelectorAll('[data-module="govuk-pub-related-navigation"]');
+  // nodeListForEach($navigation, function ($item) {
+  //   new RelatedNavigation($item).init();
+  // });
 
 }
 
 export {
-  initAll,
-  RelatedNavigation
+  initAll
+  // ,RelatedNavigation
 }

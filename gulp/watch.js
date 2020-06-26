@@ -1,3 +1,5 @@
+'use strict'
+
 const gulp = require('gulp');
 
 gulp.task('watch-sass', (done) => {
@@ -9,8 +11,7 @@ gulp.task('watch-sass', (done) => {
     'src/govuk-pub/utilities/**/*.scss',
     'src/govuk-pub/components/**/*.scss',
     'src/govuk-pub/components/**/*.js',
-    'src/govuk-pub/namespace.js',
-    'src/govuk-pub/helpers.js',
+    'src/govuk-pub/common.js',
     'app/assets/sass/*.scss'
   ], gulp.series('sass'));
   done();
@@ -19,9 +20,8 @@ gulp.task('watch-sass', (done) => {
 gulp.task('watch-javascript', (done) => {
   gulp.watch([
     'src/govuk-pub/components/**/*.js',
-    'src/govuk-pub/namespace.js',
-    'src/govuk-pub/helpers.js'
-  ], gulp.series('copy-component-javascript', 'copy-namespace', 'copy-helpers'));
+    'src/govuk-pub/common.js'
+  ], gulp.series('copy-component-javascript', 'copy-common'));
   done();
 });
 
