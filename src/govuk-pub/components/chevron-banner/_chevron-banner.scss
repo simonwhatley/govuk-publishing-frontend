@@ -1,0 +1,149 @@
+$red: #e61e32;
+$dark-red: #b31424;
+$yellow: #ffdd00;
+
+.govuk-pub-chevron-banner {
+  position: relative;
+}
+
+.govuk-pub-chevron-banner:hover {
+  .govuk-pub-chevron-banner__link-container {
+    background-color: $dark-red;
+  }
+
+  @include govuk-media-query($from: mobile) {
+    .govuk-pub-chevron-banner__link-container:after {
+      background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-hover.svg");
+    }
+  }
+}
+
+.govuk-pub-chevron-banner--hover-border:hover {
+  .govuk-pub-chevron-banner__link-container {
+    border-right: 2px solid;
+    border-color: govuk-colour("white");
+
+    @include govuk-media-query($from: mobile) {
+      border-right: 0;
+    }
+  }
+
+  @include govuk-media-query($from: mobile) {
+    .govuk-pub-chevron-banner__link-container:after {
+      background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-hover-border.svg");
+    }
+  }
+}
+
+.govuk-pub-chevron-banner:focus-within .govuk-pub-chevron-banner__link-container {
+  border-right: 2px solid;
+  border-color: govuk-colour("black");
+  background-color: $yellow;
+
+  @include govuk-media-query($from: mobile) {
+    border-right: 0;
+  }
+}
+
+.govuk-pub-chevron-banner:focus-within .govuk-pub-chevron-banner__link-container:after {
+  background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-small-focus.svg");
+
+  @include govuk-media-query($from: mobile) {
+    background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-focus.svg");
+  }
+}
+
+.govuk-pub-chevron-banner__link-container {
+  padding: govuk-spacing(4);
+  border: 2px solid transparent;
+  border-right: 0;
+  border-radius: 5px;
+  background-color: $red;
+
+  @include govuk-media-query($from: mobile) {
+    margin-right: 120px;
+    padding: govuk-spacing(3);
+    border-radius: 5px 0 0 5px;
+  }
+
+  @include govuk-media-query($from: desktop) {
+    padding: govuk-spacing(4);
+  }
+}
+
+.govuk-pub-chevron-banner__link-container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 25px;
+  height: 100%;
+  background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner-small.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 25px 25px;
+
+  @include govuk-media-query($from: mobile) {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 120px;
+    height: 100%;
+    background-image: url("#{$govuk-pub-images-path}components/chevron-banner/chevron-banner.svg");
+    background-repeat: no-repeat;
+    background-position: -1px center;
+    background-size: auto 100%;
+  }
+
+  // Target IE 9-11
+  @media screen and (min-width: 0\0) and (min-width: 320px) and (max-width: 364px) {
+    background-position: -15px center;
+  }
+
+  @media screen and (min-width: 0\0) and (min-width: 365px) and (max-width: 640px) {
+    background-position: -28px center;
+  }
+
+  @media screen and (min-width: 0\0) and (min-width: 641px) and (max-width: 769px) {
+    background-position: -20px center;
+  }
+
+  @media screen and (min-width: 0\0) and (min-width: 770px) {
+    background-position: -14px center;
+  }
+}
+
+.govuk-pub-chevron-banner__link {
+  @include govuk-media-query($until: mobile) {
+    display: block;
+    width: 80%;
+  }
+}
+
+.govuk-pub-chevron-banner__link:link,
+.govuk-pub-chevron-banner__link:visited,
+.govuk-pub-chevron-banner__link:hover {
+  @include govuk-font(24, $weight: bold);
+  color: govuk-colour("white");
+  text-decoration: none;
+}
+
+// The yellow is hardcoded so it doesn't vary between apps as a result of the partial GOVUK Frontend V3 pgrade
+.govuk-pub-chevron-banner__link:link:focus,
+.govuk-pub-chevron-banner__link:focus {
+  color: govuk-colour("black");
+  background-color: $yellow;
+  box-shadow: 0 -2px $yellow, 0 4px govuk-colour("black");
+}
+
+.govuk-pub-chevron-banner__link:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

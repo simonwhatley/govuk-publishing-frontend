@@ -1,0 +1,9 @@
+{%- if (params.text or params.html) and params.href %}
+<div class="govuk-pub-chevron-banner govuk-pub-chevron-banner--hover-border">
+  <div class="govuk-pub-chevron-banner__link-container">
+    <a class="govuk-pub-chevron-banner__link govuk-link" href="{{ params.href }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {{- params.html | safe if params.html else params.text -}}
+    </a>
+  </div>
+</div>
+{% endif -%}

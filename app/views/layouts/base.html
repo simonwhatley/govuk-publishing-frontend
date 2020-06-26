@@ -25,6 +25,7 @@
 
 {%- from "govuk-pub/components/action-link/macro.njk" import govukPubActionLink %}
 {%- from "govuk-pub/components/banner/macro.njk" import govukPubBanner %}
+{%- from "govuk-pub/components/chevron-banner/macro.njk" import govukPubChevronBanner %}
 {%- from "govuk-pub/components/contents-list/macro.njk" import govukPubContentsList %}
 {%- from "govuk-pub/components/cookie-banner/macro.njk" import govukPubCookieBanner %}
 {%- from "govuk-pub/components/copy-to-clipboard/macro.njk" import govukPubCopyToClipboard %}
@@ -80,6 +81,8 @@
       <link rel="apple-touch-icon" sizes="152x152" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-152x152.png">
       <link rel="apple-touch-icon" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon.png">
     {% endblock %}
+
+    {%- block pageHead %}{% endblock %}
 
     <meta name="description" content="Design your service using GOV.UK styles, components and patterns">
     <meta property="og:image" content="/public/images/govuk-pub-opengraph-image.png">
