@@ -10,7 +10,7 @@ Have you read the Code of Conduct? By filing an Issue, you are expected to compl
 
 https://github.com/simonwhatley/govuk-publishing-frontend/blob/master/CODE_OF_CONDUCT.md
 
-Do you want to ask a question? Are you looking for support? You can email [design-system@digital.justice.gov.uk](design-system@digital.justice.gov.uk) putting the repository name in the subject line.
+Do you want to ask a question? Are you looking for support? You can email [support@humanedesign.co](support@humanedesign.co) putting the repository name in the subject line.
 
 ---
 
