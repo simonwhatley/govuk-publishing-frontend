@@ -1,0 +1,59 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Page preview component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Page preview
+    </h1>
+
+    <p class="govuk-body-l">Preview a page on mobile, desktop and Google.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://content-publisher.integration.publishing.service.gov.uk/component-guide/page_preview">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/page-preview">View the Nunjucks macro options on GitHub</a></p>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-5">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">Default</p>
+
+    {{ govukPubPagePreview({
+      href: "https://www.gov.uk/browse",
+      snippet: {
+        title: "Lorem ipsum dolor sit amet",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    {{ govukPubPagePreview({
+      href: "https://www.simonwhatley.co.uk"
+    }) }}
+
+
+
+  </div>
+</div>
+
+{% endblock %}
