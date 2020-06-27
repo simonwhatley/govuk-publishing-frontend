@@ -1,0 +1,81 @@
+$app-google-link-colour: #1a0dab;
+$app-google-url-colour: #006621;
+$app-google-description-colour: #545454;
+$app-mobile-frame-width: 320px;
+$app-mobile-frame-height: 585px;
+$app-mobile-border-width: 17px;
+$app-mobile-border-bottom-width: 68px;
+
+.govuk-pub-preview {
+  .govuk-tabs__list {
+    display: none;
+
+    @include govuk-media-query($from: tablet) {
+      display: block;
+    }
+  }
+
+  .govuk-tabs__title {
+    display: none;
+  }
+}
+
+.govuk-pub-preview__mobile {
+  display: none;
+
+  @include govuk-media-query($from: tablet) {
+    display: block;
+    width: $app-mobile-frame-width + 2 * $app-mobile-border-width;
+    height: $app-mobile-frame-height + $app-mobile-border-width + $app-mobile-border-bottom-width;
+    background-image: url("#{$govuk-pub-images-path}components/page-preview/preview-mobile.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.govuk-pub-preview__mobile-iframe {
+  width: $app-mobile-frame-width;
+  height: $app-mobile-frame-height;
+  margin: $app-mobile-border-width;
+  margin-bottom: $app-mobile-border-bottom-width;
+  border: 0;
+}
+
+.govuk-pub-preview__desktop-preview {
+  display: block;
+  width: 100%;
+  height: 1000px;
+  border: 0;
+}
+
+.govuk-pub-preview__google {
+  display: none;
+
+  @include govuk-media-query($from: tablet) {
+    display: block;
+    max-width: 600px;
+    -webkit-font-smoothing: auto;
+  }
+}
+
+.govuk-pub-preview__google-title {
+  color: $app-google-link-colour;
+  font-family: arial, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.govuk-pub-preview__google-url {
+  color: $app-google-url-colour;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.govuk-pub-preview__google-description {
+  color: $app-google-description-colour;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
