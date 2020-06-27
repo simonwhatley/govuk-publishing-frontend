@@ -6,6 +6,10 @@
 </div>
 {% endset -%}
 
+{%- set desktopPreviewHtml %}
+<iframe class="govuk-pub-preview__desktop-preview" src="{{ params.href }}" title="Preview of the page on desktop or tablet"></iframe>
+{% endset -%}
+
 {%- set searchEngineSnippetHtml %}
 <div class="govuk-pub-preview__google">
 <a class="govuk-pub-preview__google-title" href="{{ params.href }}">{{ params.snippet.title }}</a>
@@ -32,7 +36,7 @@
         id: "desktop",
         label: "Desktop and tablet",
         panel: {
-          html: '<iframe class="govuk-pub-preview__desktop-preview" src="{{ params.href }}" title="Preview of the page on desktop or tablet"></iframe>'
+          html: desktopPreviewHtml
         }
       },
       {
