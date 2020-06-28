@@ -1,0 +1,27 @@
+<div class="govuk-pub-facet-tags {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- for facet in params.facets %}
+    <div class="govuk-pub-facet-tags__group {{- ' ' + facet.classes if facet.classes }}" {%- for attribute, value in facet.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {%- for item in facet.items %}
+        <div class="govuk-pub-facet-tags__wrapper {{- ' ' + item.classes if item.classes }}" {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+          {%- if facet.heading or facet.preposition %}
+          <p class="govuk-pub-facet-tags__preposition">
+            {%- if loop.first %}
+              {{- facet.heading.html | safe if facet.heading.html else facet.heading.text -}}
+            {% else %}
+              {{- facet.preposition if facet.preposition else 'or' -}}
+            {% endif -%}
+          </p>
+          {% endif -%}
+          <div class="govuk-pub-facet-tag">
+            <p class="govuk-pub-facet-tag__text {{- ' ' + item.label.classes if item.label.classes }}" {%- for attribute, value in item.label.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+              {{- item.label.html | safe if item.label.html else item.label.text -}}
+            </p>
+            <button type="button" class="govuk-pub-facet-tag__remove {{- ' ' + item.button.classes if item.button.classes }}" aria-label="{{ item.button.attributes['aria-label'] if item.button.attributes['aria-label'] else 'Remove filter' }}" {%- for attribute, value in item.button.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+              {{- item.button.label.html | safe if item.button.label.html else item.button.label.text | default('✕') -}}
+            </button>
+          </div>
+        </div>
+      {% endfor -%}
+    </div>
+  {% endfor -%}
+</div>
