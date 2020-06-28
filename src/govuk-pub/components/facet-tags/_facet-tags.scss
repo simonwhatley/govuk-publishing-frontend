@@ -1,0 +1,108 @@
+.govuk-pub-facet-tags {
+  padding-bottom: govuk-spacing(1);
+}
+
+.govuk-pub-facet-tags__group {
+  padding: govuk-spacing(1);
+
+  @include govuk-media-query($from: tablet) {
+    &:nth-child(odd) {
+      background-color: govuk-colour("light-grey");
+    }
+  }
+}
+
+.govuk-pub-facet-tags__wrapper {
+  margin: 5px 0;
+  vertical-align: middle;
+
+  @include govuk-media-query($from: tablet) {
+    display: inline-block;
+  }
+}
+
+.govuk-pub-facet-tags__wrapper:first-of-type .govuk-pub-facet-tags__preposition:first-of-type {
+  font-weight: bold;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.govuk-pub-facet-tags__preposition {
+  @include govuk-font(16);
+  margin: 0;
+  padding: 0 5px 5px 2px;
+  text-transform: lowercase;
+  vertical-align: middle;
+
+  @include govuk-media-query($from: tablet) {
+    display: table-cell;
+    padding: 0 5px 0 2px;
+  }
+}
+
+.govuk-pub-facet-tag {
+  @include govuk-media-query($until: tablet) {
+    display: inline-block;
+    border: 2px solid $govuk-input-border-colour;
+    background: none;
+  }
+
+  display: table-cell;
+  position: relative;
+  padding: 5px;
+  border: 1px solid govuk-colour("dark-grey");
+  border-radius: 5px;
+  background-color: govuk-colour("light-grey");
+
+  .js-enabled & {
+    padding: 8px 7px 7px 23px;
+  }
+
+  @include govuk-media-query($from: tablet) {
+    display: table-cell;
+  }
+}
+
+.govuk-pub-facet-tag__text {
+  @include govuk-font(16);
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 0;
+
+  .js-enabled & {
+    margin-left: 5px;
+  }
+}
+
+.govuk-pub-facet-tag__remove {
+  @include govuk-font(16, $weight: bold);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border: 0;
+  border-radius: 5px;
+  color: govuk-colour("black");
+  background: none;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+
+  .js-enabled & {
+    display: inline-block;
+    border: 1px solid transparent;
+
+    &:focus {
+      border: solid 1px govuk-colour("black");
+      outline: 3px solid $govuk-focus-colour;
+      box-shadow: inset 0 0 0 2px;
+      // -webkit-box-shadow: inset 0 0 0 2px;
+    }
+  }
+}

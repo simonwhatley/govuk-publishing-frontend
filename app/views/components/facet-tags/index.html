@@ -1,0 +1,203 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Facet tags component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Facet tags
+    </h1>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/facet-tags">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubFacetTags({
+      facets: [{
+        items: [{
+          label: {
+            text: 'Aerospace and space'
+          }
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With data attributes</p>
+
+    {{ govukPubFacetTags({
+      facets: [{
+        items: [{
+          label: {
+            text: 'Aerospace and space'
+          },
+          button: {
+            label: {
+              text: '✕'
+            },
+            attributes: {
+              'aria-label': 'Remove filter Aerospace and space',
+              'data-track-label': 'Aerospace and space',
+              'data-facet': 'sector_business_area',
+              'data-value': 'aerospace',
+              'data-name': '',
+              'data-module': 'remove-filter-link'
+            }
+          }
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    {{ govukPubFacetTags({
+      facets: [{
+        heading: {
+          text: 'Your business is in'
+        },
+        items: [{
+          label: {
+            text: 'Aerospace and space'
+          }
+        },{
+          label: {
+            text: 'Automotive'
+          }
+        }]
+      },{
+        heading: {
+          text: 'You'
+        },
+        items: [{
+          label: {
+            text: 'Sell goods or provide services in the UK'
+          }
+        },{
+          label: {
+            text: 'Import from the EU'
+          }
+        },{
+          label: {
+            text: 'Export to the EU'
+          }
+        },{
+          label: {
+            text: 'Provide services or do buisness in the EU'
+          }
+        }]
+      },{
+        heading: {
+          text: 'You employ'
+        },
+        items: [{
+          label: {
+            text: 'EU or EEA citizens'
+          }
+        }]
+      },{
+        heading: {
+          text: 'You exchange personal data by'
+        },
+        items: [{
+          label: {
+            text: 'Processing personal data from Europe'
+          }
+        },{
+          label: {
+            text: 'Using websites or services hosted in Europe'
+          }
+        },{
+          label: {
+            text: 'Providing digital services available to Europe'
+          }
+        }]
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <p class="govuk-body">Specifying a preposition, for example, ‘and’ (the default is ‘or’)</p>
+
+    {{ govukPubFacetTags({
+      facets: [{
+        heading: {
+          text: 'Your business is in'
+        },
+        items: [{
+          label: {
+            text: 'Creative industries'
+          }
+        },{
+          label: {
+            text: 'Digital, technology and computer services'
+          }
+        },{
+          label: {
+            text: 'Education'
+          }
+        }]
+      },{
+        heading: {
+          text: 'You'
+        },
+        items: [{
+          label: {
+            text: 'Sell goods or provide services in the UK'
+          }
+        }]
+      },{
+        heading: {
+          text: 'You employ'
+        },
+        preposition: 'and',
+        items: [{
+          label: {
+            text: 'EU or EEA citizens'
+          }
+        },{
+          label: {
+            text: 'Non EU or EEA citizens'
+          }
+        }]
+      },{
+        heading: {
+          text: 'You exchange personal data by'
+        },
+        preposition: 'and',
+        items: [{
+          label: {
+            text: 'Processing personal data from Europe'
+          }
+        },{
+          label: {
+            text: 'Using websites or services hosted in Europe'
+          }
+        },{
+          label: {
+            text: 'Providing digital services available to Europe'
+          }
+        }]
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
