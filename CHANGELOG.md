@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.12.0
+
+- Added chevron banner component
+- Added facet tags component
+- Added loading spinner component
+- Added page preview component
+- Added release, pre-release and release-to-branch scripts
+- Added `/dist` support
+- Added app SCSS linting
+
 ## v0.11.0
 
 - Added glance metric component
