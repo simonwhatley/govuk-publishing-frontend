@@ -1,0 +1,21 @@
+<div class="govuk-pub-search {{- ' ' + params.classes if params.classes }} {{- ' govuk-pub-search--on-govuk-blue' if params.inverse else ' govuk-pub-search--on-white' }} {{- ' govuk-pub-search--large' if params.large }} {{- ' govuk-pub-search--separate-label' if params.label.inline == false }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- if (params.label.html or params.label.text) %}
+  <label for="search-main{{ '-' + params.id if params.id }}" class="govuk-pub-search__label {{- ' ' + params.label.classes if params.label.classes }}" {%- for attribute, value in params.label.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    {%- if params.label.inline == false %}
+    <h{{ params.label.headingLevel | default(1) }}>
+      {{- params.label.html | safe if params.label.html else params.label.text -}}
+    </h{{ params.label.headingLevel | default(1) }}>
+    {% else %}
+      {{- params.label.html | safe if params.label.html else params.label.text -}}
+    {% endif -%}
+  </label>
+  {% endif -%}
+  <div class="govuk-pub-search__item-wrapper">
+    <input type="search" value="{{ params.input.value }}" id="search-main{{ '-' + params.id if params.id }}" name="{{ params.input.name | default('q') }}" title="{{ params.input.title | default('Search') }}" class="govuk-pub-search__item govuk-pub-search__input js-class-toggle" {%- for attribute, value in params.input.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    <div class="govuk-pub-search__item govuk-pub-search__submit-wrapper">
+      <button type="submit" class="govuk-pub-search__submit {{- ' ' + params.button.classes if params.button.classes }}" {%- for attribute, value in params.button.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+        {{- params.button.html | safe if params.button.html else params.button.text | default('Search') -}}
+      </button>
+    </div>
+  </div>
+</div>

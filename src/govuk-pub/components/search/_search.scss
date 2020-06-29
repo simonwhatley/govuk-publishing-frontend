@@ -1,0 +1,189 @@
+$input-size: 40px;
+$large-input-size: 50px;
+
+.govuk-pub-search {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.govuk-pub-search__label {
+  display: block;
+
+  h1 {
+    @include govuk-font($size: 19, $line-height: $input-size);
+    margin: 0;
+  }
+}
+
+.govuk-pub-search__input[type="search"] { // overly specific to prevent some overrides from outside
+  @include govuk-font($size: 19, $line-height: (28 / 19));
+
+  box-sizing: border-box;
+  width: 100%;
+  height: $input-size;
+  margin: .5em 0;
+  padding: 6px;
+  border: 0;
+  border-radius: 0; //otherwise iphones apply an automatic border radius
+  background: govuk-colour("white");
+  appearance: none;
+
+  &:focus {
+    outline: $govuk-focus-width solid $govuk-focus-colour;
+    outline-offset: inherit;
+  }
+}
+
+.govuk-pub-search__submit {
+  padding: 6px;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: $govuk-focus-width solid $govuk-focus-colour;
+  }
+}
+
+.js-enabled {
+  .govuk-pub-search__label {
+    @include govuk-font($size: 19, $line-height: $input-size);
+
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    left: govuk-spacing(3);
+    color: $govuk-secondary-text-colour;
+  }
+}
+
+.govuk-pub-search__item-wrapper {
+  display: table;
+  width: 100%;
+  background: govuk-colour("white");
+}
+
+//general class applied to search input and button wrapper
+.govuk-pub-search__item {
+  display: table-cell;
+  position: relative;
+  vertical-align: top;
+}
+
+.govuk-pub-search__input[type="search"] {
+  margin: 0;
+
+  // the .focus class is added by JS and ensures that the input remains above the label once clicked/filled in
+  &:focus,
+  &.focus {
+    z-index: 2;
+  }
+}
+
+.govuk-pub-search__submit-wrapper {
+  width: 1%;
+}
+
+.govuk-pub-search__submit {
+  position: relative;
+  width: $input-size;
+  height: $input-size;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("#{$govuk-pub-images-path}components/search/search-button.png");
+  background-repeat: no-repeat;
+  background-position: 2px 50%;
+  text-indent: -5000px;
+
+  &:focus {
+    z-index: 2;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  @include govuk-device-pixel-ratio {
+    background-position: 115% 50%;
+    background-size: 52.5px auto;
+  }
+}
+
+.govuk-pub-search--on-govuk-blue {
+  .govuk-pub-search__label {
+    color: govuk-colour("white");
+  }
+
+  .govuk-pub-search__submit {
+    color: govuk-colour("white");
+    background-color: govuk-colour("black");
+
+    &:hover {
+      background-color: lighten(govuk-colour("black"), 5%);
+    }
+  }
+
+  .js-enabled & {
+    .govuk-pub-search__label {
+      color: $govuk-secondary-text-colour;
+    }
+  }
+}
+
+
+.govuk-pub-search--on-white {
+  .govuk-pub-search__label {
+    color: govuk-colour("black");
+  }
+
+  .govuk-pub-search__input[type="search"] {
+    border: solid 1px govuk-colour("mid-grey", $legacy: "grey-2");
+  }
+
+  .govuk-pub-search__submit {
+    color: govuk-colour("white");
+    background-color: govuk-colour("blue");
+
+    &:hover {
+      background-color: darken(govuk-colour("blue"), 5%);
+    }
+  }
+
+  .govuk-pub-search__input[type="search"] {
+    border-right: 0;
+  }
+
+  .js-enabled & {
+    .govuk-pub-search__label {
+      color: $govuk-secondary-text-colour;
+    }
+  }
+}
+
+.govuk-pub-search--large {
+  .govuk-pub-search__label {
+    @include govuk-font($size: 19, $line-height: $large-input-size);
+  }
+
+  .govuk-pub-search__input[type="search"] {
+    height: $large-input-size;
+  }
+
+  .govuk-pub-search__submit {
+    width: $large-input-size;
+    height: $large-input-size;
+    background-position: 8px 50%;
+
+    @include govuk-device-pixel-ratio {
+      background-position: 160% 50%;
+      background-size: 60px auto;
+    }
+  }
+}
+
+.govuk-pub-search--separate-label {
+  .govuk-pub-search__label {
+    position: relative;
+    left: auto;
+  }
+}
