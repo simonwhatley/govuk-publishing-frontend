@@ -8,8 +8,8 @@
     height: 45px;
     // scss-lint:disable DuplicateProperty
     // sass-lint:disable no-duplicate-properties
-    background: url("#{$govuk-pub-images-path}action-link-arrow.png");
-    background: url("#{$govuk-pub-images-path}action-link-arrow.svg"), linear-gradient(transparent, transparent);
+    background: url("#{$govuk-pub-images-path}components/action-link/action-link-arrow.png");
+    background: url("#{$govuk-pub-images-path}components/action-link/action-link-arrow.svg"), linear-gradient(transparent, transparent);
     // scss-lint:enable DuplicateProperty
     // sass-lint:enable no-duplicate-properties
     background-repeat: no-repeat;
@@ -107,8 +107,8 @@
     height: 30px;
     // scss-lint:disable DuplicateProperty
     // sass-lint:disable no-duplicate-properties
-    background: url("#{$govuk-pub-images-path}action-link-arrow--simple.png");
-    background: url("#{$govuk-pub-images-path}action-link-arrow--simple.svg"), linear-gradient(transparent, transparent);
+    background: url("#{$govuk-pub-images-path}components/action-link/action-link-arrow--simple.png");
+    background: url("#{$govuk-pub-images-path}components/action-link/action-link-arrow--simple.svg"), linear-gradient(transparent, transparent);
     // scss-lint:enable DuplicateProperty
     // sass-lint:enable no-duplicate-properties
     background-repeat: no-repeat;
@@ -133,8 +133,8 @@
     height: 30px;
     // scss-lint:disable DuplicateProperty
     // sass-lint:disable no-duplicate-properties
-    background: url("#{$govuk-pub-images-path}action-link-arrow--dark.png");
-    background: url("#{$govuk-pub-images-path}action-link-arrow--dark.svg"), linear-gradient(transparent, transparent);
+    background: url("#{$govuk-pub-images-path}components/action-link/action-link-arrow--dark.png");
+    background: url("#{$govuk-pub-images-path}components/action-link/action-link-arrow--dark.svg"), linear-gradient(transparent, transparent);
     // scss-lint:enable DuplicateProperty
     // sass-lint:enable no-duplicate-properties
     background-repeat: no-repeat;
@@ -153,8 +153,8 @@
     height: 70px;
     // scss-lint:disable DuplicateProperty
     // sass-lint:disable no-duplicate-properties
-    background: url("#{$govuk-pub-images-path}action-link--nhs.png");
-    background: url("#{$govuk-pub-images-path}action-link--nhs.svg"), linear-gradient(transparent, transparent);
+    background: url("#{$govuk-pub-images-path}components/action-link/action-link--nhs.png");
+    background: url("#{$govuk-pub-images-path}components/action-link/action-link--nhs.svg"), linear-gradient(transparent, transparent);
     // scss-lint:enable DuplicateProperty
     // sass-lint:enable no-duplicate-properties
     background-repeat: no-repeat;
