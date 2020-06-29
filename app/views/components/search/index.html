@@ -1,0 +1,128 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Search component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/components/search/toggle-input-class-on-focus.js"></script>
+<script type="text/javascript">
+  var $element1 = $('#search-form-1');
+  var toggleInputClassOnFocus = new GOVUK.Modules.ToggleInputClassOnFocus();
+  toggleInputClassOnFocus.start($element1);
+
+  var $element2 = $('#search-form-2');
+  var toggleInputClassOnFocus = new GOVUK.Modules.ToggleInputClassOnFocus();
+  toggleInputClassOnFocus.start($element2);
+
+  var $element3 = $('#search-form-3');
+  var toggleInputClassOnFocus = new GOVUK.Modules.ToggleInputClassOnFocus();
+  toggleInputClassOnFocus.start($element3);
+
+  var $element4 = $('#search-form-4');
+  var toggleInputClassOnFocus = new GOVUK.Modules.ToggleInputClassOnFocus();
+  toggleInputClassOnFocus.start($element4);
+
+  var $element5 = $('#search-form-5');
+  var toggleInputClassOnFocus = new GOVUK.Modules.ToggleInputClassOnFocus();
+  toggleInputClassOnFocus.start($element5);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Search
+    </h1>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://components.publishing.service.gov.uk/component-guide/search">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/search">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {{ govukPubSearch({
+      attributes: {
+        id: 'search-form-1'
+      },
+      label: {
+        text: 'Search GOV.UK'
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    {{ govukPubSearch({
+      attributes: {
+        id: 'search-form-2'
+      },
+      label: {
+        inline: false,
+        text: 'Search GOV.UK'
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    {{ govukPubSearch({
+      attributes: {
+        id: 'search-form-3'
+      },
+      label: {
+        inline: false,
+        text: 'Search GOV.UK'
+      },
+      input: {
+        value: 'driving licence'
+      }
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 4</h3>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-!-padding-top-5 app-background--on-govuk-blue">
+
+        {{ govukPubSearch({
+          attributes: {
+            id: 'search-form-4'
+          },
+          inverse: true,
+          label: {
+            text: 'Search GOV.UK'
+          },
+          input: {
+            value: 'driving licence'
+          }
+        }) }}
+      </div>
+    </div>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 5</h3>
+
+    {{ govukPubSearch({
+      large: true,
+      attributes: {
+        id: 'search-form-5'
+      },
+      label: {
+        text: 'Search GOV.UK'
+      }
+    }) }}
+
+
+  </div>
+</div>
+
+{% endblock %}
