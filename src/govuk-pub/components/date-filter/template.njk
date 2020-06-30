@@ -1,0 +1,37 @@
+{%- from "govuk/components/input/macro.njk" import govukInput %}
+{%- from "govuk-pub/components/expander/macro.njk" import govukPubExpander %}
+
+{%- call govukPubExpander({
+  showOnLoad: params.showOnLoad,
+  heading: params.heading,
+  classes: params.classes,
+  attributes: params.attributes
+}) %}
+
+  <div class="govuk-pub-date-filter {{- ' ' + params.filter.classes if params.filter.classes }}" {%- for attribute, value in params.filter.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    
+    {{ govukInput({
+      id: params.from.id,
+      name: params.from.name,
+      label: params.from.label,
+      hint: params.from.hint,
+      errorMessage: params.from.errorMessage,
+      value: params.from.value,
+      classes: params.from.classes,
+      attributes: params.from.attributes
+    }) }}
+      
+    {{ govukInput({
+      id: params.to.id,
+      name: params.to.name,
+      label: params.to.label,
+      hint: params.to.hint,
+      errorMessage: params.to.errorMessage,
+      value: params.to.value,
+      classes: params.to.classes,
+      attributes: params.to.attributes
+    }) }}
+    
+  </div>
+
+{% endcall -%}
