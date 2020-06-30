@@ -1,0 +1,12 @@
+<div class="govuk-pub-expander {{- ' ' + params.classes if params.classes }}" data-module="expander" data-open-on-load="{{ params.showOnLoad | default('false') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <h{{ params.heading.headingLevel | default(2) }} class="govuk-pub-expander__heading {{- ' ' + params.heading.classes if params.heading.classes }}" {%- for attribute, value in params.heading.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    <span class="govuk-pub-expander__title js-toggle">
+      {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+    </span>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="govuk-pub-expander__icon govuk-pub-expander__icon--up" aria-hidden="true" focusable="false"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="govuk-pub-expander__icon govuk-pub-expander__icon--down" aria-hidden="true" focusable="false"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+  </h{{ params.heading.headingLevel | default(2) }}>
+  <div class="govuk-pub-expander__content js-content {{- ' govuk-pub-expander__content--visible' if params.showOnLoad }}">
+    {{- caller() if caller -}}
+  </div>
+</div>

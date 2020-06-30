@@ -1,0 +1,136 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Expander component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/components/expander/expander.js"></script>
+<script type="text/javascript">
+  var $element1 = $('#expander-1');
+  var expander = new GOVUK.Modules.Expander();
+  expander.start($element1);
+
+  var $element2 = $('#expander-2');
+  var expander = new GOVUK.Modules.Expander();
+  expander.start($element2);
+
+  var $element3 = $('#expander-3');
+  var expander = new GOVUK.Modules.Expander();
+  expander.start($element3);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Expander
+    </h1>
+
+    <p class="govuk-body-l">A block of content that can be expanded and collapsed.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://finder-frontend.herokuapp.com/component-guide/expander">GOV.UK component guide</a></p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://github.com/simonwhatley/govuk-publishing-frontend/tree/master/src/govuk-pub/components/expander">View the Nunjucks macro options on GitHub</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    {% call govukPubExpander({
+      heading: {
+        text: "Example 1"
+      },
+      attributes: {
+        id: "expander-1"
+      }
+    }) %}
+
+      <p class="govuk-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+    {% endcall %}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">With content shown on load</p>
+
+    {% call govukPubExpander({
+      showOnLoad: true,
+      heading: {
+        text: "Example 2"
+      },
+      attributes: {
+        id: "expander-2"
+      }
+    }) %}
+
+      <p class="govuk-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+    {% endcall %}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">With form fields (for example, used in finders)</p>
+
+    {% call govukPubExpander({
+      heading: {
+        text: "Example 3"
+      },
+      attributes: {
+        id: "expander-3"
+      }
+    }) %}
+
+      {{ govukCheckboxes({
+        idPrefix: "example-3-checkboxes",
+        name: "example-3-checkboxes",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Legend text",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "item-1",
+            text: "Item 1",
+            checked: true
+          },
+          {
+            value: "item-2",
+            text: "Item 2",
+            checked: false
+          },
+          {
+            value: "item-3",
+            text: "Item 3",
+            checked: false
+          }
+        ]
+      }) }}
+
+    {% endcall %}
+
+  </div>
+</div>
+
+{% endblock %}
