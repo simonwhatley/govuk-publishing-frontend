@@ -1,0 +1,90 @@
+.govuk-pub-expander {
+  margin-bottom: govuk-spacing(2);
+  padding: 0;
+  border-bottom: 1px solid $govuk-border-colour;
+}
+
+.govuk-pub-expander__title {
+  @include govuk-font(19);
+  cursor: pointer;
+}
+
+.govuk-pub-expander__content {
+  padding: govuk-spacing(2) 13px;
+
+  .govuk-form-group:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.js-enabled {
+  .govuk-pub-expander__heading {
+    position: relative;
+    padding: 5px 5px 5px 43px;
+  }
+
+  .govuk-pub-expander__content {
+    display: none;
+  }
+
+  .govuk-pub-expander__content--visible {
+    display: block;
+  }
+}
+
+.govuk-pub-expander__icon {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 9px;
+  width: 30px;
+  height: 40px;
+  fill: govuk-colour("black");
+}
+
+.govuk-pub-expander__button {
+  @include govuk-font(19);
+  padding: 0;
+  border: 0;
+  color: $govuk-link-colour;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    @include govuk-focused-text;
+  }
+
+  // Extend the touch area of the button to span the heading
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.govuk-pub-expander__selected-counter {
+  @include govuk-font($size: 14);
+  margin-top: 3px;
+  color: $govuk-text-colour;
+}
+
+.js-enabled {
+  [aria-expanded="true"] ~ .govuk-pub-expander__icon--up {
+    display: block;
+  }
+
+  [aria-expanded="false"] ~ .govuk-pub-expander__icon--down {
+    display: block;
+  }
+}
