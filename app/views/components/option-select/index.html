@@ -1,0 +1,437 @@
+{% extends "layouts/base.html" %}
+
+{% block pageTitle %}
+  Option select component – GOV.UK Publishing Frontend
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/components/option-select/option-select.js"></script>
+<script type="text/javascript">
+  var $element1 = $('#countries');
+  var optionSelect = new GOVUK.Modules.OptionSelect();
+  optionSelect.start($element1);
+
+  var $element2 = $('#european-countries');
+  var optionSelect = new GOVUK.Modules.OptionSelect();
+  optionSelect.start($element2);
+
+  var $element3 = $('#european-country-options');
+  var optionSelect = new GOVUK.Modules.OptionSelect();
+  optionSelect.start($element3);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Components</span>
+      Option select
+    </h1>
+
+    <p class="govuk-body-l">A scrollable list of checkboxes to be displayed on a form where one might otherwise use a multi-select.</p>
+
+    <p class="govuk-body"><a class="govuk-link" href="https://finder-frontend.herokuapp.com/component-guide/option-select">GOV.UK component guide</a></p>
+
+    <h2 class="govuk-heading-l">Examples</h2>
+
+    <h3 class="govuk-heading-m">Example 1</h3>
+
+    <p class="govuk-body">Defaults to closed</p>
+
+    {{ govukPubOptionSelect({
+      idPrefix: 'countries',
+      name: 'country[]',
+      attributes: {
+        'data-closed-on-load': 'true'
+      },
+      heading: {
+        text: 'Countries'
+      },
+      items: [{
+        text: 'Austria',
+        id: 'austria',
+        value: 'austria'
+      },{
+        text: 'Belgium',
+        id: 'belgium',
+        value: 'belgium'
+      },{
+        text: 'Bulgaria',
+        id: 'bulgaria',
+        value: 'bulgaria'
+      },{
+        text: 'Croatia',
+        id: 'croatia',
+        value: 'croatia'
+      },{
+        text: 'Republic of Cyprus',
+        id: 'republic-of-cyprus',
+        value: 'republic-of-cyprus'
+      },{
+        text: 'Czech Republic',
+        id: 'czech-republic',
+        value: 'czech-republic'
+      },{
+        text: 'Denmark',
+        id: 'denmark',
+        value: 'denmark'
+      },{
+        text: 'Estonia',
+        id: 'estonia',
+        value: 'estonia'
+      },{
+        text: 'Finland',
+        id: 'finland',
+        value: 'finland'
+      },{
+        text: 'France',
+        id: 'france',
+        value: 'france'
+      },{
+        text: 'Germany',
+        id: 'germany',
+        value: 'germany'
+      },{
+        text: 'Greece',
+        id: 'greece',
+        value: 'greece'
+      },{
+        text: 'Hungary',
+        id: 'hungary',
+        value: 'hungary'
+      },{
+        text: 'Ireland',
+        id: 'ireland',
+        value: 'ireland'
+      },{
+        text: 'Italy',
+        id: 'italy',
+        value: 'italy'
+      },{
+        text: 'Latvia',
+        id: 'latvia',
+        value: 'latvia'
+      },{
+        text: 'Lithuania',
+        id: 'lithuania',
+        value: 'lithuania'
+      },{
+        text: 'Luxembourg',
+        id: 'luxembourg',
+        value: 'luxembourg'
+      },{
+        text: 'Malta',
+        id: 'malta',
+        value: 'malta'
+      },{
+        text: 'Netherlands',
+        id: 'netherlands',
+        value: 'netherlands'
+      },{
+        text: 'Poland',
+        id: 'poland',
+        value: 'poland'
+      },{
+        text: 'Portugal',
+        id: 'portugal',
+        value: 'portugal'
+      },{
+        text: 'Romania',
+        id: 'romania',
+        value: 'romania'
+      },{
+        text: 'Slovakia',
+        id: 'slovakia',
+        value: 'slovakia'
+      },{
+        text: 'Slovenia',
+        id: 'slovenia',
+        value: 'slovenia'
+      },{
+        text: 'Spain',
+        id: 'spain',
+        value: 'spain'
+      },{
+        text: 'Sweden',
+        id: 'sweden',
+        value: 'sweden'
+      },{
+        text: 'United Kingdom',
+        id: 'united-kingdom',
+        value: 'united-kingdom'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 2</h3>
+
+    <p class="govuk-body">Expanded with a filter</p>
+
+    {{ govukPubOptionSelect({
+      showOnLoad: true,
+      idPrefix: 'european-countries',
+      name: 'european_countries[]',
+      filter: {
+        text: 'Filter countries'
+      },
+      heading: {
+        text: 'Countries'
+      },
+      items: [{
+        text: 'Austria',
+        id: 'austria',
+        value: 'austria'
+      },{
+        text: 'Belgium',
+        id: 'belgium',
+        value: 'belgium'
+      },{
+        text: 'Bulgaria',
+        id: 'bulgaria',
+        value: 'bulgaria'
+      },{
+        text: 'Croatia',
+        id: 'croatia',
+        value: 'croatia'
+      },{
+        text: 'Republic of Cyprus',
+        id: 'republic-of-cyprus',
+        value: 'republic-of-cyprus'
+      },{
+        text: 'Czech Republic',
+        id: 'czech-republic',
+        value: 'czech-republic'
+      },{
+        text: 'Denmark',
+        id: 'denmark',
+        value: 'denmark'
+      },{
+        text: 'Estonia',
+        id: 'estonia',
+        value: 'estonia'
+      },{
+        text: 'Finland',
+        id: 'finland',
+        value: 'finland'
+      },{
+        text: 'France',
+        id: 'france',
+        value: 'france'
+      },{
+        text: 'Germany',
+        id: 'germany',
+        value: 'germany'
+      },{
+        text: 'Greece',
+        id: 'greece',
+        value: 'greece'
+      },{
+        text: 'Hungary',
+        id: 'hungary',
+        value: 'hungary'
+      },{
+        text: 'Ireland',
+        id: 'ireland',
+        value: 'ireland'
+      },{
+        text: 'Italy',
+        id: 'italy',
+        value: 'italy'
+      },{
+        text: 'Latvia',
+        id: 'latvia',
+        value: 'latvia'
+      },{
+        text: 'Lithuania',
+        id: 'lithuania',
+        value: 'lithuania'
+      },{
+        text: 'Luxembourg',
+        id: 'luxembourg',
+        value: 'luxembourg'
+      },{
+        text: 'Malta',
+        id: 'malta',
+        value: 'malta'
+      },{
+        text: 'Netherlands',
+        id: 'netherlands',
+        value: 'netherlands'
+      },{
+        text: 'Poland',
+        id: 'poland',
+        value: 'poland'
+      },{
+        text: 'Portugal',
+        id: 'portugal',
+        value: 'portugal'
+      },{
+        text: 'Romania',
+        id: 'romania',
+        value: 'romania'
+      },{
+        text: 'Slovakia',
+        id: 'slovakia',
+        value: 'slovakia'
+      },{
+        text: 'Slovenia',
+        id: 'slovenia',
+        value: 'slovenia'
+      },{
+        text: 'Spain',
+        id: 'spain',
+        value: 'spain'
+      },{
+        text: 'Sweden',
+        id: 'sweden',
+        value: 'sweden'
+      },{
+        text: 'United Kingdom',
+        id: 'united-kingdom',
+        value: 'united-kingdom'
+      }]
+    }) }}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Example 3</h3>
+
+    <p class="govuk-body">With checked and disabled options</p>
+
+    {{ govukPubOptionSelect({
+      idPrefix: 'european-country-options',
+      name: 'european_country_options[]',
+      attributes: {
+        'data-closed-on-load': 'false'
+      },
+      heading: {
+        text: 'Countries'
+      },
+      items: [{
+        text: 'Austria',
+        id: 'austria',
+        value: 'austria'
+      },{
+        text: 'Belgium',
+        id: 'belgium',
+        value: 'belgium'
+      },{
+        text: 'Bulgaria',
+        id: 'bulgaria',
+        value: 'bulgaria',
+        checked: true
+      },{
+        text: 'Croatia',
+        id: 'croatia',
+        value: 'croatia',
+        checked: true
+      },{
+        text: 'Republic of Cyprus',
+        id: 'republic-of-cyprus',
+        value: 'republic-of-cyprus'
+      },{
+        text: 'Czech Republic',
+        id: 'czech-republic',
+        value: 'czech-republic'
+      },{
+        text: 'Denmark',
+        id: 'denmark',
+        value: 'denmark'
+      },{
+        text: 'Estonia',
+        id: 'estonia',
+        value: 'estonia'
+      },{
+        text: 'Finland',
+        id: 'finland',
+        value: 'finland'
+      },{
+        text: 'France',
+        id: 'france',
+        value: 'france'
+      },{
+        text: 'Germany',
+        id: 'germany',
+        value: 'germany'
+      },{
+        text: 'Greece',
+        id: 'greece',
+        value: 'greece'
+      },{
+        text: 'Hungary',
+        id: 'hungary',
+        value: 'hungary'
+      },{
+        text: 'Ireland',
+        id: 'ireland',
+        value: 'ireland'
+      },{
+        text: 'Italy',
+        id: 'italy',
+        value: 'italy'
+      },{
+        text: 'Latvia',
+        id: 'latvia',
+        value: 'latvia'
+      },{
+        text: 'Lithuania',
+        id: 'lithuania',
+        value: 'lithuania'
+      },{
+        text: 'Luxembourg',
+        id: 'luxembourg',
+        value: 'luxembourg'
+      },{
+        text: 'Malta',
+        id: 'malta',
+        value: 'malta'
+      },{
+        text: 'Netherlands',
+        id: 'netherlands',
+        value: 'netherlands'
+      },{
+        text: 'Poland',
+        id: 'poland',
+        value: 'poland'
+      },{
+        text: 'Portugal',
+        id: 'portugal',
+        value: 'portugal'
+      },{
+        text: 'Romania',
+        id: 'romania',
+        value: 'romania'
+      },{
+        text: 'Slovakia',
+        id: 'slovakia',
+        value: 'slovakia'
+      },{
+        text: 'Slovenia',
+        id: 'slovenia',
+        value: 'slovenia'
+      },{
+        text: 'Spain',
+        id: 'spain',
+        value: 'spain'
+      },{
+        text: 'Sweden',
+        id: 'sweden',
+        value: 'sweden'
+      },{
+        text: 'United Kingdom',
+        id: 'united-kingdom',
+        value: 'united-kingdom',
+        disabled: true
+      }]
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
