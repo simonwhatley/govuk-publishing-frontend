@@ -26,21 +26,21 @@
     title: params.title | default('Contents'),
     items: [
       {
-        id: "mobile",
+        id: (params.id + "-mobile") if params.id else "mobile",
         label: "Mobile",
         panel: {
           html: mobilePreviewHtml
         }
       },
       {
-        id: "desktop",
+        id: (params.id + "-desktop") if params.id else "desktop",
         label: "Desktop and tablet",
         panel: {
           html: desktopPreviewHtml
         }
       },
       {
-        id: "search-engine",
+        id: (params.id + "-search-engine") if params.id else "search-engine",
         label: "Search engine snippet",
         panel: {
           html: searchEngineSnippetHtml

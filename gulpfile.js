@@ -13,6 +13,7 @@ gulp.task('generate-assets', gulp.series(
     'copy-assets',
     'copy-component-javascript',
     'copy-vendor-javascript',
+    'copy-govuk-javascript',
     'copy-common',
     'copy-all',
     'lint:scss',
