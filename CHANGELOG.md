@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.13.0
+
+- Added expander component
+- Added date filter component
+- Added option select component
+- Added search component
+- Fixed page preview tabs (import govuk-frontend scripts)
+- Fixed shell script permissions
+
 ## v0.12.0
 
 - Added chevron banner component
