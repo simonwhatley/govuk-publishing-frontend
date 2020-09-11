@@ -1,6 +1,6 @@
 'use strict'
 
-const gulp = require('gulp');
+const gulp = require('gulp')
 
 gulp.task('watch-sass', (done) => {
   gulp.watch([
@@ -13,22 +13,22 @@ gulp.task('watch-sass', (done) => {
     'src/govuk-pub/components/**/*.js',
     'src/govuk-pub/common.js',
     'app/assets/sass/*.scss'
-  ], gulp.series('sass'));
-  done();
-});
+  ], gulp.series('sass'))
+  done()
+})
 
 gulp.task('watch-javascript', (done) => {
   gulp.watch([
     'src/govuk-pub/components/**/*.js',
     'src/govuk-pub/common.js'
-  ], gulp.series('copy-component-javascript', 'copy-common'));
-  done();
-});
+  ], gulp.series('copy-component-javascript', 'copy-common'))
+  done()
+})
 
 gulp.task('watch-assets', (done) => {
   gulp.watch([
     'app/assets/images/**',
     'app/components/**',
-    'app/assets/javascripts/**'], {cwd: './'}, gulp.task('copy-assets'));
-  done();
-});
+    'app/assets/javascripts/**'], { cwd: './' }, gulp.task('copy-assets'))
+  done()
+})

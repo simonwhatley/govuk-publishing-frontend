@@ -1,8 +1,8 @@
 'use strict'
 
-const gulp     = require('gulp');
-const imagemin = require('gulp-imagemin');
-const cache    = require('gulp-cache');
+const gulp = require('gulp')
+const imagemin = require('gulp-imagemin')
+const cache = require('gulp-cache')
 
 // Compresses png, jpeg, gif, png and svg images
 gulp.task('build:compress-images', () => {
@@ -10,5 +10,5 @@ gulp.task('build:compress-images', () => {
     .pipe(cache(imagemin({
       interlaced: true
     })))
-    .pipe(gulp.dest('package/govuk-pub/assets/images/'));
-});
+    .pipe(gulp.dest('package/govuk-pub/assets/images/'))
+})
