@@ -64,11 +64,6 @@
     "yargs": "^15.0.2"
   },
   "standard": {
-    "globals": [
-      "page",
-      "browser",
-      "context"
-    ],
     "ignore": [
       "/dist/**/*.js",
       "/package/**/*.js",
