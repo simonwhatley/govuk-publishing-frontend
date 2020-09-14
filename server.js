@@ -24,7 +24,7 @@ const autoRoutes = require('./app/routes/auto')
 const utils = require('./lib/utils.js')
 
 // Port
-const port = process.env.PORT || 3000
+// const port = process.env.PORT || 3000
 
 // Configuration
 const env = process.env.NODE_ENV || 'development'
