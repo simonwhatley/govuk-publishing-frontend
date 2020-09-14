@@ -38,7 +38,7 @@
   at the time it was clicked.
 */
 
-window.GOVUK = window.GOVUK || {};
+window.GOVUK = window.GOVUK || {}
 window.GOVUK.Modules = window.GOVUK.Modules || {};
 
 (function (Modules) {

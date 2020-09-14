@@ -66,8 +66,7 @@
     "ignore": [
       "/dist/**/*.js",
       "/package/**/*.js",
-      "/src/govuk-pub/vendor/*.js",
-      "/src/govuk-pub/components/**/*.js"
+      "/src/govuk-pub/vendor/*.js"
     ]
   }
 }
