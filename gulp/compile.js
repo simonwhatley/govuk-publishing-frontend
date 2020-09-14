@@ -52,31 +52,30 @@ gulp.task('compile:js', () => {
   return gulp.src([
     srcFiles
   ])
-  .pipe(rollup({
-    // Used to set the `window` global and UMD/AMD export name.
-    name: 'GOVUKPublishingFrontend',
-    // Legacy mode is required for IE8 support
-    legacy: true,
-    // UMD allows the published bundle to work in CommonJS and in the browser.
-    format: 'umd'
-  }))
-  .pipe(gulpif(isDist, uglify({
-    ie8: true
-  })))
-  .pipe(gulpif(isDist,
-    rename({
-      basename: 'govuk-publishing-frontend',
-      extname: '.min.js'
-    })
-  ))
-  .pipe(eol())
-  .pipe(gulp.dest(destinationPath))
+    .pipe(rollup({
+      // Used to set the `window` global and UMD/AMD export name.
+      name: 'GOVUKPublishingFrontend',
+      // Legacy mode is required for IE8 support
+      legacy: true,
+      // UMD allows the published bundle to work in CommonJS and in the browser.
+      format: 'umd'
+    }))
+    .pipe(gulpif(isDist, uglify({
+      ie8: true
+    })))
+    .pipe(gulpif(isDist,
+      rename({
+        basename: 'govuk-publishing-frontend',
+        extname: '.min.js'
+      })
+    ))
+    .pipe(eol())
+    .pipe(gulp.dest(destinationPath))
 })
 
 // Compile SCSS task --------------------
 // --------------------------------------
 gulp.task('compile:scss', () => {
-
   const compiledStylesheet = isDist ? configPaths.src + 'all.scss' : configPaths.app + 'assets/scss/app.scss'
   const compiledOldIeStylesheet = isDist ? configPaths.src + 'all-ie8.scss' : configPaths.app + 'assets/scss/app-ie8.scss'
 
@@ -136,5 +135,4 @@ gulp.task('compile:scss', () => {
     .pipe(gulp.dest(taskArguments.destination + '/'))
 
   return merge(compile, compileOldIe)
-
 })

@@ -1,7 +1,7 @@
 'use strict'
 
-const gulp = require('gulp');
-const lint = require('gulp-sass-lint');
+const gulp = require('gulp')
+const lint = require('gulp-sass-lint')
 
 const configPaths = require('../config/paths.json')
 const taskArguments = require('./task-arguments')

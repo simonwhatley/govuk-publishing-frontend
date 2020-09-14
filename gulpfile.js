@@ -1,11 +1,11 @@
 'use strict'
 
-const gulp = require('gulp');
-const requireDir = require('require-dir');
+const gulp = require('gulp')
+const requireDir = require('require-dir')
 
 requireDir('./gulp', {
   recurse: true
-});
+})
 
 gulp.task('generate-assets', gulp.series(
   'clean',
@@ -28,19 +28,19 @@ gulp.task('watch', gulp.parallel(
 ))
 
 gulp.task('build:package', gulp.series(
-  'clean'
-  ,'build:copy-files'
-  ,'build:javascript'
-  ,'build:compress-images'
+  'clean',
+  'build:copy-files',
+  'build:javascript',
+  'build:compress-images'
 ))
 
 gulp.task('build:dist', gulp.series(
-  'clean'
-  ,'lint:scss'
-  ,'compile:scss'
-  ,'compile:js'
-  ,'assets:copy'
-  ,'assets:update-version'
+  'clean',
+  'lint:scss',
+  'compile:scss',
+  'compile:js',
+  'assets:copy',
+  'assets:update-version'
 ))
 
 gulp.task('default', gulp.series(

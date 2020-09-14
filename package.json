@@ -8,7 +8,6 @@
     "release": "node bin/check-nvmrc.js && ./bin/release.sh",
     "release-to-branch": "node bin/check-nvmrc.js && ./bin/release-to-branch.sh",
     "test": "standard",
-    "test:dependencies": "npm ls --depth=0",
     "build:package": "node bin/check-nvmrc.js && gulp build:package --destination 'package'",
     "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination 'dist'"
   },
@@ -67,7 +66,8 @@
     "ignore": [
       "/dist/**/*.js",
       "/package/**/*.js",
-      "/src/govuk-pub/vendor/*.js"
+      "/src/govuk-pub/vendor/*.js",
+      "/src/govuk-pub/components/**/*.js"
     ]
   }
 }
