@@ -46,14 +46,12 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
     return window.fetch(url, options)
       .then(function (response) {
-
         if (!response.ok) {
           throw Error('Unable to generate response.')
         }
 
         return response.text()
       })
-
   }
 
   UrlPreview.prototype.handleBlur = function (event) {
