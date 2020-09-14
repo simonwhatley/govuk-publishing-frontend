@@ -7,6 +7,8 @@
     "pre-release": "node bin/check-nvmrc.js && ./bin/pre-release.sh",
     "release": "node bin/check-nvmrc.js && ./bin/release.sh",
     "release-to-branch": "node bin/check-nvmrc.js && ./bin/release-to-branch.sh",
+    "test": "standard",
+    "test:dependencies": "npm ls --depth=0",
     "build:package": "node bin/check-nvmrc.js && gulp build:package --destination 'package'",
     "build:dist": "node bin/check-nvmrc.js && gulp build:dist --destination 'dist'"
   },
@@ -28,6 +30,7 @@
     "cssnano": "^4.1.10",
     "del": "^3.0.0",
     "dotenv": "^6.2.0",
+    "eslint": "^7.8.1",
     "express": "^4.16.3",
     "express-session": "^1.17.1",
     "govuk-frontend": "^3.7.0",
@@ -56,7 +59,15 @@
     "prompt": "^1.0.0",
     "require-dir": "^1.0.0",
     "rollup": "^1.32.1",
+    "standard": "^14.3.4",
     "vinyl-paths": "^3.0.1",
     "yargs": "^15.0.2"
+  },
+  "standard": {
+    "ignore": [
+      "/dist/**/*.js",
+      "/package/**/*.js",
+      "/src/govuk-pub/vendor/*.js"
+    ]
   }
 }
