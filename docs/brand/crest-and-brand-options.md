@@ -12,7 +12,6 @@ The crest code is only used by the [organisation logo](https://github.com/simonw
 |Department for Digital, Culture, Media & Sport|`single-identity`|`department-for-culture-media-sport`|
 |Department for Education|`single-identity`|`department-for-education`|
 |Department for Environment, Food & Rural Affairs|`single-identity`|`department-for-environment-food-rural-affairs`|
-|Department for Exiting the European Union|`single-identity`|`department-of-energy-climate-change`|
 |Department for International Trade|`dit`|`department-for-international-trade`|
 |Department for Transport|`single-identity`|`department-for-transport`|
 |Department for Work & Pensions|`single-identity`|`department-for-transport`|
