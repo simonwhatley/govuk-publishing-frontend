@@ -13,12 +13,11 @@ The crest code is only used by the [organisation logo](https://github.com/simonw
 |Department for Education|`single-identity`|`department-for-education`|
 |Department for Environment, Food & Rural Affairs|`single-identity`|`department-for-environment-food-rural-affairs`|
 |Department for Exiting the European Union|`single-identity`|`department-of-energy-climate-change`|
-|Department for International Development|`single-identity`|`department-for-international-development`|
 |Department for International Trade|`dit`|`department-for-international-trade`|
 |Department for Transport|`single-identity`|`department-for-transport`|
 |Department for Work & Pensions|`single-identity`|`department-for-transport`|
 |Department of Health & Social Care|`single-identity`|`department-of-health`|
-|Foreign & Commonwealth Office|`single-identity`|`foreign-commonwealth-office`|
+|Foreign, Commonwealth & Development Office|`single-identity`|`foreign-commonwealth-development-office`|
 |Government Legal Department|`single-identity`|`attorney-generals-office`|
 |HM Revenue & Customs|`hmrc`|`hm-revenue-customs`|
 |HM Treasury|`single-identity`|`hm-treasury`|
