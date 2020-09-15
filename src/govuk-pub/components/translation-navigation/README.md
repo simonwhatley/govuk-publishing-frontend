@@ -54,7 +54,7 @@ This component accepts the following arguments.
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|brand|string|No|See [brand options](#brand-options)|
+|brand|string|No|See [brand options](https://github.com/simonwhatley/govuk-publishing-frontend/blob/master/docs/brand/crest-and-brand-options.md)|
 |inverse|boolean|No|Default is `false`. Setting this to `true` renders the navigation as white text on a blue background.|
 |items|array|Yes|An array of language item objects. See [items](#items).|
 |classes|string|No|Classes to add to the container.|
@@ -70,9 +70,5 @@ This component accepts the following arguments.
 |active|boolean|Yes|The active property indicating the current language.|
 |classes|string|No|Classes to add to the list item tag.|
 |attributes|object|No|HTML attributes (for example data attributes) to add to the list item tag.|
-
-## Brand options
-
-See [crest and brand options](https://github.com/simonwhatley/govuk-publishing-frontend/blob/master/docs/brand/crest-and-brand-options.md)
 
 *Warning: If you’re using Nunjucks macros in production be aware that using HTML arguments, or ones ending with `.html` can be at risk from [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks. More information about security vulnerabilities can be found in the [Nunjucks documentation](https://mozilla.github.io/nunjucks/api.html#user-defined-templates-warning).*

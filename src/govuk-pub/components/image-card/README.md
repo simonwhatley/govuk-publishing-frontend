@@ -52,7 +52,7 @@ This component accepts the following arguments.
 |Name|Type|Required|Description|
 |---|---|---|---|
 |href|string|Yes|The URL of the resource.|
-|brand|string|No|See [brand options](#brand-options)|
+|brand|string|No|See [brand options](./docs/brand/crest-and-brand-options.md)|
 |heading|object|Yes|See [heading](#heading)|
 |description|object|No|See [description](#description)|
 |image|object|Yes|See [image](#image)|
@@ -106,9 +106,5 @@ This component accepts the following arguments.
 |---|---|---|---|
 |public_updated_at|timestamp|No|The date the image was updated.|
 |document_type|string|No|The type of image.|
-
-## Brand options
-
-See [crest and brand options](https://github.com/simonwhatley/govuk-publishing-frontend/blob/master/docs/brand/crest-and-brand-options.md)
 
 *Warning: If you’re using Nunjucks macros in production be aware that using HTML arguments, or ones ending with `.html` can be at risk from [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks. More information about security vulnerabilities can be found in the [Nunjucks documentation](https://mozilla.github.io/nunjucks/api.html#user-defined-templates-warning).*
