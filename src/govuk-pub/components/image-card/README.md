@@ -52,7 +52,7 @@ This component accepts the following arguments.
 |Name|Type|Required|Description|
 |---|---|---|---|
 |href|string|Yes|The URL of the resource.|
-|brand|string|No|See [brand options](./docs/brand/crest-and-brand-options.md)|
+|brand|string|No|See [brand options](https://github.com/simonwhatley/govuk-publishing-frontend/blob/master/docs/brand/crest-and-brand-options.md)|
 |heading|object|Yes|See [heading](#heading)|
 |description|object|No|See [description](#description)|
 |image|object|Yes|See [image](#image)|
