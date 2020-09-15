@@ -73,39 +73,6 @@ This component accepts the following arguments.
 
 ## Brand options
 
-Use the following brand codes to display the appropriate organisation brand colours.
-
-|Department|Brand|
-|---|---|
-|Attorney General's Office|`attorney-generals-office`|
-|Cabinet Office|`cabinet-office`|
-|Department for Business, Energy & Industrial Strategy|`department-for-business-innovation-skills`|
-|Department for Digital, Culture, Media & Sport|`department-for-culture-media-sport`|
-|Department for Education|`department-for-education`|
-|Department for Environment, Food & Rural Affairs|`department-for-environment-food-rural-affairs`|
-|Department for Exiting the European Union|`department-of-energy-climate-change`|
-|Department for International Development|`department-for-international-development`|
-|Department for International Trade|`department-for-international-trade`|
-|Department for Transport|`department-for-transport`|
-|Department for Work & Pensions|`department-for-transport`|
-|Department of Health & Social Care|`department-of-health`|
-|Foreign & Commonwealth Office|`foreign-commonwealth-office`|
-|Government Legal Department|`attorney-generals-office`|
-|HM Revenue & Customs|`hm-revenue-customs`|
-|HM Treasury|`hm-treasury`|
-|Home Office|`home-office`|
-|Ministry of Defence|`ministry-of-defence`|
-|Ministry of Housing, Communities & Local Government|`department-for-communities-and-local-government`|
-|Ministry of Justice|`ministry-of-justice`|
-|Northern Ireland Office|`northern-ireland-office`|
-|Office of the Advocate General for Scotland|`office-of-the-advocate-general-for-scotland`|
-|Office of the Leader of the House of Commons|`the-office-of-the-leader-of-the-house-of-commons`|
-|Office of the Leader of the House of Lords|`office-of-the-leader-of-the-house-of-lords`|
-|Office of the Secretary of State for Scotland|`scotland-office`|
-|Office of the Secretary of State for Wales<br>Swyddfa Ysgrifennydd Gwladol Cymru|`wales-office`|
-|Prime Minister's Office – 10 Downing Street|`cabinet-office`|
-|Treasury Solicitor's Department|`attorney-generals-office`|
-|UK Atomic Energy Authority|`department-for-business-innovation-skills`|
-|UK Export Finance|`department-for-international-trade`|
+See [crest and brand options](https://github.com/simonwhatley/govuk-publishing-frontend/blob/master/docs/brand/crest-and-brand-options.md)
 
 *Warning: If you’re using Nunjucks macros in production be aware that using HTML arguments, or ones ending with `.html` can be at risk from [cross-site scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks. More information about security vulnerabilities can be found in the [Nunjucks documentation](https://mozilla.github.io/nunjucks/api.html#user-defined-templates-warning).*
