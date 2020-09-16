@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.14.0
+
+- Updated installation instructions
+- Added JavaScript linting
+- Fixed core JavaScript linting errors
+- Fixed component JavaScript linting errors
+- Updated crest and brand documentation
+- Added Foreign, Commonwealth & Development Office (FCDO) brand
+- Removed Department for Exiting the European Union (DExEU) brand
+- Updated packages (autoprefixer, browser-sync, eslint, govuk-frontend, moment, nunjucks, yargs)
+
 ## v0.13.0
 
 - Added expander component
