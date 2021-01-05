@@ -7,10 +7,10 @@ $transition-campaign-dark-blue: #1e1348;
 }
 
 .govuk-pub-brexit-countdown--cta {
-  background-color: govuk-colour('light-grey', $legacy: 'grey-4');
-  border-top: 4px solid $transition-campaign-red;
   display: block;
   padding: govuk-spacing(3);
+  border-top: 4px solid $transition-campaign-red;
+  background-color: govuk-colour("light-grey", $legacy: "grey-4");
   text-decoration: none;
 }
 
@@ -31,28 +31,28 @@ $transition-campaign-dark-blue: #1e1348;
 .govuk-pub-brexit-countdown__countdown-number {
   @include govuk-font($size: 80, $weight: bold, $line-height: 60px);
 
-  min-width: 50px;
-  text-align: center;
   display: inline-block;
-  background: $transition-campaign-dark-blue;
-  color: govuk-colour('white');
   position: relative;
+  min-width: 50px;
   margin-bottom: govuk-spacing(2);
+  color: govuk-colour("white");
+  background: $transition-campaign-dark-blue;
+  text-align: center;
 
   @include govuk-media-query($from: tablet) {
     padding: govuk-spacing(2) govuk-spacing(1);
   }
 
   &:after {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    margin-top: -1px;
-    height: 3px;
-    background: govuk-colour('white');
-    content: '';
-    width: 100%;
+    content: "";
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: -1px;
+    background: govuk-colour("white");
   }
 
   // &:first-child {
@@ -68,19 +68,19 @@ $transition-campaign-dark-blue: #1e1348;
   @extend %govuk-heading-m;
 
   display: inline-block;
-  margin-left: govuk-spacing(1);
-  margin-bottom: 0;
   height: 45px;
-  vertical-align: middle;
+  margin-bottom: 0;
+  margin-left: govuk-spacing(1);
   color: $transition-campaign-dark-blue;
+  vertical-align: middle;
 
   @include govuk-media-query($from: tablet) {
-    margin-left: govuk-spacing(2);
     height: 80px;
+    margin-left: govuk-spacing(2);
   }
 
   &:after {
-    content: '' / '.'; // Wrap up the countdown-text element in a statement for screen readers
+    content: "" / "."; // Wrap up the countdown-text element in a statement for screen readers
   }
 }
 
