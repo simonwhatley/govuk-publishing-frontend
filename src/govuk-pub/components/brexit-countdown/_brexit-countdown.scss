@@ -1,0 +1,127 @@
+$transition-campaign-red: #ff003b;
+$transition-campaign-dark-blue: #1e1348;
+
+.govuk-pub-brexit-countdown {
+  @include govuk-font(19);
+  margin-bottom: govuk-spacing(6);
+}
+
+.govuk-pub-brexit-countdown--cta {
+  display: block;
+  padding: govuk-spacing(3);
+  border-top: 4px solid $transition-campaign-red;
+  background-color: govuk-colour("light-grey", $legacy: "grey-4");
+  text-decoration: none;
+}
+
+.govuk-pub-brexit-countdown__title {
+  @extend %govuk-heading-m;
+  color: $transition-campaign-dark-blue;
+}
+
+.govuk-pub-brexit-countdown__countdown {
+  margin-top: 0;
+  margin-bottom: govuk-spacing(2);
+
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: govuk-spacing(0);
+  }
+}
+
+.govuk-pub-brexit-countdown__countdown-number {
+  @include govuk-font($size: 80, $weight: bold, $line-height: 60px);
+
+  display: inline-block;
+  position: relative;
+  min-width: 50px;
+  margin-bottom: govuk-spacing(2);
+  color: govuk-colour("white");
+  background: $transition-campaign-dark-blue;
+  text-align: center;
+
+  @include govuk-media-query($from: tablet) {
+    padding: govuk-spacing(2) govuk-spacing(1);
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: -1px;
+    background: govuk-colour("white");
+  }
+
+  // &:first-child {
+  //   margin-right: 3px;
+  // }
+
+  // &:nth-child(2) {
+  //   margin-right: govuk-spacing(2);
+  // }
+}
+
+.govuk-pub-brexit-countdown__countdown-text {
+  @extend %govuk-heading-m;
+
+  display: inline-block;
+  height: 45px;
+  margin-bottom: 0;
+  margin-left: govuk-spacing(1);
+  color: $transition-campaign-dark-blue;
+  vertical-align: middle;
+
+  @include govuk-media-query($from: tablet) {
+    height: 80px;
+    margin-left: govuk-spacing(2);
+  }
+
+  &:after {
+    content: "" / "."; // Wrap up the countdown-text element in a statement for screen readers
+  }
+}
+
+.govuk-pub-brexit-countdown__text {
+  @extend %govuk-link;
+
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: underline;
+
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: govuk-spacing(2);
+  }
+}
+
+.govuk-pub-brexit-countdown:focus {
+  .govuk-pub-brexit-countdown__countdown-number:after {
+    background-color: $govuk-focus-colour;
+  }
+
+  .govuk-pub-brexit-countdown__text {
+    text-decoration: none;
+  }
+}
+
+@include govuk-compatibility(govuk_template) {
+  .govuk-pub-brexit-countdown__title {
+    margin-bottom: govuk-spacing(3);
+  }
+
+  .govuk-pub-brexit-countdown__countdown-number {
+    padding: govuk-spacing(1) 0 0;
+
+    @include govuk-media-query($from: tablet) {
+      padding: govuk-spacing(3) govuk-spacing(1) govuk-spacing(1);
+    }
+  }
+
+  .govuk-pub-brexit-countdown__countdown-text {
+    @include govuk-media-query($from: tablet) {
+      height: 75px;
+    }
+  }
+}

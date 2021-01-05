@@ -1,0 +1,35 @@
+{%- set countdownHtml %}
+<p class="govuk-pub-brexit-countdown__countdown">
+  {%- if params.count %}
+    {% set numbers = params.count.toString().split('') %}
+    {%- for number in numbers %}
+      <span class="govuk-pub-brexit-countdown__countdown-number">{{ number }}</span>
+    {% endfor -%}
+  {% else %}
+    <span class="govuk-pub-brexit-countdown__countdown-number">0</span>
+  {% endif -%}
+  <span class="govuk-pub-brexit-countdown__countdown-text">day {{- 's' if params.count != 1 }} to go</span>
+</p>
+{% endset -%}
+
+{%- if params.link %}
+  <a class="govuk-pub-brexit-countdown {{- ' ' + params.classes if params.classes }}" lang="en" dir="ltr" {%- if params.link.href | length %}href="{{ params.link.href | default('https://www.gov.uk') }}"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    {%- if params.heading | length %}
+      <h{{ params.headingLevel | default(2) }} class="govuk-pub-brexit-countdown__title {{- ' ' + params.heading.classes if params.heading.classes }}">
+        {{- params.heading.html | safe if params.heading.html else params.heading.text -}}
+      </h{{ params.headingLevel | default(2) }}>
+    {% endif -%}
+
+    {{- countdownHtml | safe -}}
+    
+    {%- if params.link | length %}
+      <p class="govuk-pub-brexit-countdown__text">
+        {{- params.link.html | safe if params.link.html else params.link.text -}}
+      </p>
+    {% endif -%}
+  </a>
+{% else %}
+  
+  {{- countdownHtml | safe -}}
+  
+{% endif -%}
