@@ -60,7 +60,7 @@
     "rollup": "^1.32.1",
     "sass": "^1.54.9",
     "standard": "^17.0.0",
-    "vinyl-paths": "^3.0.1",
+    "vinyl-paths": "^5.0.0",
     "yargs": "^15.4.1"
   },
   "standard": {
