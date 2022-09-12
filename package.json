@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/simonwhatley/govuk-publishing-frontend#readme",
   "dependencies": {
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^9.8.8",
     "basic-auth": "^2.0.1",
     "body-parser": "^1.19.0",
     "browser-sync": "^2.26.12",
