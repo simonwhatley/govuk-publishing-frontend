@@ -61,7 +61,7 @@
     "sass": "^1.54.9",
     "standard": "^17.0.0",
     "vinyl-paths": "^3.0.1",
-    "yargs": "^15.4.1"
+    "yargs": "^17.6.2"
   },
   "standard": {
     "ignore": [
