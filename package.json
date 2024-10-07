@@ -58,7 +58,7 @@
     "postcss-pseudo-classes": "0.2.1",
     "require-dir": "^1.0.0",
     "rollup": "^1.32.1",
-    "sass": "^1.54.9",
+    "sass": "^1.79.4",
     "standard": "^17.0.0",
     "vinyl-paths": "^3.0.1",
     "yargs": "^15.4.1"
