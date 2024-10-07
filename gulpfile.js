@@ -30,8 +30,7 @@ gulp.task('watch', gulp.parallel(
 gulp.task('build:package', gulp.series(
   'clean',
   'build:copy-files',
-  'build:javascript',
-  'build:compress-images'
+  'build:javascript'
 ))
 
 gulp.task('build:dist', gulp.series(
