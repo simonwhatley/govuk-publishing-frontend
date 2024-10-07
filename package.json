@@ -34,7 +34,7 @@
     "express": "^4.18.1",
     "express-session": "^1.17.1",
     "govuk-frontend": "^3.9.0",
-    "gulp": "^4.0.0",
+    "gulp": "^5.0.0",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-better-rollup": "^4.0.1",
     "gulp-cache": "^1.1.3",
