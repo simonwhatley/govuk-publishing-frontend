@@ -27,7 +27,7 @@
     "basic-auth": "^2.0.1",
     "body-parser": "^1.20.3",
     "browser-sync": "^3.0.3",
-    "cssnano": "^5.1.13",
+    "cssnano": "^7.0.6",
     "del": "^3.0.0",
     "dotenv": "^16.4.5",
     "eslint": "^9.12.0",
