@@ -1,4 +1,4 @@
-{%- from "govuk/components/input/macro.njk" import govukInput %}
+{%- from "dist/govuk/components/input/macro.njk" import govukInput %}
 {%- from "govuk-pub/components/expander/macro.njk" import govukPubExpander %}
 
 {%- call govukPubExpander({
@@ -9,7 +9,7 @@
 }) %}
 
   <div class="govuk-pub-date-filter {{- ' ' + params.filter.classes if params.filter.classes }}" {%- for attribute, value in params.filter.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-    
+
     {{ govukInput({
       id: params.from.id,
       name: params.from.name,
@@ -20,7 +20,7 @@
       classes: params.from.classes,
       attributes: params.from.attributes
     }) }}
-      
+
     {{ govukInput({
       id: params.to.id,
       name: params.to.name,
@@ -31,7 +31,7 @@
       classes: params.to.classes,
       attributes: params.to.attributes
     }) }}
-    
+
   </div>
 
 {% endcall -%}

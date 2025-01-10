@@ -1,5 +1,5 @@
-{%- from "govuk/components/button/macro.njk" import govukButton -%}
-{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "dist/govuk/components/button/macro.njk" import govukButton -%}
+{%- from "dist/govuk/components/input/macro.njk" import govukInput -%}
 
 <div {%- if params.id %} id="{{ params.id }}"{% endif %} class="govuk-pub-copy-to-clipboard {{- ' ' + params.classes if params.classes }}" data-module="copy-to-clipboard" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
 

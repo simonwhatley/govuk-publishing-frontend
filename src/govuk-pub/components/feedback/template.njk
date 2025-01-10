@@ -1,8 +1,8 @@
-{%- from "govuk/components/button/macro.njk" import govukButton -%}
-{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "dist/govuk/components/button/macro.njk" import govukButton -%}
+{%- from "dist/govuk/components/input/macro.njk" import govukInput -%}
 
 <div class="govuk-pub-feedback {{- ' ' + params.classes if params.classes }}" data-module="feedback" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  
+
   <div class="govuk-pub-feedback__prompt govuk-pub-feedback__js-show js-prompt" tabindex="-1">
     <div class="govuk-pub-feedback__prompt-questions js-prompt-questions">
       <h2 class="govuk-pub-feedback__prompt-question">Is this page useful?</h2>
@@ -34,19 +34,19 @@
   </div>
 
   <form action="/contact/govuk/problem_reports" id="something-is-wrong" class="govuk-pub-feedback__form js-feedback-form js-hidden" method="post" aria-hidden="true" novalidate>
-  
+
     <a href="#" class="govuk-pub-feedback__close govuk-pub-feedback__js-show js-close-form" aria-controls="something-is-wrong" aria-expanded="true" role="button">
       Close
     </a>
-    
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-pub-feedback__error-summary govuk-pub-feedback__js-show js-hidden js-errors" tabindex="-1"></div>
-        
+
         <h3 class="govuk-pub-feedback__form-heading">Help us improve GOV.UK</h3>
-        
-        <p id="feedback_explanation" class="govuk-pub-feedback__form-paragraph">Don’t include personal or financial information like your National Insurance number or credit card details.</p>  
-        
+
+        <p id="feedback_explanation" class="govuk-pub-feedback__form-paragraph">Don’t include personal or financial information like your National Insurance number or credit card details.</p>
+
         {{ govukInput({
           id: "what-doing",
           name: "what_doing",
@@ -58,7 +58,7 @@
             "aria-describedby": "feedback_explanation"
           }
         }) }}
-        
+
         {{ govukInput({
           id: "what-wrong",
           name: "what_wrong",
@@ -67,32 +67,32 @@
           },
           classes: "govuk-pub-input"
         }) }}
-        
+
         {{ govukButton({
           text: "Send",
           classes: "govuk-pub-button"
         }) }}
-        
+
       </div>
     </div>
-    
+
   </form>
 
   <form action="/contact/govuk/email-survey-signup" id="page-is-not-useful" class="govuk-pub-feedback__form govuk-pub-feedback__form--email govuk-pub-feedback__js-show js-feedback-form js-hidden" method="post" aria-hidden="true" novalidate>
-      
+
     <a href="#" class="govuk-pub-feedback__close js-close-form" aria-controls="page-is-not-useful" aria-expanded="true" role="button">
       Close
     </a>
-    
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds" id="survey-wrapper">
-        
+
         <div class="govuk-pub-feedback__error-summary js-hidden js-errors" tabindex="-1"></div>
-        
+
         <h3 class="govuk-pub-feedback__form-heading">Help us improve GOV.UK</h3>
-        
-        <p id="survey_explanation" class="govuk-pub-feedback__form-paragraph">To help us improve GOV.UK, we’d like to know more about your visit today. We’ll send you a link to a feedback form. It will take only 2 minutes to fill in. Don’t worry we won’t send you spam or share your email address with anyone.</p>    
-        
+
+        <p id="survey_explanation" class="govuk-pub-feedback__form-paragraph">To help us improve GOV.UK, we’d like to know more about your visit today. We’ll send you a link to a feedback form. It will take only 2 minutes to fill in. Don’t worry we won’t send you spam or share your email address with anyone.</p>
+
         {{ govukInput({
           id: "email",
           name: "email",
@@ -106,15 +106,15 @@
             "aria-describedby": "survey_explanation"
           }
         }) }}
-        
+
         {{ govukButton({
           text: "Send me the survey",
           classes: "govuk-pub-button"
         }) }}
-        
+
       </div>
     </div>
-    
+
   </form>
 
 </div>
