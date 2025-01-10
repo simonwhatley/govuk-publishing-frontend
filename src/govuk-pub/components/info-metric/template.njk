@@ -1,4 +1,4 @@
-{%- from "govuk/components/details/macro.njk" import govukDetails -%}
+{%- from "dist/govuk/components/details/macro.njk" import govukDetails -%}
 
 <div class="govuk-pub-info-metric {{- ' ' + params.classes if params.classes }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <h{{ params.heading.headingLevel | default(3) }} class="govuk-pub-info-metric__heading {{- ' ' + params.heading.classes if params.heading.classes }}">
@@ -25,7 +25,7 @@
   <span class="govuk-pub-info-metric__figure">
     {%- if params.metric.figure %}
       {{- params.metric.figure -}}
-      {%- if params.metric.figureContext %} <span class="govuk-pub-info-metric__short-context">( {{- params.metric.figureContext -}} )</span>{% endif -%}    
+      {%- if params.metric.figureContext %} <span class="govuk-pub-info-metric__short-context">( {{- params.metric.figureContext -}} )</span>{% endif -%}
     {% else %}
       No data
     {% endif -%}

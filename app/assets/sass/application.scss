@@ -7,7 +7,7 @@ $app-code-colour: #d13118;
 $govuk-brexit-background-colour: #182d4e;
 
 // GOV.UK Frontend
-@import "node_modules/govuk-frontend/govuk/all";
+@import "node_modules/govuk-frontend/dist/govuk/all";
 
 // GOV.UK Publishing Frontend
 @import "src/govuk-pub/all";
