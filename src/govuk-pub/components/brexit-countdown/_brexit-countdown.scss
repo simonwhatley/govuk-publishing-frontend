@@ -106,22 +106,22 @@ $transition-campaign-dark-blue: #1e1348;
   }
 }
 
-@include govuk-compatibility(govuk_template) {
-  .govuk-pub-brexit-countdown__title {
-    margin-bottom: govuk-spacing(3);
-  }
+// @include govuk-compatibility(govuk_template) {
+//   .govuk-pub-brexit-countdown__title {
+//     margin-bottom: govuk-spacing(3);
+//   }
 
-  .govuk-pub-brexit-countdown__countdown-number {
-    padding: govuk-spacing(1) 0 0;
+//   .govuk-pub-brexit-countdown__countdown-number {
+//     padding: govuk-spacing(1) 0 0;
 
-    @include govuk-media-query($from: tablet) {
-      padding: govuk-spacing(3) govuk-spacing(1) govuk-spacing(1);
-    }
-  }
+//     @include govuk-media-query($from: tablet) {
+//       padding: govuk-spacing(3) govuk-spacing(1) govuk-spacing(1);
+//     }
+//   }
 
-  .govuk-pub-brexit-countdown__countdown-text {
-    @include govuk-media-query($from: tablet) {
-      height: 75px;
-    }
-  }
-}
+//   .govuk-pub-brexit-countdown__countdown-text {
+//     @include govuk-media-query($from: tablet) {
+//       height: 75px;
+//     }
+//   }
+// }
