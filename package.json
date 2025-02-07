@@ -30,7 +30,7 @@
     "cssnano": "^7.0.6",
     "del": "^3.0.0",
     "dotenv": "^16.4.7",
-    "eslint": "^9.19.0",
+    "eslint": "^9.20.0",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
     "govuk-frontend": "^5.8.0",
