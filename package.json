@@ -33,7 +33,7 @@
     "eslint": "^9.26.0",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
-    "govuk-frontend": "^5.10.0",
+    "govuk-frontend": "^5.10.1",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-better-rollup": "^4.0.1",
